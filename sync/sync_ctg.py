@@ -101,8 +101,9 @@ def _daily(con, run_id):
             n, new, chg = n + a, new + b, chg + c
         if total is not None and n != total:
             raise RuntimeError(f"fetched {n} but the API total is {total}")
-        if n == 0 and dt.date.today().weekday() < 5:
-            raise RuntimeError(f"zero records on a weekday (since {start})")
+        today = dt.date.today()
+        if n == 0 and any((start + dt.timedelta(days=k)).weekday() < 5 for k in range((today - start).days)):  # the registry posts on weekdays: a window with one yet no records is suspicious
+            raise RuntimeError(f"zero records although the window since {start} includes a weekday")
         labels.label_stale(con)
         store.set_state(con, "watermark", dt.date.today().isoformat())
         con.execute("COMMIT")

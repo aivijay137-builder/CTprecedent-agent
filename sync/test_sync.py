@@ -98,6 +98,14 @@ def test_zero_records_on_weekday_fails(db, monkeypatch):
     assert "zero records" in sync_ctg.run("daily")["error"]
 
 
+def test_zero_records_after_a_weekend_is_fine(db, monkeypatch):
+    store.set_state(db, "watermark", "2026-11-09")  # window starts Saturday 7 Nov: only the weekend, nothing is posted then
+    db.close()
+    _fake_pages(monkeypatch, [])
+    monkeypatch.setattr(sync_ctg.dt, "date", type("D", (dt.date,), {"today": classmethod(lambda c: dt.date(2026, 11, 9))}))
+    assert sync_ctg.run("daily")["status"] == "ok"
+
+
 def test_refuses_second_sync_and_needs_bootstrap(db, monkeypatch):
     db.close()
     sync_ctg.LOCK.write_text(str(__import__("os").getpid()))
