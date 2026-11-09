@@ -1,0 +1,26 @@
+/* Design tokens. Neutral palette, no brand colours, no shadows. 8px grid. */
+:root {
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text: #1F2430;
+  --text-2: #5B6372;
+  --muted: #8A92A0;
+  --surface: #FFFFFF;
+  --surface-2: #F4F6F9;
+  --border: #E3E6EB;
+  --accent: #2457C5;
+  --accent-bg: #E9EFFB;
+  --amber: #8A4B08;
+  --amber-bg: #FEF3E2;
+  --amber-line: #E6B567;
+  --green: #145A33;
+  --green-bg: #E8F5EE;
+  --green-solid: #1F7A45;
+  --red: #8C1D18;
+  --red-bg: #FDECEA;
+  --radius: 8px;
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --touch: 44px;
+}

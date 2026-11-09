@@ -1,0 +1,12 @@
+{
+  "name": "faro-precedent",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm --prefix frontend install",
+    "start": "npm --prefix frontend run build && python -m uvicorn backend.main:app --host 127.0.0.1 --port 8765",
+    "dev": "concurrently --kill-others-on-fail -n api,web -c blue,green \"npm:api\" \"npm:web\"",
+    "api": "python -m uvicorn backend.main:app --host 127.0.0.1 --port 8765",
+    "web": "npm --prefix frontend run dev"
+  },
+  "devDependencies": { "concurrently": "^9.1.0" }
+}

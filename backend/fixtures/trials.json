@@ -1,0 +1,1158 @@
+{
+  "NCT05100017": {
+    "nct_id": "NCT05100017",
+    "title": "Brenvalimab versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 105,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2021-02",
+    "countries": [
+      "Poland",
+      "Canada",
+      "United States"
+    ]
+  },
+  "NCT05100018": {
+    "nct_id": "NCT05100018",
+    "title": "Axilumab versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 120,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2017-03",
+    "countries": [
+      "Germany",
+      "United States",
+      "Spain"
+    ]
+  },
+  "NCT05100003": {
+    "nct_id": "NCT05100003",
+    "title": "Brenvalimab versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 598,
+    "has_results": true,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2023-08",
+    "countries": [
+      "Germany",
+      "Spain",
+      "Canada"
+    ]
+  },
+  "NCT05100014": {
+    "nct_id": "NCT05100014",
+    "title": "Zelvarotide versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 327,
+    "has_results": true,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2024-04",
+    "countries": [
+      "Canada",
+      "Germany",
+      "Japan"
+    ]
+  },
+  "NCT05100010": {
+    "nct_id": "NCT05100010",
+    "title": "Glycoquin versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 171,
+    "has_results": true,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2017-07",
+    "countries": [
+      "Japan",
+      "Germany",
+      "United States"
+    ]
+  },
+  "NCT05100015": {
+    "nct_id": "NCT05100015",
+    "title": "Nebuvir-5 versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 113,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2020-01",
+    "countries": [
+      "Germany",
+      "Canada",
+      "Japan"
+    ]
+  },
+  "NCT05100019": {
+    "nct_id": "NCT05100019",
+    "title": "Ventrolan versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 47,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2017-01",
+    "countries": [
+      "Germany",
+      "Canada",
+      "Japan"
+    ]
+  },
+  "NCT05100009": {
+    "nct_id": "NCT05100009",
+    "title": "Orlavent versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 57,
+    "has_results": true,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2016-10",
+    "countries": [
+      "Poland",
+      "Canada",
+      "Japan"
+    ]
+  },
+  "NCT05100020": {
+    "nct_id": "NCT05100020",
+    "title": "Tiotex-2 versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 498,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2017-02",
+    "countries": [
+      "Germany",
+      "Spain",
+      "Canada"
+    ]
+  },
+  "NCT05100006": {
+    "nct_id": "NCT05100006",
+    "title": "Tiotex-2 versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 67,
+    "has_results": true,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2021-06",
+    "countries": [
+      "Spain",
+      "Japan",
+      "Germany"
+    ]
+  },
+  "NCT05100002": {
+    "nct_id": "NCT05100002",
+    "title": "Dupexil versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 142,
+    "has_results": true,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2023-10",
+    "countries": [
+      "Germany",
+      "Japan",
+      "Canada"
+    ]
+  },
+  "NCT05100023": {
+    "nct_id": "NCT05100023",
+    "title": "Orlavent versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": "Slow recruitment",
+    "stop_tier": "stated",
+    "enrollment": 56,
+    "has_results": false,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 2",
+    "start_date": "2020-04",
+    "countries": [
+      "Spain",
+      "Germany",
+      "Canada"
+    ]
+  },
+  "NCT05100005": {
+    "nct_id": "NCT05100005",
+    "title": "Ventrolan versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 67,
+    "has_results": true,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 2",
+    "start_date": "2024-04",
+    "countries": [
+      "Canada",
+      "Japan",
+      "Spain"
+    ]
+  },
+  "NCT05100008": {
+    "nct_id": "NCT05100008",
+    "title": "Mepolex versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 358,
+    "has_results": true,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2017-07",
+    "countries": [
+      "United States",
+      "Canada",
+      "Spain"
+    ]
+  },
+  "NCT05100004": {
+    "nct_id": "NCT05100004",
+    "title": "Axilumab versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 407,
+    "has_results": true,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2024-05",
+    "countries": [
+      "Germany",
+      "Japan",
+      "Poland"
+    ]
+  },
+  "NCT05100028": {
+    "nct_id": "NCT05100028",
+    "title": "Zelvarotide versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": "Enrollment below target",
+    "stop_tier": "stated",
+    "enrollment": 58,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2023-05",
+    "countries": [
+      "Spain",
+      "Germany",
+      "United States"
+    ]
+  },
+  "NCT05100001": {
+    "nct_id": "NCT05100001",
+    "title": "Nebuvir-5 versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 57,
+    "has_results": true,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 2",
+    "start_date": "2019-08",
+    "countries": [
+      "Spain",
+      "Canada",
+      "United States"
+    ]
+  },
+  "NCT05100012": {
+    "nct_id": "NCT05100012",
+    "title": "Pulmaris versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 218,
+    "has_results": true,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2019-04",
+    "countries": [
+      "Canada",
+      "United States",
+      "Spain"
+    ]
+  },
+  "NCT05100026": {
+    "nct_id": "NCT05100026",
+    "title": "Pulmaris versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": "Low enrollment after strict exacerbation rule",
+    "stop_tier": "stated",
+    "enrollment": 61,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2022-08",
+    "countries": [
+      "Germany",
+      "United States",
+      "Spain"
+    ]
+  },
+  "NCT05100007": {
+    "nct_id": "NCT05100007",
+    "title": "Revoterol versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 40,
+    "has_results": true,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 2",
+    "start_date": "2020-06",
+    "countries": [
+      "Spain",
+      "Canada",
+      "Germany"
+    ]
+  },
+  "NCT05100025": {
+    "nct_id": "NCT05100025",
+    "title": "Airvanta versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": "Recruitment difficulties",
+    "stop_tier": "stated",
+    "enrollment": 17,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2021-03",
+    "countries": [
+      "Japan",
+      "Poland",
+      "Germany"
+    ]
+  },
+  "NCT05100021": {
+    "nct_id": "NCT05100021",
+    "title": "Revoterol versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 94,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2016-01",
+    "countries": [
+      "Japan",
+      "Poland",
+      "Spain"
+    ]
+  },
+  "NCT05100011": {
+    "nct_id": "NCT05100011",
+    "title": "Airvanta versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 93,
+    "has_results": true,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2016-10",
+    "countries": [
+      "Canada",
+      "United States",
+      "Japan"
+    ]
+  },
+  "NCT05100013": {
+    "nct_id": "NCT05100013",
+    "title": "Inhalar-9 versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 53,
+    "has_results": true,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2020-06",
+    "countries": [
+      "Germany",
+      "United States",
+      "Spain"
+    ]
+  },
+  "NCT05100024": {
+    "nct_id": "NCT05100024",
+    "title": "Glycoquin versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": "Lack of efficacy at interim analysis",
+    "stop_tier": "stated",
+    "enrollment": 80,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2024-06",
+    "countries": [
+      "Canada",
+      "United States",
+      "Germany"
+    ]
+  },
+  "NCT05100016": {
+    "nct_id": "NCT05100016",
+    "title": "Dupexil versus placebo in moderate-to-severe COPD",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 160,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2021-02",
+    "countries": [
+      "Canada",
+      "Japan",
+      "United States"
+    ]
+  },
+  "NCT05100022": {
+    "nct_id": "NCT05100022",
+    "title": "Mepolex versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": "Sponsor portfolio reprioritisation (company announcement)",
+    "stop_tier": "outside",
+    "enrollment": 88,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2016-08",
+    "countries": [
+      "Spain",
+      "United States",
+      "Japan"
+    ]
+  },
+  "NCT05100027": {
+    "nct_id": "NCT05100027",
+    "title": "Inhalar-9 versus placebo in moderate-to-severe COPD",
+    "status": "TERMINATED",
+    "stop_reason": null,
+    "stop_tier": "unknown",
+    "enrollment": 33,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2016-10",
+    "countries": [
+      "United States",
+      "Canada",
+      "Spain"
+    ]
+  },
+  "NCT05100500": {
+    "nct_id": "NCT05100500",
+    "title": "Brenvalimab in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 447,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2026-05",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100501": {
+    "nct_id": "NCT05100501",
+    "title": "Pulmaris in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 333,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2026-07",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100502": {
+    "nct_id": "NCT05100502",
+    "title": "Revoterol in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 496,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2026-08",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100503": {
+    "nct_id": "NCT05100503",
+    "title": "Dupexil in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 345,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2026-09",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100504": {
+    "nct_id": "NCT05100504",
+    "title": "Airvanta in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 162,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2026-09",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100505": {
+    "nct_id": "NCT05100505",
+    "title": "Tiotex-2 in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 135,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2026-02",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100506": {
+    "nct_id": "NCT05100506",
+    "title": "Nebuvir-5 in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 366,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2026-04",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100507": {
+    "nct_id": "NCT05100507",
+    "title": "Glycoquin in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 477,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2026-08",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100508": {
+    "nct_id": "NCT05100508",
+    "title": "Ventrolan in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 434,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2026-05",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100509": {
+    "nct_id": "NCT05100509",
+    "title": "Zelvarotide in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 125,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 2",
+    "start_date": "2026-05",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05100510": {
+    "nct_id": "NCT05100510",
+    "title": "Orlavent in moderate-to-severe COPD (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 193,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2026-04",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200002": {
+    "nct_id": "NCT05200002",
+    "title": "Dupexil versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 95,
+    "has_results": true,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 3",
+    "start_date": "2024-06",
+    "countries": [
+      "Canada",
+      "Spain",
+      "Germany"
+    ]
+  },
+  "NCT05200001": {
+    "nct_id": "NCT05200001",
+    "title": "Nebuvir-5 versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 586,
+    "has_results": true,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2017-02",
+    "countries": [
+      "United States",
+      "Japan",
+      "Canada"
+    ]
+  },
+  "NCT05200003": {
+    "nct_id": "NCT05200003",
+    "title": "Brenvalimab versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 132,
+    "has_results": true,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2020-10",
+    "countries": [
+      "Poland",
+      "Spain",
+      "Canada"
+    ]
+  },
+  "NCT05200018": {
+    "nct_id": "NCT05200018",
+    "title": "Axilumab versus placebo in type 2 diabetes",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 329,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 3",
+    "start_date": "2021-05",
+    "countries": [
+      "Spain",
+      "Poland",
+      "Japan"
+    ]
+  },
+  "NCT05200015": {
+    "nct_id": "NCT05200015",
+    "title": "Nebuvir-5 versus placebo in type 2 diabetes",
+    "status": "TERMINATED",
+    "stop_reason": "Slow recruitment",
+    "stop_tier": "stated",
+    "enrollment": 68,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2019-05",
+    "countries": [
+      "Germany",
+      "United States",
+      "Spain"
+    ]
+  },
+  "NCT05200005": {
+    "nct_id": "NCT05200005",
+    "title": "Ventrolan versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 184,
+    "has_results": true,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2019-06",
+    "countries": [
+      "Spain",
+      "Germany",
+      "United States"
+    ]
+  },
+  "NCT05200007": {
+    "nct_id": "NCT05200007",
+    "title": "Revoterol versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 599,
+    "has_results": true,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2018-08",
+    "countries": [
+      "United States",
+      "Canada",
+      "Japan"
+    ]
+  },
+  "NCT05200017": {
+    "nct_id": "NCT05200017",
+    "title": "Brenvalimab versus placebo in type 2 diabetes",
+    "status": "UNKNOWN",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 183,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2016-03",
+    "countries": [
+      "Germany",
+      "United States",
+      "Canada"
+    ]
+  },
+  "NCT05200010": {
+    "nct_id": "NCT05200010",
+    "title": "Glycoquin versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 134,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 3",
+    "start_date": "2024-08",
+    "countries": [
+      "Canada",
+      "United States",
+      "Poland"
+    ]
+  },
+  "NCT05200012": {
+    "nct_id": "NCT05200012",
+    "title": "Pulmaris versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 502,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 3",
+    "start_date": "2022-08",
+    "countries": [
+      "Germany",
+      "United States",
+      "Spain"
+    ]
+  },
+  "NCT05200006": {
+    "nct_id": "NCT05200006",
+    "title": "Tiotex-2 versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 354,
+    "has_results": true,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 3",
+    "start_date": "2023-09",
+    "countries": [
+      "Germany",
+      "Japan",
+      "Poland"
+    ]
+  },
+  "NCT05200016": {
+    "nct_id": "NCT05200016",
+    "title": "Dupexil versus placebo in type 2 diabetes",
+    "status": "WITHDRAWN",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 0,
+    "has_results": false,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 3",
+    "start_date": "2017-02",
+    "countries": [
+      "Spain",
+      "Canada",
+      "Germany"
+    ]
+  },
+  "NCT05200019": {
+    "nct_id": "NCT05200019",
+    "title": "Ventrolan versus placebo in type 2 diabetes",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 193,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2024-04",
+    "countries": [
+      "Poland",
+      "United States",
+      "Japan"
+    ]
+  },
+  "NCT05200011": {
+    "nct_id": "NCT05200011",
+    "title": "Airvanta versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 548,
+    "has_results": false,
+    "sponsor": "Helio Biosciences",
+    "phase": "Phase 3",
+    "start_date": "2016-08",
+    "countries": [
+      "Poland",
+      "Japan",
+      "Germany"
+    ]
+  },
+  "NCT05200009": {
+    "nct_id": "NCT05200009",
+    "title": "Orlavent versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 370,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2022-02",
+    "countries": [
+      "Canada",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200008": {
+    "nct_id": "NCT05200008",
+    "title": "Mepolex versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 503,
+    "has_results": true,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2022-05",
+    "countries": [
+      "Spain",
+      "Canada",
+      "United States"
+    ]
+  },
+  "NCT05200004": {
+    "nct_id": "NCT05200004",
+    "title": "Axilumab versus placebo in type 2 diabetes",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 61,
+    "has_results": true,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 3",
+    "start_date": "2017-01",
+    "countries": [
+      "Canada",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200014": {
+    "nct_id": "NCT05200014",
+    "title": "Zelvarotide versus placebo in type 2 diabetes",
+    "status": "TERMINATED",
+    "stop_reason": "Safety signal in extension study",
+    "stop_tier": "stated",
+    "enrollment": 30,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2022-04",
+    "countries": [
+      "Germany",
+      "United States",
+      "Poland"
+    ]
+  },
+  "NCT05200013": {
+    "nct_id": "NCT05200013",
+    "title": "Inhalar-9 versus placebo in type 2 diabetes",
+    "status": "TERMINATED",
+    "stop_reason": null,
+    "stop_tier": "unknown",
+    "enrollment": 69,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2024-02",
+    "countries": [
+      "Germany",
+      "Spain",
+      "Japan"
+    ]
+  },
+  "NCT05200500": {
+    "nct_id": "NCT05200500",
+    "title": "Brenvalimab in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 350,
+    "has_results": false,
+    "sponsor": "Meridian Therapeutics",
+    "phase": "Phase 3",
+    "start_date": "2026-01",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200501": {
+    "nct_id": "NCT05200501",
+    "title": "Pulmaris in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 293,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2026-01",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200502": {
+    "nct_id": "NCT05200502",
+    "title": "Revoterol in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 192,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2026-04",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200503": {
+    "nct_id": "NCT05200503",
+    "title": "Dupexil in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 468,
+    "has_results": false,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 3",
+    "start_date": "2026-03",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200504": {
+    "nct_id": "NCT05200504",
+    "title": "Airvanta in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 455,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2026-07",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200505": {
+    "nct_id": "NCT05200505",
+    "title": "Tiotex-2 in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 161,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 3",
+    "start_date": "2026-05",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05200506": {
+    "nct_id": "NCT05200506",
+    "title": "Nebuvir-5 in type 2 diabetes (recruiting)",
+    "status": "RECRUITING",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 365,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 3",
+    "start_date": "2026-09",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ]
+  },
+  "NCT05300001": {
+    "nct_id": "NCT05300001",
+    "title": "Nebuvir-5 versus placebo in alpha-1 antitrypsin deficiency",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 134,
+    "has_results": true,
+    "sponsor": "Northgate Pharma",
+    "phase": "Phase 2",
+    "start_date": "2023-10",
+    "countries": [
+      "Poland",
+      "Japan",
+      "Spain"
+    ]
+  },
+  "NCT05300003": {
+    "nct_id": "NCT05300003",
+    "title": "Brenvalimab versus placebo in alpha-1 antitrypsin deficiency",
+    "status": "TERMINATED",
+    "stop_reason": null,
+    "stop_tier": "unknown",
+    "enrollment": 75,
+    "has_results": false,
+    "sponsor": "Altura Health",
+    "phase": "Phase 2",
+    "start_date": "2018-01",
+    "countries": [
+      "United States",
+      "Japan",
+      "Canada"
+    ]
+  },
+  "NCT05300002": {
+    "nct_id": "NCT05300002",
+    "title": "Dupexil versus placebo in alpha-1 antitrypsin deficiency",
+    "status": "COMPLETED",
+    "stop_reason": null,
+    "stop_tier": null,
+    "enrollment": 434,
+    "has_results": false,
+    "sponsor": "Quill Respiratory",
+    "phase": "Phase 2",
+    "start_date": "2020-06",
+    "countries": [
+      "Canada",
+      "Japan",
+      "Poland"
+    ]
+  }
+}

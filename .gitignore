@@ -1,0 +1,31 @@
+.env
+__pycache__/
+*.duckdb
+
+*.db
+node_modules/
+dist/
+*.wal
+
+# --- not for public view (kept locally only) ---
+# job-application material and private working notes
+Faro Platform Teardown and Prototype Fit.md
+faro_prototype_conversation_notes.md
+Q&A.md
+audit_out.json
+Screen *.png
+demo/share_with_faro.md
+# local data, logs and build output
+data/
+*.log
+frontend/dist-demo/
+demo/artifact/
+
+# --- documentation and working docs: local only (bare-minimum repo) ---
+docs/
+decision.md
+PROMPTS.md
+flag rules.md
+BUILD.md
+DEPLOY.md
+demo/

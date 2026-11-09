@@ -1,0 +1,166 @@
+{
+  "run_id": "",
+  "brief_echo": {
+    "source": "nct",
+    "nct_id": "NCT05000002",
+    "condition": "Alpha-1 Antitrypsin Deficiency with Emphysema",
+    "mesh_terms": [
+      "alpha 1-Antitrypsin Deficiency"
+    ],
+    "phase": [
+      "PHASE2"
+    ],
+    "intervention_type": [
+      "BIOLOGICAL"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 18 to 65 years\n* Serum AAT below 11 uM\n* FEV1 between 35% and 70% of predicted\n\nExclusion Criteria:\n* IgA deficiency",
+    "primary_endpoint": "Change in CT lung density at Week 52",
+    "primary_endpoint_timeframe": "52 weeks",
+    "target_enrollment": 60,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Spain"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL"
+    ]
+  },
+  "data_as_of": "2026-11-02",
+  "condition_support": "basic",
+  "bottom_line": {
+    "risk": "insufficient",
+    "n_comparables": 3,
+    "n_terminated": 1,
+    "n_terminated_enrollment": 0,
+    "sentence": "3 comparable trials; 1 terminated."
+  },
+  "comparables": [
+    {
+      "nct_id": "NCT05300001",
+      "title": "Nebuvir-5 versus placebo in alpha-1 antitrypsin deficiency",
+      "why_picked": "Phase 2 AATD, similar population",
+      "similarity": 0.85,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 134,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05300003",
+      "title": "Brenvalimab versus placebo in alpha-1 antitrypsin deficiency",
+      "why_picked": "Phase 2 AATD, similar population",
+      "similarity": 0.83,
+      "status": "TERMINATED",
+      "stop_reason": null,
+      "stop_tier": "unknown",
+      "enrollment": 75,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05300002",
+      "title": "Dupexil versus placebo in alpha-1 antitrypsin deficiency",
+      "why_picked": "Phase 2 AATD, same endpoint",
+      "similarity": 0.65,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 434,
+      "has_results": false
+    }
+  ],
+  "outcomes": {
+    "comparables": {
+      "completed_results": 1,
+      "completed_no_results": 1,
+      "terminated": 1,
+      "withdrawn": 0,
+      "unknown": 0,
+      "running": 0
+    },
+    "baseline": {
+      "completed_results": 22,
+      "completed_no_results": 9,
+      "terminated": 8,
+      "withdrawn": 3,
+      "unknown": 4,
+      "running": 6
+    }
+  },
+  "stop_causes": [
+    {
+      "cause": "Reason not stated",
+      "count": 1,
+      "tier": "unknown",
+      "quotes": [
+        {
+          "nct_id": "NCT05300003",
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "elements": {
+    "population": {
+      "findings": [
+        {
+          "text": "No comparable eligibility cutoffs could be compared with fewer than 5 trials.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    },
+    "endpoints": {
+      "findings": [
+        {
+          "text": "CT lung density is the primary endpoint in 2 of 3 comparables.",
+          "n": 2,
+          "evidence_ids": [
+            "NCT05300001",
+            "NCT05300002"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "findings": [
+        {
+          "text": "Enrollment of the 3 comparables ranged widely; too few to compare.",
+          "n": 2,
+          "evidence_ids": [
+            "NCT05300001",
+            "NCT05300002"
+          ]
+        }
+      ]
+    },
+    "sites": {
+      "findings": [
+        {
+          "text": "Competing trials: not found.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    },
+    "design": {
+      "findings": [
+        {
+          "text": "Design details: not found in the registry fields.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    }
+  },
+  "flags": [],
+  "no_flags_reason": "Only 3 comparable trials were found. At least 5 are needed before a flag can be raised, so none are shown rather than guessing from too little evidence.",
+  "limits": [
+    "Fewer than 5 comparable trials: no flags are raised.",
+    "Basic condition support.",
+    "Original enrollment targets are replaced by actual enrollment once a trial finishes."
+  ],
+  "diff": null,
+  "package_id": null
+}

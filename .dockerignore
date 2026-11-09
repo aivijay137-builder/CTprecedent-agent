@@ -1,0 +1,10 @@
+.env
+*.duckdb
+*.db
+node_modules
+frontend
+demo
+data
+docs
+.git
+__pycache__

@@ -1,0 +1,425 @@
+{
+  "run_id": "",
+  "brief_echo": {
+    "source": "nct",
+    "nct_id": "NCT05000001",
+    "condition": "Type 2 Diabetes Mellitus",
+    "mesh_terms": [
+      "Diabetes Mellitus, Type 2"
+    ],
+    "phase": [
+      "PHASE3"
+    ],
+    "intervention_type": [
+      "DRUG"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 18 to 75 years\n* HbA1c between 7.0% and 10.5%\n* BMI 25 to 40 kg/m2\n\nExclusion Criteria:\n* Type 1 diabetes\n* eGFR below 45 mL/min/1.73 m2",
+    "primary_endpoint": "Change in HbA1c from baseline at Week 26",
+    "primary_endpoint_timeframe": "26 weeks",
+    "target_enrollment": 420,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Mexico",
+      "Poland"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL",
+      "PLACEBO_COMPARATOR"
+    ]
+  },
+  "data_as_of": "2026-08-20",
+  "condition_support": "basic",
+  "bottom_line": {
+    "risk": "low",
+    "n_comparables": 19,
+    "n_terminated": 3,
+    "n_terminated_enrollment": 1,
+    "sentence": "19 comparable trials; 3 terminated, 1 for slow enrollment."
+  },
+  "comparables": [
+    {
+      "nct_id": "NCT05200002",
+      "title": "Dupexil versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.94,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 95,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200001",
+      "title": "Nebuvir-5 versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.93,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 586,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200003",
+      "title": "Brenvalimab versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.92,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 132,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200018",
+      "title": "Axilumab versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.87,
+      "status": "RECRUITING",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 329,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200015",
+      "title": "Nebuvir-5 versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.86,
+      "status": "TERMINATED",
+      "stop_reason": "Slow recruitment",
+      "stop_tier": "stated",
+      "enrollment": 68,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200005",
+      "title": "Ventrolan versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.82,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 184,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200007",
+      "title": "Revoterol versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.8,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 599,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200017",
+      "title": "Brenvalimab versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.79,
+      "status": "UNKNOWN",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 183,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200010",
+      "title": "Glycoquin versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.77,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 134,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200012",
+      "title": "Pulmaris versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.77,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 502,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200006",
+      "title": "Tiotex-2 versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.76,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 354,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200016",
+      "title": "Dupexil versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.76,
+      "status": "WITHDRAWN",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 0,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200019",
+      "title": "Ventrolan versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.74,
+      "status": "RECRUITING",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 193,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200011",
+      "title": "Airvanta versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.7,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 548,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200009",
+      "title": "Orlavent versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.69,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 370,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200008",
+      "title": "Mepolex versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.66,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 503,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200004",
+      "title": "Axilumab versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.65,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 61,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05200014",
+      "title": "Zelvarotide versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.65,
+      "status": "TERMINATED",
+      "stop_reason": "Safety signal in extension study",
+      "stop_tier": "stated",
+      "enrollment": 30,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05200013",
+      "title": "Inhalar-9 versus placebo in type 2 diabetes",
+      "why_picked": "Phase 3 type 2 diabetes, same endpoint",
+      "similarity": 0.63,
+      "status": "TERMINATED",
+      "stop_reason": null,
+      "stop_tier": "unknown",
+      "enrollment": 69,
+      "has_results": false
+    }
+  ],
+  "outcomes": {
+    "comparables": {
+      "completed_results": 8,
+      "completed_no_results": 4,
+      "terminated": 3,
+      "withdrawn": 1,
+      "unknown": 1,
+      "running": 2
+    },
+    "baseline": {
+      "completed_results": 1180,
+      "completed_no_results": 640,
+      "terminated": 410,
+      "withdrawn": 120,
+      "unknown": 330,
+      "running": 260
+    }
+  },
+  "stop_causes": [
+    {
+      "cause": "Slow enrollment",
+      "count": 1,
+      "tier": "stated",
+      "quotes": [
+        {
+          "nct_id": "NCT05200015",
+          "quote": "Slow recruitment"
+        }
+      ]
+    },
+    {
+      "cause": "Safety",
+      "count": 1,
+      "tier": "stated",
+      "quotes": [
+        {
+          "nct_id": "NCT05200014",
+          "quote": "Safety signal in extension study"
+        }
+      ]
+    },
+    {
+      "cause": "Reason not stated",
+      "count": 1,
+      "tier": "unknown",
+      "quotes": [
+        {
+          "nct_id": "NCT05200013",
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "elements": {
+    "population": {
+      "findings": [
+        {
+          "text": "Eligibility cutoffs for this condition are not parsed yet (basic support); text match only.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    },
+    "endpoints": {
+      "findings": [
+        {
+          "text": "HbA1c change is the primary endpoint in 10 of 19 comparables.",
+          "n": 10,
+          "evidence_ids": [
+            "NCT05200002",
+            "NCT05200001",
+            "NCT05200003",
+            "NCT05200005",
+            "NCT05200007",
+            "NCT05200010",
+            "NCT05200012",
+            "NCT05200006",
+            "NCT05200011",
+            "NCT05200009"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "findings": [
+        {
+          "text": "5 of 12 completed comparables enrolled fewer than 200 patients.",
+          "n": 5,
+          "evidence_ids": [
+            "NCT05200002",
+            "NCT05200005",
+            "NCT05200004",
+            "NCT05200010",
+            "NCT05200003"
+          ]
+        }
+      ]
+    },
+    "sites": {
+      "findings": [
+        {
+          "text": "7 other type 2 diabetes trials are recruiting in your countries.",
+          "n": 7,
+          "evidence_ids": [
+            "NCT05200500",
+            "NCT05200501",
+            "NCT05200502",
+            "NCT05200503",
+            "NCT05200504",
+            "NCT05200505",
+            "NCT05200506"
+          ]
+        }
+      ]
+    },
+    "design": {
+      "findings": [
+        {
+          "text": "Add-on design: not found in the registry fields.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    }
+  },
+  "flags": [
+    {
+      "id": "sites_competing_trials",
+      "element": "sites",
+      "title": "7 diabetes trials recruiting in your 3 countries",
+      "body": "7 other type 2 diabetes trials are recruiting in the United States, Mexico and Poland now.",
+      "question": "Which of your planned sites overlap with these trials?",
+      "confidence": "stated",
+      "evidence_ids": [
+        "NCT05200500",
+        "NCT05200501",
+        "NCT05200502",
+        "NCT05200503",
+        "NCT05200504",
+        "NCT05200505",
+        "NCT05200506"
+      ],
+      "n": 7,
+      "action_label": "Review sites",
+      "status": "open"
+    },
+    {
+      "id": "size_above_actual",
+      "element": "size",
+      "title": "Target of 420 is above what most comparables enrolled",
+      "body": "5 of 12 completed comparables enrolled fewer than 200 patients. Original targets are not kept by the registry, so this compares against actual enrollment.",
+      "question": "Is 420 driven by power, or carried over from an earlier design?",
+      "confidence": "stated",
+      "evidence_ids": [
+        "NCT05200002",
+        "NCT05200005",
+        "NCT05200004",
+        "NCT05200010",
+        "NCT05200003"
+      ],
+      "n": 5,
+      "action_label": "Review sample size",
+      "status": "open"
+    }
+  ],
+  "no_flags_reason": null,
+  "limits": [
+    "Basic condition support: comparables and outcomes are real, eligibility cutoffs are not parsed for this condition.",
+    "Original enrollment targets are replaced by actual enrollment once a trial finishes.",
+    "No per-site enrollment is published.",
+    "1 of 3 terminated comparables gave no stop reason."
+  ],
+  "diff": null,
+  "package_id": null
+}

@@ -1,0 +1,696 @@
+{
+  "run_id": "",
+  "brief_echo": {
+    "source": "nct",
+    "nct_id": "NCT03460704",
+    "condition": "Chronic Obstructive Pulmonary Disease",
+    "mesh_terms": [
+      "Pulmonary Disease, Chronic Obstructive"
+    ],
+    "phase": [
+      "PHASE2"
+    ],
+    "intervention_type": [
+      "DRUG"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 40 to 80 years\n* Physician-diagnosed COPD, post-bronchodilator FEV1/FVC < 0.70\n* Post-bronchodilator FEV1 between 30% and 60% of predicted\n* At least 2 moderate or severe COPD exacerbations in the previous 12 months\n* Current or former smoker with at least 10 pack-years\n\nExclusion Criteria:\n* Current diagnosis of asthma\n* COPD exacerbation within 4 weeks before screening\n* Lung volume reduction surgery within the previous 12 months",
+    "structured_cutoffs": null,
+    "primary_endpoint": "Change from baseline in trough FEV1 at Week 12",
+    "primary_endpoint_timeframe": "12 weeks",
+    "target_enrollment": 240,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL",
+      "PLACEBO_COMPARATOR"
+    ]
+  },
+  "data_as_of": "2026-11-02",
+  "condition_support": "full",
+  "bottom_line": {
+    "risk": "medium",
+    "n_comparables": 28,
+    "n_terminated": 7,
+    "n_terminated_enrollment": 4,
+    "sentence": "28 comparable trials; 7 terminated, 4 for slow enrollment."
+  },
+  "comparables": [
+    {
+      "nct_id": "NCT05100017",
+      "title": "Brenvalimab versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, same endpoint",
+      "similarity": 0.95,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 105,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100018",
+      "title": "Axilumab versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 75%",
+      "similarity": 0.95,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 120,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100003",
+      "title": "Brenvalimab versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 75%",
+      "similarity": 0.93,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 598,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100014",
+      "title": "Zelvarotide versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2b COPD, similar population",
+      "similarity": 0.9,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 327,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100010",
+      "title": "Glycoquin versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 90%",
+      "similarity": 0.89,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 171,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100015",
+      "title": "Nebuvir-5 versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 90%",
+      "similarity": 0.86,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 113,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100019",
+      "title": "Ventrolan versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2b COPD, similar population",
+      "similarity": 0.84,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 47,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100009",
+      "title": "Orlavent versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2b COPD, similar population",
+      "similarity": 0.83,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 57,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100020",
+      "title": "Tiotex-2 versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 90%",
+      "similarity": 0.83,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 498,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100006",
+      "title": "Tiotex-2 versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, inhaled, same timeframe",
+      "similarity": 0.82,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 67,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100002",
+      "title": "Dupexil versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, same endpoint",
+      "similarity": 0.81,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 142,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100023",
+      "title": "Orlavent versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 75%",
+      "similarity": 0.8,
+      "status": "TERMINATED",
+      "stop_reason": "Slow recruitment",
+      "stop_tier": "stated",
+      "enrollment": 56,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100005",
+      "title": "Ventrolan versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 90%",
+      "similarity": 0.79,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 67,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100008",
+      "title": "Mepolex versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 75%",
+      "similarity": 0.79,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 358,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100004",
+      "title": "Axilumab versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2b COPD, similar population",
+      "similarity": 0.78,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 407,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100028",
+      "title": "Zelvarotide versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 75%",
+      "similarity": 0.78,
+      "status": "TERMINATED",
+      "stop_reason": "Enrollment below target",
+      "stop_tier": "stated",
+      "enrollment": 58,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100001",
+      "title": "Nebuvir-5 versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, inhaled, same timeframe",
+      "similarity": 0.77,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 57,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100012",
+      "title": "Pulmaris versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, same endpoint",
+      "similarity": 0.72,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 218,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100026",
+      "title": "Pulmaris versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, inhaled, same timeframe",
+      "similarity": 0.7,
+      "status": "TERMINATED",
+      "stop_reason": "Low enrollment after strict exacerbation rule",
+      "stop_tier": "stated",
+      "enrollment": 61,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100007",
+      "title": "Revoterol versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, same endpoint",
+      "similarity": 0.68,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 40,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100025",
+      "title": "Airvanta versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 90%",
+      "similarity": 0.68,
+      "status": "TERMINATED",
+      "stop_reason": "Recruitment difficulties",
+      "stop_tier": "stated",
+      "enrollment": 17,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100021",
+      "title": "Revoterol versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, inhaled, same timeframe",
+      "similarity": 0.67,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 94,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100011",
+      "title": "Airvanta versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, inhaled, same timeframe",
+      "similarity": 0.65,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 93,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100013",
+      "title": "Inhalar-9 versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, FEV1 range overlaps 75%",
+      "similarity": 0.65,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 53,
+      "has_results": true
+    },
+    {
+      "nct_id": "NCT05100024",
+      "title": "Glycoquin versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2b COPD, similar population",
+      "similarity": 0.64,
+      "status": "TERMINATED",
+      "stop_reason": "Lack of efficacy at interim analysis",
+      "stop_tier": "stated",
+      "enrollment": 80,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100016",
+      "title": "Dupexil versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, inhaled, same timeframe",
+      "similarity": 0.63,
+      "status": "COMPLETED",
+      "stop_reason": null,
+      "stop_tier": null,
+      "enrollment": 160,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100022",
+      "title": "Mepolex versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, same endpoint",
+      "similarity": 0.63,
+      "status": "TERMINATED",
+      "stop_reason": "Sponsor portfolio reprioritisation (company announcement)",
+      "stop_tier": "outside",
+      "enrollment": 88,
+      "has_results": false
+    },
+    {
+      "nct_id": "NCT05100027",
+      "title": "Inhalar-9 versus placebo in moderate-to-severe COPD",
+      "why_picked": "Phase 2 COPD, same endpoint",
+      "similarity": 0.63,
+      "status": "TERMINATED",
+      "stop_reason": null,
+      "stop_tier": "unknown",
+      "enrollment": 33,
+      "has_results": false
+    }
+  ],
+  "outcomes": {
+    "comparables": {
+      "completed_results": 14,
+      "completed_no_results": 7,
+      "terminated": 7,
+      "withdrawn": 0,
+      "unknown": 0,
+      "running": 0
+    },
+    "baseline": {
+      "completed_results": 520,
+      "completed_no_results": 301,
+      "terminated": 262,
+      "withdrawn": 71,
+      "unknown": 150,
+      "running": 108
+    }
+  },
+  "stop_causes": [
+    {
+      "cause": "Slow enrollment",
+      "count": 4,
+      "tier": "stated",
+      "quotes": [
+        {
+          "nct_id": "NCT05100023",
+          "quote": "Slow recruitment"
+        },
+        {
+          "nct_id": "NCT05100028",
+          "quote": "Enrollment below target"
+        },
+        {
+          "nct_id": "NCT05100026",
+          "quote": "Low enrollment after strict exacerbation rule"
+        },
+        {
+          "nct_id": "NCT05100025",
+          "quote": "Recruitment difficulties"
+        }
+      ]
+    },
+    {
+      "cause": "Lack of efficacy",
+      "count": 1,
+      "tier": "stated",
+      "quotes": [
+        {
+          "nct_id": "NCT05100024",
+          "quote": "Lack of efficacy at interim analysis"
+        }
+      ]
+    },
+    {
+      "cause": "Business decision",
+      "count": 1,
+      "tier": "outside",
+      "quotes": [
+        {
+          "nct_id": "NCT05100022",
+          "quote": "Sponsor portfolio reprioritisation (company announcement)"
+        }
+      ]
+    },
+    {
+      "cause": "Reason not stated",
+      "count": 1,
+      "tier": "unknown",
+      "quotes": [
+        {
+          "nct_id": "NCT05100027",
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "elements": {
+    "population": {
+      "findings": [
+        {
+          "text": "21 of 28 comparables required fewer prior exacerbations than this design (2 or more in 12 months).",
+          "n": 21,
+          "evidence_ids": [
+            "NCT05100017",
+            "NCT05100018",
+            "NCT05100003",
+            "NCT05100014",
+            "NCT05100010",
+            "NCT05100015",
+            "NCT05100019",
+            "NCT05100009",
+            "NCT05100020",
+            "NCT05100006",
+            "NCT05100002",
+            "NCT05100005",
+            "NCT05100008",
+            "NCT05100004",
+            "NCT05100001",
+            "NCT05100012",
+            "NCT05100007",
+            "NCT05100021",
+            "NCT05100011",
+            "NCT05100013",
+            "NCT05100024"
+          ]
+        },
+        {
+          "text": "FEV1 30 to 60% of predicted matches the range used in 17 of 28 comparables.",
+          "n": 17,
+          "evidence_ids": [
+            "NCT05100017",
+            "NCT05100018",
+            "NCT05100003",
+            "NCT05100014",
+            "NCT05100010",
+            "NCT05100015",
+            "NCT05100019",
+            "NCT05100009",
+            "NCT05100020",
+            "NCT05100006",
+            "NCT05100002",
+            "NCT05100005",
+            "NCT05100008",
+            "NCT05100004",
+            "NCT05100001",
+            "NCT05100012",
+            "NCT05100007"
+          ]
+        },
+        {
+          "text": "No comparable reported a blood eosinophil cutoff in its eligibility text.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    },
+    "endpoints": {
+      "findings": [
+        {
+          "text": "Trough FEV1 is the primary endpoint in 17 of 28 comparables.",
+          "n": 17,
+          "evidence_ids": [
+            "NCT05100017",
+            "NCT05100018",
+            "NCT05100003",
+            "NCT05100014",
+            "NCT05100010",
+            "NCT05100015",
+            "NCT05100019",
+            "NCT05100009",
+            "NCT05100020",
+            "NCT05100006",
+            "NCT05100002",
+            "NCT05100005",
+            "NCT05100008",
+            "NCT05100004",
+            "NCT05100001",
+            "NCT05100012",
+            "NCT05100007"
+          ]
+        },
+        {
+          "text": "Week 12 timeframe appears in 9 comparables; 8 of those completed.",
+          "n": 9,
+          "evidence_ids": [
+            "NCT05100017",
+            "NCT05100018",
+            "NCT05100003",
+            "NCT05100014",
+            "NCT05100010",
+            "NCT05100015",
+            "NCT05100019",
+            "NCT05100009",
+            "NCT05100020"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "findings": [
+        {
+          "text": "15 of 21 completed comparables enrolled fewer than 200 patients (actual enrollment).",
+          "n": 15,
+          "evidence_ids": [
+            "NCT05100001",
+            "NCT05100011",
+            "NCT05100019",
+            "NCT05100007",
+            "NCT05100009",
+            "NCT05100006",
+            "NCT05100021",
+            "NCT05100017",
+            "NCT05100002",
+            "NCT05100018",
+            "NCT05100016",
+            "NCT05100010",
+            "NCT05100013",
+            "NCT05100005",
+            "NCT05100015"
+          ]
+        }
+      ]
+    },
+    "sites": {
+      "findings": [
+        {
+          "text": "11 other COPD trials are recruiting in the United States, Germany and Poland.",
+          "n": 11,
+          "evidence_ids": [
+            "NCT05100500",
+            "NCT05100501",
+            "NCT05100502",
+            "NCT05100503",
+            "NCT05100504",
+            "NCT05100505",
+            "NCT05100506",
+            "NCT05100507",
+            "NCT05100508",
+            "NCT05100509",
+            "NCT05100510"
+          ]
+        }
+      ]
+    },
+    "design": {
+      "findings": [
+        {
+          "text": "24 of 28 comparables were randomised, double-blind and parallel-group.",
+          "n": 24,
+          "evidence_ids": [
+            "NCT05100017",
+            "NCT05100018",
+            "NCT05100003",
+            "NCT05100014",
+            "NCT05100010",
+            "NCT05100015",
+            "NCT05100019",
+            "NCT05100009",
+            "NCT05100020",
+            "NCT05100006",
+            "NCT05100002",
+            "NCT05100005",
+            "NCT05100008",
+            "NCT05100004",
+            "NCT05100001",
+            "NCT05100012",
+            "NCT05100007",
+            "NCT05100021",
+            "NCT05100011",
+            "NCT05100013",
+            "NCT05100024",
+            "NCT05100016",
+            "NCT05100022",
+            "NCT05100027"
+          ]
+        },
+        {
+          "text": "Add-on to background therapy: not found in the registry fields.",
+          "n": 0,
+          "evidence_ids": []
+        }
+      ]
+    }
+  },
+  "flags": [
+    {
+      "id": "pop_exacerbation_stricter",
+      "element": "population",
+      "title": "Exacerbation rule stricter than most comparables",
+      "body": "21 of 28 comparable trials required fewer prior exacerbations. 3 of the 4 trials that stopped for slow enrollment used the same rule.",
+      "question": "Is one prior exacerbation enough for this mechanism?",
+      "confidence": "stated",
+      "evidence_ids": [
+        "NCT05100023",
+        "NCT05100028",
+        "NCT05100026",
+        "NCT05100025"
+      ],
+      "n": 4,
+      "action_label": "Edit eligibility",
+      "status": "open"
+    },
+    {
+      "id": "sites_competing_trials",
+      "element": "sites",
+      "title": "11 COPD trials recruiting in your 3 countries",
+      "body": "11 other COPD trials are recruiting in the United States, Germany and Poland now; 6 list sites in the same cities as your likely sites.",
+      "question": "Which of your planned sites overlap with these trials?",
+      "confidence": "stated",
+      "evidence_ids": [
+        "NCT05100500",
+        "NCT05100501",
+        "NCT05100502",
+        "NCT05100503",
+        "NCT05100504",
+        "NCT05100505",
+        "NCT05100506",
+        "NCT05100507",
+        "NCT05100508",
+        "NCT05100509",
+        "NCT05100510"
+      ],
+      "n": 11,
+      "action_label": "Review sites",
+      "status": "open"
+    },
+    {
+      "id": "size_above_actual",
+      "element": "size",
+      "title": "Target of 240 is above what most comparables enrolled",
+      "body": "15 of 21 completed comparables enrolled fewer than 200 patients. Original targets are not kept by the registry, so this compares against actual enrollment.",
+      "question": "Is 240 driven by power, or carried over from an earlier design?",
+      "confidence": "stated",
+      "evidence_ids": [
+        "NCT05100001",
+        "NCT05100011",
+        "NCT05100019",
+        "NCT05100007",
+        "NCT05100009",
+        "NCT05100006",
+        "NCT05100021",
+        "NCT05100017",
+        "NCT05100002",
+        "NCT05100018",
+        "NCT05100016",
+        "NCT05100010",
+        "NCT05100013",
+        "NCT05100005",
+        "NCT05100015"
+      ],
+      "n": 15,
+      "action_label": "Review sample size",
+      "status": "open"
+    }
+  ],
+  "no_flags_reason": null,
+  "limits": [
+    "The registry has no schedule of activities, so visit burden cannot be compared.",
+    "Original enrollment targets are replaced by actual enrollment once a trial finishes.",
+    "No per-site enrollment is published, so site performance cannot be measured.",
+    "Protocol amendment reasons are not recorded.",
+    "1 of 7 terminated comparables gave no stop reason (shown as 'reason not stated')."
+  ],
+  "diff": null,
+  "package_id": null
+}

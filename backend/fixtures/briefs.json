@@ -1,0 +1,142 @@
+{
+  "NCT03460704": {
+    "source": "nct",
+    "nct_id": "NCT03460704",
+    "condition": "Chronic Obstructive Pulmonary Disease",
+    "mesh_terms": [
+      "Pulmonary Disease, Chronic Obstructive"
+    ],
+    "phase": [
+      "PHASE2"
+    ],
+    "intervention_type": [
+      "DRUG"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 40 to 80 years\n* Physician-diagnosed COPD, post-bronchodilator FEV1/FVC < 0.70\n* Post-bronchodilator FEV1 between 30% and 60% of predicted\n* At least 2 moderate or severe COPD exacerbations in the previous 12 months\n* Current or former smoker with at least 10 pack-years\n\nExclusion Criteria:\n* Current diagnosis of asthma\n* COPD exacerbation within 4 weeks before screening\n* Lung volume reduction surgery within the previous 12 months",
+    "structured_cutoffs": null,
+    "primary_endpoint": "Change from baseline in trough FEV1 at Week 12",
+    "primary_endpoint_timeframe": "12 weeks",
+    "target_enrollment": 240,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL",
+      "PLACEBO_COMPARATOR"
+    ]
+  },
+  "NCT05000003": {
+    "source": "nct",
+    "nct_id": "NCT05000003",
+    "condition": "Chronic Obstructive Pulmonary Disease",
+    "mesh_terms": [
+      "Pulmonary Disease, Chronic Obstructive"
+    ],
+    "phase": [
+      "PHASE2"
+    ],
+    "intervention_type": [
+      "DRUG"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 40 to 80 years\n* Physician-diagnosed COPD, post-bronchodilator FEV1/FVC < 0.70\n* Post-bronchodilator FEV1 between 30% and 60% of predicted\n* At least 2 moderate or severe COPD exacerbations in the previous 12 months\n* Current or former smoker with at least 10 pack-years\n\nExclusion Criteria:\n* Current diagnosis of asthma\n* COPD exacerbation within 4 weeks before screening\n* Lung volume reduction surgery within the previous 12 months",
+    "structured_cutoffs": null,
+    "primary_endpoint": "Change from baseline in trough FEV1 at Week 12",
+    "primary_endpoint_timeframe": "12 weeks",
+    "target_enrollment": 240,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Germany",
+      "Poland"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL",
+      "PLACEBO_COMPARATOR"
+    ]
+  },
+  "NCT05000001": {
+    "source": "nct",
+    "nct_id": "NCT05000001",
+    "condition": "Type 2 Diabetes Mellitus",
+    "mesh_terms": [
+      "Diabetes Mellitus, Type 2"
+    ],
+    "phase": [
+      "PHASE3"
+    ],
+    "intervention_type": [
+      "DRUG"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 18 to 75 years\n* HbA1c between 7.0% and 10.5%\n* BMI 25 to 40 kg/m2\n\nExclusion Criteria:\n* Type 1 diabetes\n* eGFR below 45 mL/min/1.73 m2",
+    "primary_endpoint": "Change in HbA1c from baseline at Week 26",
+    "primary_endpoint_timeframe": "26 weeks",
+    "target_enrollment": 420,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Mexico",
+      "Poland"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL",
+      "PLACEBO_COMPARATOR"
+    ]
+  },
+  "NCT05000002": {
+    "source": "nct",
+    "nct_id": "NCT05000002",
+    "condition": "Alpha-1 Antitrypsin Deficiency with Emphysema",
+    "mesh_terms": [
+      "alpha 1-Antitrypsin Deficiency"
+    ],
+    "phase": [
+      "PHASE2"
+    ],
+    "intervention_type": [
+      "BIOLOGICAL"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 18 to 65 years\n* Serum AAT below 11 uM\n* FEV1 between 35% and 70% of predicted\n\nExclusion Criteria:\n* IgA deficiency",
+    "primary_endpoint": "Change in CT lung density at Week 52",
+    "primary_endpoint_timeframe": "52 weeks",
+    "target_enrollment": 60,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Spain"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL"
+    ]
+  },
+  "NCT05000004": {
+    "source": "nct",
+    "nct_id": "NCT05000004",
+    "condition": "Type 2 Diabetes Mellitus",
+    "mesh_terms": [
+      "Diabetes Mellitus, Type 2"
+    ],
+    "phase": [
+      "PHASE3"
+    ],
+    "intervention_type": [
+      "DRUG"
+    ],
+    "eligibility_text": "Inclusion Criteria:\n* Age 18 to 75 years\n* HbA1c between 7.0% and 10.5%\n* BMI 25 to 40 kg/m2\n\nExclusion Criteria:\n* Type 1 diabetes\n* eGFR below 45 mL/min/1.73 m2",
+    "primary_endpoint": "",
+    "primary_endpoint_timeframe": "",
+    "target_enrollment": null,
+    "enrollment_type": "ESTIMATED",
+    "countries": [
+      "United States",
+      "Mexico",
+      "Poland"
+    ],
+    "arm_types": [
+      "EXPERIMENTAL",
+      "PLACEBO_COMPARATOR"
+    ]
+  }
+}
