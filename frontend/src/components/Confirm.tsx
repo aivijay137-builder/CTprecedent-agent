@@ -130,7 +130,7 @@ export function Confirm({ brief, onChange, onRun, onCancel, onLoadNct, fixtures,
       </div>
 
       <div className="actions" style={{ marginTop: 24 }}>
-        <button className="btn primary" onClick={run}>Run precedent check</button>
+        <button className="btn primary" onClick={run} disabled={cutoffs === null && !parseErr} title={cutoffs === null && !parseErr ? "Wait until your eligibility text has been read" : undefined}>{cutoffs === null && !parseErr ? "Reading your criteria…" : "Run precedent check"}</button>
         <button className="btn" onClick={onCancel}>Cancel</button>
         <button className="linkbtn" onClick={onNewDesign}>Start a different design</button>
       </div>
