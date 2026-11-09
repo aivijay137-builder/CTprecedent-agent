@@ -95,6 +95,24 @@ def test_rejected_key_stops_further_calls_and_never_falls_back_to_server(monkeyp
     assert calls == ["my-model"]                      # one try; no server model; no repeat after the first refusal
 
 
+def test_unknown_model_gives_a_clear_message_and_one_try(monkeypatch):
+    calls = []
+
+    class NotFoundError(Exception):
+        pass
+
+    def boom(system, user, model=None, client=None, retries=8):
+        calls.append(model)
+        raise NotFoundError("model not found")
+    monkeypatch.setattr(llm, "ask_json", boom)
+    monkeypatch.setattr(llm, "client_for", lambda b, k: object())
+    with llmsvc.use(creds()):
+        for n in range(3):
+            with pytest.raises(llmsvc.LLMUnavailable, match='does not know the model "my-model"'):
+                llmsvc.ask("t", "v1", "sys", f"nf{n}")
+    assert calls == ["my-model"]
+
+
 def test_url_guard():
     for bad in ("http://8.8.8.8/v1", "https://127.0.0.1/v1", "https://localhost/v1", "https://10.0.0.5/v1",
                 "https://169.254.169.254/latest", "https://user:pw@8.8.8.8/v1", "ftp://8.8.8.8"):

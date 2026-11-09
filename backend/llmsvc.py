@@ -128,7 +128,7 @@ def ask(task: str, version: str, system: str, user: str, budget: Budget | None =
         raise LLMUnavailable("AI reading is switched off. Set LLM_ENABLED=on in .env to turn it on (it makes paid calls).")
     c = current()
     if c and c.rejected:
-        raise LLMUnavailable("Your AI key was not accepted by the provider, so this check used the free reader.")
+        raise LLMUnavailable(c.rejected)
     cap = float(os.environ.get("LLM_DAILY_BUDGET_USD") or 0.50)
     if not c and spent_today() >= cap:
         raise LLMUnavailable(f"The daily AI budget of ${cap:.2f} is used up. It resets tomorrow (UTC).")
@@ -146,8 +146,11 @@ def ask(task: str, version: str, system: str, user: str, budget: Budget | None =
                 last = f"{model}: {type(e).__name__}"
                 _log(task, model, version, {}, 0.0, time.time() - t0, "error", _scrub(str(e), c))
                 if c and type(e).__name__ in ("AuthenticationError", "PermissionDeniedError"):
-                    c.rejected = True
-                    raise LLMUnavailable("Your AI key was not accepted by the provider, so this check used the free reader.")
+                    c.rejected = "Your AI key was not accepted by the provider, so this check used the free reader."
+                    raise LLMUnavailable(c.rejected)
+                if c and type(e).__name__ == "NotFoundError":
+                    c.rejected = f"Your provider does not know the model \"{model}\". Check the model name in the AI key settings. This check used the free reader."
+                    raise LLMUnavailable(c.rejected)
                 if not isinstance(e, ValueError):  # JSONDecodeError is a ValueError; anything else goes straight to the next model
                     break
         if out is None:

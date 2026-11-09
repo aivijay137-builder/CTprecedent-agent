@@ -15,7 +15,7 @@ class Creds:
     base_url: str
     api_key: str
     model: str
-    rejected: bool = field(default=False)  # set when the provider refuses the key: later calls in the run stop trying
+    rejected: str = field(default="")  # set (to a message the user can read) when the provider refuses the key or the model: later calls in the run stop trying
 
 
 def check_url(url: str):
