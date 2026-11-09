@@ -78,6 +78,7 @@ export default function App() {
     try {
       const { run_id } = await api.createRun(b, focus, []);
       retry.current = () => startRun(b, focus);
+      setBrief(b);  // keep the cutoffs read on the Confirm screen, so a Re-run checks the same ones
       setProgressId(run_id); setMode("progress");
     } catch (e) { setError((e as Error).message); }
   };
@@ -114,7 +115,11 @@ export default function App() {
     setMode("confirm");
   };
   const openPrecedent = () => { setNav("population"); if (role === "lead") setMode(run ? "results" : "confirm"); };
-  const editBrief = (b: DesignBrief) => { setBrief(b); setDraftVersion((v) => v + 1); };
+  const editBrief = (b: DesignBrief) => {
+    const reworded = !!brief && (b.eligibility_text !== brief.eligibility_text || b.condition !== brief.condition);
+    setBrief(reworded ? { ...b, structured_cutoffs: null } : b);  // new wording: the cutoffs must be read again (Confirm does that)
+    setDraftVersion((v) => v + 1);
+  };
 
   const phaseText = brief?.phase.length ? brief.phase.map((p) => p.replace("PHASE", "Phase ").replace("EARLY_", "Early ")).join("/") : "Phase not set";
   const studyMeta = `${health?.fixtures ? "COPD-201" : brief?.nct_id ?? (brief?.condition || "New design")} · ${phaseText} · Draft v3 (Illustrative)`;
