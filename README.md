@@ -1,4 +1,4 @@
-# Faro – Protocol Precedent Agent (Step 1)
+# Protocol Precedent Agent (Step 1)
 Run from this folder. `pip install -r requirements.txt` first; fill `.env` (LLM_BASE_URL, LLM_API_KEY, LLM_MODEL).
 
 - `python src/adapters.py`   prints 3 test briefs (NCT -> Design Brief)
