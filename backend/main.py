@@ -20,7 +20,7 @@ from fastapi.staticfiles import StaticFiles
 
 import adapters
 from sync import sync_ctg
-from . import appdb, criteria, engine, llmsvc, readers
+from . import appdb, byok, criteria, engine, llmsvc, readers
 from .schemas import (DecisionIn, Diff, DiffItem, Flag, Health, NctIn, PackageId, PackageSnapshot, ParseIn,
                       ParseOut, ConditionSuggestion, RerunIn, RerunOut, ReviewIn, RunId, RunIn, RunResult, TrialSummary)
 
@@ -36,7 +36,7 @@ STEPS = ["Finding comparable trials", "Counting how they ended", "Reading why th
 app = FastAPI(title="Protocol Precedent Agent")
 _origins = [o.strip() for o in os.environ.get("CORS_ORIGINS", "").split(",") if o.strip()]  # the Vercel domain; blank = same-origin only
 if _origins:
-    app.add_middleware(CORSMiddleware, allow_origins=_origins, allow_methods=["GET", "POST"], allow_headers=["Content-Type", "X-Role"])
+    app.add_middleware(CORSMiddleware, allow_origins=_origins, allow_methods=["GET", "POST"], allow_headers=["Content-Type", "X-Role", "X-LLM-Key", "X-LLM-Base-URL", "X-LLM-Model"])
 
 
 def _visitor(request: Request) -> str:
@@ -54,7 +54,7 @@ _attempts: dict[str, int] = {}  # demo: NCT05000003 fails on odd attempts, so Re
 JOBS: dict[str, dict] = {}  # real engine: run_id -> {events, state, error}
 
 
-def _start_job(brief, focus, excluded, parent=None) -> str:
+def _start_job(brief, focus, excluded, parent=None, creds=None) -> str:
     """Run the real engine in a background thread; the SSE endpoint streams its progress."""
     run_id = appdb.new_id("run")
     job = {"events": [], "state": "running", "error": "", "t0": time.time()}
@@ -66,7 +66,8 @@ def _start_job(brief, focus, excluded, parent=None) -> str:
 
     def work():
         try:
-            res = engine.run(brief, focus, excluded, progress)
+            with llmsvc.use(creds):  # the visitor's own key, if any (a new thread does not inherit it)
+                res = engine.run(brief, focus, excluded, progress)
             res["run_id"] = run_id
             if parent:
                 engine.apply_diff(parent, res)
@@ -122,7 +123,8 @@ def suggest(q: str = ""):
 
 
 @app.post("/api/briefs/parse", response_model=ParseOut)
-def parse(body: ParseIn):
+def parse(body: ParseIn, request: Request):
+    creds = byok.from_request(request)
     if not FIXTURES:  # Phase C adds live LLM parsing; until then reuse cutoffs already parsed (free)
         hit = engine.cached_cutoffs(body.eligibility_text)
         if hit:
@@ -132,7 +134,8 @@ def parse(body: ParseIn):
             return {"cutoffs": [], "note": "No eligibility text yet."}
         why = ""
         try:
-            found = readers.parse_design(text, body.condition, llmsvc.Budget(5))
+            with llmsvc.use(creds):
+                found = readers.parse_design(text, body.condition, llmsvc.Budget(5))
             bad = sum(1 for c in found if not c["valid"])
             note = (f"Read by AI. Each quoted sentence was checked against your text{f'; {bad} could not be matched and are marked' if bad else ''}."
                     if found else "The AI found no numeric limits in this text. The check still compares your wording with each trial's.")
@@ -231,7 +234,7 @@ def create_run(body: RunIn, request: Request):
         raise HTTPException(422, "Missing required: " + ", ".join(miss))
     if not FIXTURES:
         _limit_checks(request)
-        return {"run_id": _start_job(body.brief, body.focus, body.excluded_ids)}
+        return {"run_id": _start_job(body.brief, body.focus, body.excluded_ids, creds=byok.from_request(request))}
     res = _make_run(body.brief, body.excluded_ids)
     if body.brief.nct_id == "NCT05000003":  # demo: every other attempt fails
         _attempts["n"] = _attempts.get("n", 0) + 1
@@ -321,7 +324,7 @@ def rerun(run_id: str, body: RerunIn, request: Request):
         raise HTTPException(422, "Missing required: " + ", ".join(miss))
     if not FIXTURES:  # the diff arrives with the finished run (GET /runs/{id}.diff); see docs/api.md
         _limit_checks(request)
-        return {"run_id": _start_job(body.brief, list(parent_focus(parent)), body.excluded_ids, parent), "diff": {}}
+        return {"run_id": _start_job(body.brief, list(parent_focus(parent)), body.excluded_ids, parent, creds=byok.from_request(request)), "diff": {}}
     res = _make_run(body.brief, body.excluded_ids, parent)
     return {"run_id": res["run_id"], "diff": res["diff"]}
 
@@ -405,6 +408,16 @@ def health():
     return {**info, **sync, "version": (os.environ.get("RAILWAY_GIT_COMMIT_SHA") or "dev")[:7],
             "llm_configured": llmsvc.configured(), "llm_enabled": llmsvc.enabled(),
             "fixtures": FIXTURES}
+
+
+@app.post("/api/llm/test")
+def llm_test(request: Request):
+    """The Settings panel's "Test key" button: one tiny call with the visitor's key. The key is used for this request only."""
+    creds = byok.from_request(request)
+    if not creds:
+        raise HTTPException(400, "Enter your provider address, model and key first.")
+    with llmsvc.use(creds):
+        return llmsvc.test_key()
 
 
 @app.post("/admin/sync", status_code=202)

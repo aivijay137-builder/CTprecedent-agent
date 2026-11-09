@@ -6,10 +6,13 @@ from openai import OpenAI, RateLimitError, BadRequestError
 load_dotenv()
 
 
-def _client():
+def client_for(base_url: str, api_key: str):
     # a hung provider must fail fast (the library default is 10 minutes), so the app can fall back to the free reader
-    return OpenAI(base_url=os.environ["LLM_BASE_URL"], api_key=os.environ["LLM_API_KEY"],
-                  timeout=float(os.environ.get("LLM_TIMEOUT_S", 60)), max_retries=1)
+    return OpenAI(base_url=base_url, api_key=api_key, timeout=float(os.environ.get("LLM_TIMEOUT_S", 60)), max_retries=1)
+
+
+def _client():
+    return client_for(os.environ["LLM_BASE_URL"], os.environ["LLM_API_KEY"])
 
 
 def _parse(text: str) -> dict:

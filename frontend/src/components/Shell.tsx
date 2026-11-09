@@ -11,7 +11,7 @@ export const NAV = [
   { id: "schedule", label: "Schedule of activities (next)", next: true },
 ];
 
-export function TopBar({ role, onRole, meta }: { role: Role; onRole: (r: Role) => void; meta: string }) {
+export function TopBar({ role, onRole, meta, onSettings, aiOn }: { role: Role; onRole: (r: Role) => void; meta: string; onSettings?: () => void; aiOn?: boolean }) {
   return (
     <header className="topbar">
       <span className="logo" aria-hidden="true" />
@@ -21,6 +21,7 @@ export function TopBar({ role, onRole, meta }: { role: Role; onRole: (r: Role) =
         <button aria-pressed={role === "lead"} onClick={() => onRole("lead")}>Study lead</button>
         <button aria-pressed={role === "reviewer"} onClick={() => onRole("reviewer")}>Reviewer</button>
       </div>
+      {onSettings && <button className="btn" onClick={onSettings} title="Optional: use your own AI key">{aiOn ? "AI key: on" : "AI key"}</button>}
     </header>
   );
 }

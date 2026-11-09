@@ -41,6 +41,8 @@ for t in ["study_sites", "study_conditions", "study_interventions", "study_outco
     print(t, con.execute(f"SELECT count(*) FROM {t}").fetchone()[0], f"{time.time()-t0:.0f}s", flush=True)
 store.init(con)  # creates the indexes
 asof = store.data_as_of(con)
+con.execute("INSERT OR REPLACE INTO sync_runs (run_id, mode, started_at, ended_at, fetched, status) VALUES (?, 'bootstrap', ?, current_timestamp, ?, 'ok')",
+            ["local-build-" + time.strftime("%Y%m%dT%H%M%S"), time.strftime("%Y-%m-%d %H:%M:%S"), con.execute("SELECT count(*) FROM studies_current").fetchone()[0]])
 store.set_state(con, "data_as_of", asof)
 store.set_state(con, "watermark", asof)  # the next daily sync fetches everything updated since this date (minus 2 days)
 con.execute("DETACH src")

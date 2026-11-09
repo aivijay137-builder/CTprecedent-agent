@@ -151,6 +151,7 @@ class RunResult(BaseModel):
     flags: list[Flag] = Field(default_factory=list, max_length=3)
     no_flags_reason: Optional[str] = None  # set when flags is empty on purpose
     rule_notes: list[str] = Field(default_factory=list)  # why a rule could not be checked
+    ai_usage: Optional[dict] = None  # {calls, tokens, own_key}: what the AI reading cost this run
     limits: list[str]
     diff: Optional[Diff] = None  # only on a re-run
     package_id: Optional[str] = None  # set once packaged; cleared by any later decision

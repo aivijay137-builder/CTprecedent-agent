@@ -74,6 +74,9 @@ export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, 
           </div>
           {run.flags.length === 0 && <div className="banner grey" role="status">{run.no_flags_reason ?? "No flags."}</div>}
           {run.flags.map((f) => <FlagCard key={f.id} flag={f} onDecide={(a, r) => onDecide(f, a, r)} />)}
+          {run.ai_usage && run.ai_usage.calls > 0 && (
+            <div className="banner grey" role="note">AI reading used {run.ai_usage.calls} call{run.ai_usage.calls === 1 ? "" : "s"} and about {run.ai_usage.tokens.toLocaleString()} tokens{run.ai_usage.own_key ? " on your key. Set a spend limit on it at your provider." : "."}</div>
+          )}
           {run.rule_notes && run.rule_notes.length > 0 && (
             <div className="banner grey" role="note">
               <b>Not checked:</b>

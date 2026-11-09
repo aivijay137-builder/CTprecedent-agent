@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { api, demoExamples, demoReset, setRole } from "./api";
 import { Confirm } from "./components/Confirm";
 import { NewDesign } from "./components/NewDesign";
+import { Settings } from "./components/Settings";
+import { loadAi } from "./llmKey";
 import { Criteria } from "./components/Criteria";
 import { PackageView } from "./components/PackageView";
 import { Progress } from "./components/Progress";
@@ -10,7 +12,7 @@ import { LeftNav, NAV, SidePanel, TopBar, type Status } from "./components/Shell
 import type { DesignBrief, Element, Flag, Health, PackageSnapshot, Role, RunResult } from "./types";
 import { store } from "./util";
 
-type Mode = "criteria" | "confirm" | "progress" | "results" | "new";
+type Mode = "criteria" | "confirm" | "progress" | "results" | "new" | "settings";
 const DEFAULT_NCT = "NCT03460704"; // seeds the "COPD-201 draft v3" workspace
 interface Saved { brief: DesignBrief; draftVersion: number; runId: string | null; runDraft: number | null }
 
@@ -136,6 +138,8 @@ export default function App() {
     );
   } else if (role === "reviewer") {
     centre = <PackageView pkg={pkg} onReview={review} />;
+  } else if (mode === "settings") {
+    centre = <Settings onClose={() => setMode(run ? "results" : "criteria")} />;
   } else if (mode === "new") {
     centre = <NewDesign onSubmit={submitNewDesign} onCancel={() => setMode(run ? "results" : "criteria")} />;
   } else if (mode === "confirm") {
@@ -177,7 +181,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <TopBar role={role} onRole={switchRole} meta={studyMeta} />
+      <TopBar role={role} onRole={switchRole} meta={studyMeta} onSettings={examples.length === 0 && role === "lead" ? () => setMode("settings") : undefined} aiOn={!!loadAi()?.key} />
       <div className="body">
         <LeftNav onlyPopulation={examples.length > 0} active={nav} onPick={(id) => { setNav(id); if (id === "population" && mode !== "progress") setMode("criteria"); }} />
         <main className="main">{demoBar}{centre}</main>

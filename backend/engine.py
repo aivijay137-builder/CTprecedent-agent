@@ -564,7 +564,7 @@ WHERE nct_id IN ({IN}) AND overall_status IN ({",".join(lit(x) for x in cfg.DESI
         "run_id": "", "brief_echo": brief.model_dump(), "data_as_of": as_of, "condition_support": "full" if copd else "basic",
         "bottom_line": {"risk": risk, "n_comparables": len(ids), "n_terminated": n_term, "n_terminated_enrollment": n_te, "sentence": sentence},
         "comparables": comps, "outcomes": outcomes, "stop_causes": stop_causes, "elements": el, "flags": flags,
-        "no_flags_reason": no_flags_reason, "rule_notes": notes, "limits": limits, "diff": None, "package_id": None, "audit": cx.audit}
+        "no_flags_reason": no_flags_reason, "rule_notes": notes, "ai_usage": {"calls": budget.used, "tokens": budget.tokens, "own_key": bool(llmsvc.current())}, "limits": limits, "diff": None, "package_id": None, "audit": cx.audit}
 
 
 def apply_diff(parent: dict, res: dict) -> dict:

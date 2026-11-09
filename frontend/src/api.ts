@@ -1,3 +1,4 @@
+import { aiHeaders } from "./llmKey";
 import type { Cutoff, DesignBrief, Diff, Flag, Health, PackageSnapshot, Role, RunResult, TrialSummary } from "./types";
 
 let role: Role = "lead";
@@ -13,7 +14,7 @@ async function call<T>(method: string, path: string, body?: unknown): Promise<T>
   try {
     res = await fetch(API + "/api" + path, {
       method,
-      headers: { "Content-Type": "application/json", "X-Role": role },
+      headers: { "Content-Type": "application/json", "X-Role": role, ...aiHeaders() },
       body: body === undefined ? undefined : JSON.stringify(body),
     });
   } catch {
@@ -31,6 +32,7 @@ const trialCache = new Map<string, Promise<TrialSummary>>();
 
 export const api = {
   health: () => call<Health>("GET", "/health"),
+  testKey: () => call<{ ok: boolean; message: string }>("POST", "/llm/test"),
   fromNct: (nct_id: string) => call<DesignBrief>("POST", "/briefs/from-nct", { nct_id }),
   suggest: (q: string) => call<{ term: string; n_trials: number }[]>("GET", `/conditions/suggest?q=${encodeURIComponent(q)}`),
   parse: (eligibility_text: string, condition: string) =>

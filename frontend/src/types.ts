@@ -68,6 +68,7 @@ export interface RunResult {
   run_id: string;
   brief_echo: DesignBrief;
   data_as_of: string;
+  ai_usage?: { calls: number; tokens: number; own_key: boolean } | null;
   condition_support: "full" | "basic";
   bottom_line: {
     risk: "low" | "medium" | "high" | "insufficient";
