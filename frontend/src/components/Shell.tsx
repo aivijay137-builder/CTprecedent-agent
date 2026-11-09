@@ -26,14 +26,15 @@ export function TopBar({ role, onRole, meta, onSettings, aiOn }: { role: Role; o
   );
 }
 
-export function LeftNav({ active, onPick, onlyPopulation = false }: { active: string; onPick: (id: string) => void; onlyPopulation?: boolean }) {
+export function LeftNav({ active, onPick, onlyPopulation = false, startHere = false }: { active: string; onPick: (id: string) => void; onlyPopulation?: boolean; startHere?: boolean }) {
   return (
     <nav className="nav" aria-label="Design elements">
       <div className="label">Design</div>
       {NAV.map((n) => (
-        <button key={n.id} className={n.next ? "next" : ""} aria-current={active === n.id ? "page" : undefined} onClick={() => onPick(n.id)}
-          disabled={onlyPopulation && n.id !== "population"} title={onlyPopulation && n.id !== "population" ? "Not part of this demo. Only Population has the precedent check." : undefined}>
+        <button key={n.id} className={`${n.next ? "next" : ""} ${onlyPopulation && n.id === "population" ? "start" : ""}`.trim()} aria-current={active === n.id ? "page" : undefined} onClick={() => onPick(n.id)}
+          disabled={onlyPopulation && n.id !== "population"} title={onlyPopulation && n.id !== "population" ? "Not part of this prototype. Only Population has the precedent check." : undefined}>
           {n.label}
+          {onlyPopulation && n.id === "population" && startHere && <span className="startpill">Start here</span>}
         </button>
       ))}
     </nav>

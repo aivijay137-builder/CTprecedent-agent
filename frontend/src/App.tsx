@@ -188,7 +188,7 @@ export default function App() {
     <div className="app">
       <TopBar role={role} onRole={switchRole} meta={studyMeta} onSettings={examples.length === 0 && role === "lead" ? () => setMode("settings") : undefined} aiOn={!!loadAi()?.key} />
       <div className="body">
-        <LeftNav onlyPopulation={examples.length > 0} active={nav} onPick={(id) => { setNav(id); if (id === "population" && mode !== "progress") setMode("criteria"); }} />
+        <LeftNav onlyPopulation startHere={!run} active={nav} onPick={(id) => { setNav(id); if (id === "population" && mode !== "progress") setMode("criteria"); }} />
         <main className="main">{demoBar}{centre}</main>
         <SidePanel status={status} onOpen={openPrecedent} dataAsOf={run?.data_as_of ?? health?.data_as_of ?? new Date().toISOString().slice(0, 10)} fixtures={!!health?.fixtures} />
       </div>
