@@ -61,7 +61,7 @@ export function Footer({ dataAsOf, stale, fixtures }: { dataAsOf: string; stale:
     <footer className="footer">
       {fixtures && <span className="fx">Illustrative fixture data.</span>}
       Data from ClinicalTrials.gov as of <span className={stale ? "stale" : ""}>{fmtDate(dataAsOf)}{stale ? " (older than 3 days)" : ""}</span>.
-      Concept prototype. Not affiliated with Faro.
+      Concept prototype.
       {import.meta.env.VITE_DEMO_URL && <> <a href={import.meta.env.VITE_DEMO_URL} target="_blank" rel="noreferrer">See worked examples</a>.</>}
     </footer>
   );

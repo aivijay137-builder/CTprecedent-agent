@@ -1,6 +1,6 @@
 """Step 2: pull eligibility cutoffs out of free text with an LLM.
 
-Commands (run from the Faro folder):
+Commands (run from the project folder):
   python src/extract.py pilot            20 trials x 2 models, comparison table, cost estimate, then STOP
   python src/extract.py sample [N]       random N trials (default 200), then build copd_cutoffs
   python src/extract.py full [--alt]     all rows with the chosen model (resumable; cached results are skipped)

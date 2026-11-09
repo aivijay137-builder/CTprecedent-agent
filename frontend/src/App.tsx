@@ -36,7 +36,7 @@ export default function App() {
     (async () => {
       try {
         setHealth(await api.health());
-        const saved = store.get<Saved>("faro-state");
+        const saved = store.get<Saved>("ctp-state");
         if (saved?.brief) {
           setBrief(saved.brief); setDraftVersion(saved.draftVersion); setRunDraft(saved.runDraft);
           if (saved.runId) { try { setRun(await api.getRun(saved.runId)); } catch { setRunDraft(null); } }
@@ -48,7 +48,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (brief) store.set("faro-state", { brief, draftVersion, runId: run?.run_id ?? null, runDraft } satisfies Saved);
+    if (brief) store.set("ctp-state", { brief, draftVersion, runId: run?.run_id ?? null, runDraft } satisfies Saved);
   }, [brief, draftVersion, run?.run_id, runDraft]);
 
   // the reviewer sees the frozen package of the current run

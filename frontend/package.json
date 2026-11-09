@@ -1,5 +1,5 @@
 {
-  "name": "faro-precedent-web",
+  "name": "ct-precedent-web",
   "private": true,
   "type": "module",
   "scripts": { "dev": "vite", "build": "tsc --noEmit && vite build", "check": "tsc --noEmit", "build:demo": "tsc --noEmit && vite build --mode demo" },

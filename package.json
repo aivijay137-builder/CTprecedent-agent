@@ -1,5 +1,5 @@
 {
-  "name": "faro-precedent",
+  "name": "ct-precedent",
   "private": true,
   "scripts": {
     "setup": "npm install && npm --prefix frontend install",

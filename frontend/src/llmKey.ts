@@ -7,7 +7,7 @@ export const PROVIDERS = [
   { id: "openai", label: "OpenAI", base_url: "https://api.openai.com/v1", model: "gpt-4o-mini" },
   { id: "custom", label: "Other (OpenAI-compatible address)", base_url: "", model: "" },
 ];
-const K = "faro-ai";
+const K = "ctp-ai";
 
 export function loadAi(): AiSettings | null {
   for (const s of [sessionStorage, localStorage]) {

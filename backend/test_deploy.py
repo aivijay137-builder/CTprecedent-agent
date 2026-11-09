@@ -40,13 +40,13 @@ def test_run_endpoint_returns_429_over_limit(tmp_path, monkeypatch):
 
 
 def test_cors_only_for_listed_origin(monkeypatch):
-    monkeypatch.setenv("CORS_ORIGINS", "https://faro-demo.vercel.app")
+    monkeypatch.setenv("CORS_ORIGINS", "https://demo-app.vercel.app")
     m = importlib.reload(main)
     try:
         c = TestClient(m.app)
-        ok = c.get("/api/health", headers={"Origin": "https://faro-demo.vercel.app"})
+        ok = c.get("/api/health", headers={"Origin": "https://demo-app.vercel.app"})
         bad = c.get("/api/health", headers={"Origin": "https://evil.example"})
-        assert ok.headers.get("access-control-allow-origin") == "https://faro-demo.vercel.app"
+        assert ok.headers.get("access-control-allow-origin") == "https://demo-app.vercel.app"
         assert "access-control-allow-origin" not in bad.headers
     finally:
         monkeypatch.delenv("CORS_ORIGINS")
