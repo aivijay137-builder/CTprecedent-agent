@@ -113,6 +113,33 @@ def test_unknown_model_gives_a_clear_message_and_one_try(monkeypatch):
     assert calls == ["my-model"]
 
 
+def test_test_key_shows_the_providers_reason_without_the_key(monkeypatch):
+    c = TestClient(main.app)
+
+    class PermissionDeniedError(Exception):
+        message = f"Model requires terms acceptance for key {KEY}"
+
+    def boom(*a, **k):
+        raise PermissionDeniedError("x")
+    monkeypatch.setattr(llm, "ask_json", boom)
+    r = c.post("/api/llm/test", headers=HDR).json()
+    assert r["ok"] is False and "not allowed to use that model" in r["message"] and "terms acceptance" in r["message"]
+    assert KEY not in r["message"] and KEY[:8] not in r["message"]
+
+
+def test_permission_denied_is_not_called_a_bad_key(monkeypatch):
+    class PermissionDeniedError(Exception):
+        pass
+
+    def boom(system, user, model=None, client=None, retries=8):
+        raise PermissionDeniedError("403")
+    monkeypatch.setattr(llm, "ask_json", boom)
+    monkeypatch.setattr(llm, "client_for", lambda b, k: object())
+    with llmsvc.use(creds()):
+        with pytest.raises(llmsvc.LLMUnavailable, match="permission denied"):
+            llmsvc.ask("t", "v1", "sys", "pd1")
+
+
 def test_url_guard():
     for bad in ("http://8.8.8.8/v1", "https://127.0.0.1/v1", "https://localhost/v1", "https://10.0.0.5/v1",
                 "https://169.254.169.254/latest", "https://user:pw@8.8.8.8/v1", "ftp://8.8.8.8"):

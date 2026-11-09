@@ -145,8 +145,11 @@ def ask(task: str, version: str, system: str, user: str, budget: Budget | None =
             except Exception as e:  # rate limit that will not clear, bad request, network: try the next model
                 last = f"{model}: {type(e).__name__}"
                 _log(task, model, version, {}, 0.0, time.time() - t0, "error", _scrub(str(e), c))
-                if c and type(e).__name__ in ("AuthenticationError", "PermissionDeniedError"):
+                if c and type(e).__name__ == "AuthenticationError":
                     c.rejected = "Your AI key was not accepted by the provider, so this check used the free reader."
+                    raise LLMUnavailable(c.rejected)
+                if c and type(e).__name__ == "PermissionDeniedError":
+                    c.rejected = f"Your provider refused the request for model \"{model}\" (permission denied). Press Test key in the AI key settings to see why. This check used the free reader."
                     raise LLMUnavailable(c.rejected)
                 if c and type(e).__name__ == "NotFoundError":
                     c.rejected = f"Your provider does not know the model \"{model}\". Check the model name in the AI key settings. This check used the free reader."
@@ -177,4 +180,5 @@ def test_key() -> dict:
         msg = {"AuthenticationError": "The provider rejected this key.", "PermissionDeniedError": "This key is not allowed to use that model.",
                "NotFoundError": "The provider does not know that model name.", "APIConnectionError": "Could not reach the provider.",
                "RateLimitError": "The provider says this key is out of quota or going too fast."}.get(n, f"The test call failed ({n}).")
-        return {"ok": False, "message": msg}
+        why = " ".join(_scrub(str(getattr(e, "message", "") or e), c).split())[:200]
+        return {"ok": False, "message": f"{msg} The provider said: {why}" if why else msg}
