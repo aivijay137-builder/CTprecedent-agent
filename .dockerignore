@@ -1,5 +1,6 @@
 .env
 *.duckdb
+!seed/*.duckdb
 *.db
 node_modules
 frontend

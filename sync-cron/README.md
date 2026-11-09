@@ -1,6 +1,4 @@
 # sync-cron (Railway)
-Two cron services from this folder, same code, different env:
-- daily  : schedule `0 2 * * *`  (02:00 UTC), `SYNC_MODE=daily`
-- weekly : schedule `0 3 * * 0`  (Sunday 03:00 UTC), `SYNC_MODE=ids`
-Both need `API_URL` and the same `SYNC_SECRET` as the api service. Start command: `python trigger.py`.
-First deploy only: run once by hand with `SYNC_MODE=bootstrap` (loads all ~610k studies; resumable if interrupted).
+One cron service, `sync-cron`, runs `trigger.py` daily at 02:00 UTC. It calls the api's `/admin/sync`: `daily` on most days, `ids` (weekly full ID check) on Sundays.
+Env: `API_URL`, `SYNC_SECRET` (same value as the api service). Deploy from this folder: `railway up --service sync-cron`.
+First deploy only: run the api's bootstrap once with `curl -X POST "<api>/admin/sync?mode=bootstrap" -H "X-Sync-Secret: ..."` (resumable).

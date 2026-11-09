@@ -1,0 +1,13 @@
+.env
+.git
+node_modules
+frontend
+data
+docs
+demo
+__pycache__
+*.db
+*.wal
+/precedent.duckdb
+*.log
+*.png

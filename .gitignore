@@ -29,3 +29,6 @@ flag rules.md
 BUILD.md
 DEPLOY.md
 demo/
+
+# one-time seed for the Railway volume (copied from precedent.duckdb at deploy time; never commit)
+seed/*.seed
