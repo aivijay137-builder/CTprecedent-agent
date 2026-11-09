@@ -253,11 +253,15 @@ async def events(run_id: str):
     job = JOBS.get(run_id)
     if job:
         async def stream():
-            sent = 0
+            sent, last = 0, time.time()
             while True:
                 while sent < len(job["events"]):
                     yield _sse("step", job["events"][sent])
                     sent += 1
+                    last = time.time()
+                if time.time() - last > 10:  # a long step (the AI reading) sends nothing; proxies close silent connections, so say "still here"
+                    yield ": keep-alive\n\n"
+                    last = time.time()
                 if job["state"] == "done":
                     yield _sse("done", {"run_id": run_id})
                     return
@@ -265,7 +269,7 @@ async def events(run_id: str):
                     yield _sse("error", {"message": job["error"]})
                     return
                 await asyncio.sleep(0.15)
-        return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+        return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
     res = appdb.load_run(run_id)
     if not res:
         raise HTTPException(404, "run not found")

@@ -51,3 +51,31 @@ def test_cors_only_for_listed_origin(monkeypatch):
     finally:
         monkeypatch.delenv("CORS_ORIGINS")
         importlib.reload(m)
+
+
+def test_progress_stream_sends_keep_alive_during_a_long_silent_step(monkeypatch):
+    """Step 4 (AI reading) can be silent for 40+ s; proxies drop silent connections, so the stream must say 'still here'."""
+    import asyncio
+
+    clock = [1000.0]
+
+    class FakeTime:
+        @staticmethod
+        def time():
+            clock[0] += 6  # each look at the clock is 6 s later
+            return clock[0]
+    monkeypatch.setattr(main, "time", FakeTime)
+    main.JOBS["run_ka"] = {"events": [], "state": "running", "error": "", "t0": 0}
+
+    async def go():
+        resp = await main.events("run_ka")
+        seen = []
+        async for chunk in resp.body_iterator:
+            seen.append(chunk)
+            if ": keep-alive" in chunk:
+                main.JOBS["run_ka"]["state"] = "done"
+            if "event: done" in chunk:
+                break
+        return seen
+    seen = asyncio.run(go())
+    assert any(": keep-alive" in c for c in seen) and "event: done" in seen[-1]

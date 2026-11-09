@@ -9,6 +9,7 @@ export function Progress({ runId, onDone, onCancel, onRetry }: {
 }) {
   const [steps, setSteps] = useState<Record<number, StepEvent>>({});
   const [error, setError] = useState("");
+  const [reconnecting, setReconnecting] = useState(false);
   const [announce, setAnnounce] = useState("Starting the precedent check.");
 
   useEffect(() => {
@@ -23,10 +24,12 @@ export function Progress({ runId, onDone, onCancel, onRetry }: {
     es.addEventListener("done", () => { finished = true; es.close(); onDone(); });
     es.addEventListener("error", (m) => {
       if (finished) return;
-      es.close();
       const data = (m as MessageEvent).data;
-      setError(data ? JSON.parse(data).message : "The connection to the server was lost.");
+      if (data) { es.close(); setError(JSON.parse(data).message); return; }  // the server itself reported a failure
+      if (es.readyState === 2) { setError("The connection to the server was lost."); return; }  // closed for good (EventSource.CLOSED)
+      setReconnecting(true);  // a dropped connection: the browser reconnects by itself and the check keeps running on the server
     });
+    es.addEventListener("open", () => setReconnecting(false));
     return () => { finished = true; es.close(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [runId]);
@@ -46,6 +49,7 @@ export function Progress({ runId, onDone, onCancel, onRetry }: {
       <h1>Checking precedent</h1>
       <p className="lead">Looking at how similar trials on ClinicalTrials.gov ended. This usually takes under a minute.</p>
       <div className="sr" aria-live="polite" role="status">{announce}</div>
+      {reconnecting && <div className="banner grey" role="status">Connection interrupted. Reconnecting… your check is still running.</div>}
       <ol className="steps card" style={{ marginTop: 16, padding: "0 16px", listStyle: "none" }}>
         {DEFAULT.map((label, i) => {
           const s = steps[i + 1];
