@@ -561,7 +561,7 @@ WHERE nct_id IN ({IN}) AND overall_status IN ({",".join(lit(x) for x in cfg.DESI
     else:
         limits.insert(0, "Basic condition support: comparables and outcomes come from the registry and eligibility is compared by wording. Numeric cutoffs of comparables are read by an AI when a key is set.")
     return {
-        "run_id": "", "brief_echo": brief.model_dump(), "data_as_of": as_of, "condition_support": "full" if copd else "basic",
+        "run_id": "", "brief_echo": brief.model_dump(), "data_as_of": synced_through(cx, as_of), "condition_support": "full" if copd else "basic",
         "bottom_line": {"risk": risk, "n_comparables": len(ids), "n_terminated": n_term, "n_terminated_enrollment": n_te, "sentence": sentence},
         "comparables": comps, "outcomes": outcomes, "stop_causes": stop_causes, "elements": el, "flags": flags,
         "no_flags_reason": no_flags_reason, "rule_notes": notes, "ai_usage": {"calls": budget.used, "tokens": budget.tokens, "own_key": bool(llmsvc.current())}, "limits": limits, "diff": None, "package_id": None, "audit": cx.audit}
@@ -626,10 +626,16 @@ def cached_cutoffs(eligibility_text: str) -> list[dict] | None:
     return out
 
 
+def synced_through(cx, fallback):
+    """Date shown as "data as of": the day the last good sync covered. Falls back to the newest posting date (old stores, tests)."""
+    r = cx.q("data synced through", "SELECT value FROM sync_state WHERE key = 'watermark'") if cx.con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name = 'sync_state'").fetchone()[0] else []
+    return (r[0][0] if r and r[0][0] else None) or fallback
+
+
 def health() -> dict:
     cx = Ctx()
     as_of = cx.q("as of", "SELECT max(last_update_post_date) FROM studies_current")[0][0]
-    return {"data_as_of": as_of, "row_counts": {
+    return {"data_as_of": synced_through(cx, as_of), "row_counts": {
         "studies_current": cx.q("n", "SELECT count(*) FROM studies_current")[0][0],
         "copd_trials": cx.q("n", "SELECT count(*) FROM prec.copd_trials")[0][0],
         "copd_cutoffs_parsed": cx.q("n", "SELECT count(*) FROM prec.copd_cutoffs WHERE status='ok'")[0][0]}}
