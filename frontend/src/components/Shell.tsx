@@ -15,7 +15,7 @@ export function TopBar({ role, onRole, meta, onSettings, aiOn }: { role: Role; o
   return (
     <header className="topbar">
       <span className="logo" aria-hidden="true" />
-      <span className="name">Study workspace</span>
+      <span className="name">Déjà Trial</span>
       <span className="meta">{meta}</span>
       <div className="toggle" role="group" aria-label="View as">
         <button aria-pressed={role === "lead"} onClick={() => onRole("lead")}>Study lead</button>
