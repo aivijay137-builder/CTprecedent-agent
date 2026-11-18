@@ -125,7 +125,7 @@ export default function App() {
   };
 
   const phaseText = brief?.phase.length ? brief.phase.map((p) => p.replace("PHASE", "Phase ").replace("EARLY_", "Early ")).join("/") : "Phase not set";
-  const studyMeta = `${health?.fixtures ? "COPD-201" : brief?.nct_id ?? (brief?.condition || "New design")} · ${phaseText} · Draft v${draftVersion}`;
+  const studyMeta = `${health?.fixtures ? "COPD-201" : brief?.nct_id ?? (brief?.condition || "New design")} · ${phaseText}`;
 
   // ---- centre column ----
   let centre;
