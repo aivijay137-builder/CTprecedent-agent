@@ -178,3 +178,37 @@ td:first-child { min-width: 170px; }
   .startpill { animation: startpulse 2s ease-out infinite; }
   @keyframes startpulse { 0% { box-shadow: 0 0 0 0 rgba(36, 87, 197, .45); } 70% { box-shadow: 0 0 0 8px rgba(36, 87, 197, 0); } 100% { box-shadow: 0 0 0 0 rgba(36, 87, 197, 0); } }
 }
+
+/* ---- responsive: any screen size ---- */
+.topbar { flex-wrap: wrap; padding-block: 6px; }
+.tabs { overflow-x: auto; }
+.tabs button { white-space: nowrap; }
+@media (max-width: 1000px) {
+  html, body, #root, .app { height: auto; min-height: 100%; }
+  .main, .side { overflow: visible; }
+  .main { padding: var(--s2); }
+}
+@media (max-width: 640px) {
+  .body { grid-template-columns: minmax(0, 1fr); }
+  .nav { display: flex; flex-wrap: wrap; gap: 4px; padding: var(--s1); }
+  .nav button { width: auto; flex: 1 1 auto; text-align: center; padding: 0 var(--s1); font-size: 12px; }
+  .nav button.start { justify-content: center; }
+  .toggle { margin-left: 0; }
+  .bottom { flex-wrap: wrap; }
+  .actions .btn, .bottom .btn { flex: 1 1 140px; }
+}
+@media (min-width: 1600px) { .main > .inner { max-width: 1040px; } body { font-size: 14px; } }
+
+/* mobile top bar: the demo link sits beside the AI key, outlined in green so it gets noticed */
+.demolink { display: flex; align-items: center; gap: 4px; border: 2px solid var(--green-solid); border-radius: var(--radius); padding: 4px var(--s1); font-size: 12px; color: var(--text); background: var(--green-bg); min-height: 40px; flex: 1 1 auto; }
+.demolink b { color: var(--green); text-decoration: underline; }
+.demolink:hover { text-decoration: none; }
+
+.nav button.start { flex-wrap: wrap; row-gap: 4px; padding-block: 8px; }
+.demolink { margin-left: var(--s1); flex: 0 1 auto; }
+@media (max-width: 640px) { .demolink { flex: 1 1 auto; margin-left: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .demolink { animation: demoglow 2.4s ease-out infinite; }
+  .demolink:hover { animation: none; }
+  @keyframes demoglow { 0% { box-shadow: 0 0 0 0 rgba(31, 138, 76, .5); } 70% { box-shadow: 0 0 0 9px rgba(31, 138, 76, 0); } 100% { box-shadow: 0 0 0 0 rgba(31, 138, 76, 0); } }
+}
