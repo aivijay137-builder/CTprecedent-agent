@@ -14,7 +14,7 @@ export function TopBar({ role, onRole, meta, onSettings, aiOn }: { role: Role; o
         <button aria-pressed={role === "lead"} onClick={() => onRole("lead")}>Study lead</button>
         <button aria-pressed={role === "reviewer"} onClick={() => onRole("reviewer")}>Reviewer</button>
       </div>
-      {import.meta.env.VITE_DEMO_URL && <a className="demolink" href={import.meta.env.VITE_DEMO_URL} target="_blank" rel="noreferrer"><span>Concept prototype.</span> <b>See worked examples</b></a>}
+      {import.meta.env.VITE_DEMO_URL && <a className="demolink" href={import.meta.env.VITE_DEMO_URL} target="_blank" rel="noreferrer"><b>See worked examples</b></a>}
       {onSettings && <button className="btn" onClick={onSettings} title="Optional: use your own AI key">{aiOn ? "AI key: on" : "AI key"}</button>}
     </header>
   );
@@ -56,7 +56,6 @@ export function Footer({ dataAsOf, stale, fixtures }: { dataAsOf: string; stale:
     <footer className="footer">
       {fixtures && <span className="fx">Illustrative fixture data.</span>}
       Data from ClinicalTrials.gov as of <span className={stale ? "stale" : ""}>{fmtDate(dataAsOf)}{stale ? " (older than 3 days)" : ""}</span>.
-      Concept prototype.
     </footer>
   );
 }
