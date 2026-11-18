@@ -190,7 +190,7 @@ export default function App() {
       <div className="body">
         <LeftNav onlyPopulation startHere={!run} active={nav} onPick={(id) => { setNav(id); if (id === "population" && mode !== "progress") setMode("criteria"); }} />
         <main className="main">{demoBar}{centre}</main>
-        <SidePanel status={status} onOpen={openPrecedent} dataAsOf={run?.data_as_of ?? health?.data_as_of ?? new Date().toISOString().slice(0, 10)} fixtures={!!health?.fixtures} />
+        <SidePanel status={status} onOpen={openPrecedent} dataAsOf={health?.data_as_of ?? run?.data_as_of ?? new Date().toISOString().slice(0, 10)} fixtures={!!health?.fixtures} />
       </div>
     </div>
   );
