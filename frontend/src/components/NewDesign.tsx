@@ -11,7 +11,7 @@ export const emptyBrief = (): DesignBrief => ({
   structured_cutoffs: null, primary_endpoint: "", primary_endpoint_timeframe: "", target_enrollment: null, enrollment_type: "ESTIMATED", countries: [], arm_types: [],
 });
 
-export function NewDesign({ onSubmit, onCancel }: { onSubmit: (b: DesignBrief) => void; onCancel: () => void }) {
+export function NewDesign({ onSubmit, onCancel }: { onSubmit: (b: DesignBrief) => void; onCancel?: () => void }) {
   const [b, setB] = useState<DesignBrief>(emptyBrief());
   const [typed, setTyped] = useState("");
   const [picks, setPicks] = useState<{ term: string; n_trials: number }[]>([]);
@@ -104,7 +104,7 @@ export function NewDesign({ onSubmit, onCancel }: { onSubmit: (b: DesignBrief) =
 
       <div className="actions" style={{ marginTop: 24 }}>
         <button className="btn primary" type="submit">Continue to confirm</button>
-        <button className="btn" type="button" onClick={onCancel}>Cancel</button>
+        {onCancel && <button className="btn" type="button" onClick={onCancel}>Cancel</button>}
       </div>
     </form>
   );

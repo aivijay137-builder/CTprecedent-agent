@@ -13,7 +13,7 @@ import type { DesignBrief, Element, Flag, Health, PackageSnapshot, Role, RunResu
 import { store } from "./util";
 
 type Mode = "criteria" | "confirm" | "progress" | "results" | "new" | "settings";
-const DEFAULT_NCT = "NCT03460704"; // seeds the "COPD-201 draft v3" workspace
+const DEFAULT_NCT = "NCT03460704"; // only the saved-results demo opens on this trial; the live app starts empty
 interface Saved { brief: DesignBrief; draftVersion: number; runId: string | null; runDraft: number | null }
 
 export default function App() {
@@ -22,6 +22,7 @@ export default function App() {
   const [nav, setNav] = useState("population");
   const [mode, setMode] = useState<Mode>("criteria");
   const [brief, setBrief] = useState<DesignBrief | null>(null);
+  const [empty, setEmpty] = useState(false);  // live app, nothing saved: show the New design form
   const [draftVersion, setDraftVersion] = useState(1);
   const [runDraft, setRunDraft] = useState<number | null>(null);
   const [run, setRun] = useState<RunResult | null>(null);
@@ -36,19 +37,21 @@ export default function App() {
     (async () => {
       try {
         setHealth(await api.health());
-        const saved = store.get<Saved>("ctp-state");
+        const saved = store.get<Saved>("ctp-state-v2");
         if (saved?.brief) {
           setBrief(saved.brief); setDraftVersion(saved.draftVersion); setRunDraft(saved.runDraft);
           if (saved.runId) { try { setRun(await api.getRun(saved.runId)); } catch { setRunDraft(null); } }
+        } else if (demoExamples().length > 0) {
+          setBrief(await api.fromNct(DEFAULT_NCT));  // the demo replays saved results and needs a design
         } else {
-          setBrief(await api.fromNct(DEFAULT_NCT));
+          setEmpty(true);
         }
       } catch (e) { setError((e as Error).message); }
     })();
   }, []);
 
   useEffect(() => {
-    if (brief) store.set("ctp-state", { brief, draftVersion, runId: run?.run_id ?? null, runDraft } satisfies Saved);
+    if (brief) store.set("ctp-state-v2", { brief, draftVersion, runId: run?.run_id ?? null, runDraft } satisfies Saved);
   }, [brief, draftVersion, run?.run_id, runDraft]);
 
   // the reviewer sees the frozen package of the current run
@@ -129,6 +132,8 @@ export default function App() {
   if (!brief) {
     centre = error
       ? <div className="inner"><div className="banner red" role="alert">Could not reach the API: {error}. Is <code>npm run dev</code> running?</div></div>
+      : role === "reviewer" ? <PackageView pkg={pkg} onReview={review} />
+      : empty ? <NewDesign onSubmit={submitNewDesign} />
       : <div className="inner"><p className="lead" aria-live="polite">Loading the draft design…</p></div>;
   } else if (nav !== "population") {
     const label = NAV.find((n) => n.id === nav)?.label ?? "";
