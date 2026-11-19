@@ -123,9 +123,9 @@ def ask(task: str, version: str, system: str, user: str, budget: Budget | None =
     if hit:
         return json.loads(hit["response"])
     if not configured():
-        raise LLMUnavailable("No AI key is set. Add LLM_BASE_URL, LLM_API_KEY and LLM_MODEL to .env to turn this on.")
+        raise LLMUnavailable("No AI key is set. To read criteria with AI, add your own key under \"AI key\" (top right).")
     if not enabled():
-        raise LLMUnavailable("AI reading is switched off. Set LLM_ENABLED=on in .env to turn it on (it makes paid calls).")
+        raise LLMUnavailable("AI reading is switched off on this server. To use it, add your own key under \"AI key\" (top right).")
     c = current()
     if c and c.rejected:
         raise LLMUnavailable(c.rejected)
