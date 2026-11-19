@@ -11,7 +11,7 @@ Scores are 1 (low) to 3 (high). Score = likelihood (L) x impact (I). Owner is th
 | R05 | **Confidential draft design exposed** (stored in `app.db`, shared link, sent to an LLM vendor) | 2 | 3 | 6 | Key never stored; AI off unless the user opts in | Drafts kept with no expiry or login. Add a retention limit and delete; say so in the UI | PM |
 | R06 | **Over-trust:** a user treats "no flag" as "design is fine" | 2 | 3 | 6 | "No flags is a finding, not an error" message; under 5 comparables says insufficient; accept or defer is the user's call | No evidence yet of how people read it; test with 3 real users | PM |
 | R07 | **API key leak** | 1 | 3 | 3 | Never stored or logged; scrubbed from errors; `test_byok.py` | Browser-side exposure is the user's to manage | Engineer |
-| R08 | **Bias by therapeutic area:** rules and packs tuned on COPD work worse elsewhere | 3 | 2 | 6 | Packs labelled draft and unreviewed; the "did not help" result is published | Gold set is mixed-condition but small (40 texts); add areas before claiming generality | PM |
+| R08 | **Bias by therapeutic area:** rules and packs developed mostly on respiratory designs work worse elsewhere | 3 | 2 | 6 | Packs labelled draft and unreviewed; the "did not help" result is published | Gold set is mixed-condition but small (40 texts); add areas before claiming generality | PM |
 | R09 | **Provider outage or rate limit** stalls a run | 3 | 1 | 3 | Fallback models, free-reader fallback, per-run time budget, `LLM_MAX_WAIT_S` | Two fallback models return 404 on the current account (D36) | Engineer |
 | R10 | **Cost overrun** from many AI calls | 1 | 2 | 2 | Daily cap $0.50, 60 calls per run, answer cache, per-visitor rate limit | Caps are per instance, not per user | Engineer |
 

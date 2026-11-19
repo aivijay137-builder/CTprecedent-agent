@@ -1,0 +1,254 @@
+{
+ "cases": 30,
+ "solvable": 22,
+ "unsolvable": 8,
+ "success_on_solvable": 1.0,
+ "honest_on_unsolvable": 1.0,
+ "n_after_median": 19.0,
+ "n_after_max": 2213,
+ "share_over_BIG": 0.18181818181818182,
+ "same_rung_as_smallest": 0.9090909090909091,
+ "median_smallest_n": 19.0,
+ "rows": [
+  {
+   "nct_id": "NCT00601276",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 15,
+   "smallest": "phase",
+   "smallest_n": 15
+  },
+  {
+   "nct_id": "NCT01236898",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 12,
+   "smallest": "phase",
+   "smallest_n": 12
+  },
+  {
+   "nct_id": "NCT01395641",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 6,
+   "smallest": "phase",
+   "smallest_n": 6
+  },
+  {
+   "nct_id": "NCT01502345",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 5,
+   "smallest": "phase",
+   "smallest_n": 5
+  },
+  {
+   "nct_id": "NCT01584362",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 16,
+   "smallest": "phase",
+   "smallest_n": 16
+  },
+  {
+   "nct_id": "NCT01637272",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 17,
+   "smallest": "phase",
+   "smallest_n": 17
+  },
+  {
+   "nct_id": "NCT01840813",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 8,
+   "smallest": "phase",
+   "smallest_n": 8
+  },
+  {
+   "nct_id": "NCT02283957",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 21,
+   "smallest": "phase",
+   "smallest_n": 21
+  },
+  {
+   "nct_id": "NCT00007358",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 199,
+   "smallest": "condition_level",
+   "smallest_n": 199
+  },
+  {
+   "nct_id": "NCT00457288",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 46,
+   "smallest": "condition_level",
+   "smallest_n": 46
+  },
+  {
+   "nct_id": "NCT00534391",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 25,
+   "smallest": "condition_level",
+   "smallest_n": 25
+  },
+  {
+   "nct_id": "NCT01161641",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 2213,
+   "smallest": "condition_level",
+   "smallest_n": 2213
+  },
+  {
+   "nct_id": "NCT01304407",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 88,
+   "smallest": "condition_level",
+   "smallest_n": 88
+  },
+  {
+   "nct_id": "NCT01712555",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 39,
+   "smallest": "condition_level",
+   "smallest_n": 39
+  },
+  {
+   "nct_id": "NCT01827020",
+   "solvable": true,
+   "baseline": "condition_level",
+   "n_after": 258,
+   "smallest": "condition_level",
+   "smallest_n": 258
+  },
+  {
+   "nct_id": "NCT00006174",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 60,
+   "smallest": "condition_level",
+   "smallest_n": 37
+  },
+  {
+   "nct_id": "NCT00056550",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 6,
+   "smallest": "phase",
+   "smallest_n": 6
+  },
+  {
+   "nct_id": "NCT00168688",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 148,
+   "smallest": "condition_level",
+   "smallest_n": 31
+  },
+  {
+   "nct_id": "NCT00186069",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 9,
+   "smallest": "phase",
+   "smallest_n": 9
+  },
+  {
+   "nct_id": "NCT00194272",
+   "solvable": true,
+   "baseline": "phase",
+   "n_after": 38,
+   "smallest": "phase",
+   "smallest_n": 38
+  },
+  {
+   "nct_id": "NCT00758667",
+   "solvable": true,
+   "baseline": "phase+condition_level",
+   "n_after": 6,
+   "smallest": "phase+condition_level",
+   "smallest_n": 6
+  },
+  {
+   "nct_id": "NCT04785014",
+   "solvable": true,
+   "baseline": "phase+condition_level",
+   "n_after": 5,
+   "smallest": "phase+condition_level",
+   "smallest_n": 5
+  },
+  {
+   "nct_id": "NCT00189397",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 0,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT00894920",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 0,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT01674946",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 0,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT01932437",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 4,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT03005327",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 0,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT03086226",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 0,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT03094624",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 1,
+   "smallest": null,
+   "smallest_n": 0
+  },
+  {
+   "nct_id": "NCT03116113",
+   "solvable": false,
+   "baseline": null,
+   "n_after": 0,
+   "smallest": null,
+   "smallest_n": 0
+  }
+ ]
+}

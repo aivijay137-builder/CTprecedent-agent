@@ -1,5 +1,5 @@
 """Compares two finished runs of the same design (for example prompt-only vs with a pack): which comparables moved, which flags changed.
-It describes WHAT CHANGED. It does not say which run is better: that needs the quality eval (BUILD.md Step 2)."""
+It describes WHAT CHANGED. It does not say which run is better: that needs a quality eval against hand-graded comparables (not built)."""
 
 
 def _label(run: dict) -> str:
@@ -29,5 +29,5 @@ def compare_runs(a: dict, b: dict) -> dict:
         "flags": {"in_both": [i for i in fa if i in fb], "only_a": [i for i in fa if i not in fb], "only_b": [i for i in fb if i not in fa],
                   "n_changed": [{"id": i, "n_a": fa[i]["n"], "n_b": fb[i]["n"]} for i in fa if i in fb and fa[i]["n"] != fb[i]["n"]]},
         "pack_log": (pb or pa or {}),
-        "note": "This shows what changed, not which result is better. A quality check against hand-graded comparables is still to be built (BUILD.md Step 2).",
+        "note": "This shows what changed, not which result is better. A quality check against hand-graded comparables is still to be built.",
     }

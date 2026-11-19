@@ -1,0 +1,624 @@
+{
+ "min_n": 5,
+ "relaxations": [
+  "phase",
+  "condition_level"
+ ],
+ "registry_note": "counts are as of the registry copy used to build this file; they drift with each sync",
+ "cases": [
+  {
+   "nct_id": "NCT00601276",
+   "condition": "Pedophilia",
+   "mesh_terms": [
+    "Pedophilia"
+   ],
+   "phase": [
+    "PHASE3"
+   ],
+   "parent_term": "Paraphilic Disorders",
+   "counts": {
+    "none": 1,
+    "phase": 15,
+    "condition_level": 1,
+    "phase+condition_level": 19
+   },
+   "solvable_by": [
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01236898",
+   "condition": "Nonaka Myopathy; Hereditary Inclusion Body Myopathy",
+   "mesh_terms": [
+    "Distal myopathy, Nonaka type"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 4,
+    "phase": 12,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": [
+    "phase"
+   ]
+  },
+  {
+   "nct_id": "NCT01395641",
+   "condition": "Aromatic L-amino Acid Decarboxylase (AADC) Deficiency",
+   "mesh_terms": [
+    "Aromatic amino acid decarboxylase deficiency"
+   ],
+   "phase": [
+    "PHASE1",
+    "PHASE2"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 4,
+    "phase": 6,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": [
+    "phase"
+   ]
+  },
+  {
+   "nct_id": "NCT01502345",
+   "condition": "Hemorrhagic Fever With Renal Syndrome",
+   "mesh_terms": [
+    "Hemorrhagic Fever with Renal Syndrome"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Hantavirus Infections",
+   "counts": {
+    "none": 0,
+    "phase": 5,
+    "condition_level": 2,
+    "phase+condition_level": 10
+   },
+   "solvable_by": [
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01584362",
+   "condition": "Tenia Solium Infection",
+   "mesh_terms": [
+    "Taeniasis",
+    "Neurocysticercosis"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Central Nervous System Helminthiasis",
+   "counts": {
+    "none": 3,
+    "phase": 16,
+    "condition_level": 3,
+    "phase+condition_level": 16
+   },
+   "solvable_by": [
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01637272",
+   "condition": "Dumping Syndrome",
+   "mesh_terms": [
+    "Dumping Syndrome"
+   ],
+   "phase": [
+    "PHASE2"
+   ],
+   "parent_term": "Postgastrectomy Syndromes",
+   "counts": {
+    "none": 2,
+    "phase": 17,
+    "condition_level": 2,
+    "phase+condition_level": 19
+   },
+   "solvable_by": [
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01840813",
+   "condition": "Retained Placenta",
+   "mesh_terms": [
+    "Placenta, Retained"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Placenta Diseases",
+   "counts": {
+    "none": 0,
+    "phase": 8,
+    "condition_level": 3,
+    "phase+condition_level": 165
+   },
+   "solvable_by": [
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT02283957",
+   "condition": "Painful Intermetatarsal Neuroma (Morton's Neuroma)",
+   "mesh_terms": [
+    "Morton Neuroma"
+   ],
+   "phase": [
+    "PHASE2"
+   ],
+   "parent_term": "Metatarsalgia",
+   "counts": {
+    "none": 3,
+    "phase": 21,
+    "condition_level": 3,
+    "phase+condition_level": 37
+   },
+   "solvable_by": [
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00007358",
+   "condition": "Congenital Heart Block; Neonatal Lupus; Atrioventricular Nodal Dysfunction; Myocardial Injury",
+   "mesh_terms": [
+    "Congenital heart block",
+    "Neonatal Systemic lupus erythematosus"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": "Xerostomia",
+   "counts": {
+    "none": 0,
+    "phase": 2,
+    "condition_level": 199,
+    "phase+condition_level": 419
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00457288",
+   "condition": "Cutaneous Mastocytosis",
+   "mesh_terms": [
+    "Mastocytosis, Cutaneous"
+   ],
+   "phase": [
+    "PHASE2"
+   ],
+   "parent_term": "Mastocytosis",
+   "counts": {
+    "none": 1,
+    "phase": 3,
+    "condition_level": 46,
+    "phase+condition_level": 84
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00534391",
+   "condition": "Hordeolum",
+   "mesh_terms": [
+    "Hordeolum"
+   ],
+   "phase": [
+    "PHASE3"
+   ],
+   "parent_term": "Eye Infections, Bacterial",
+   "counts": {
+    "none": 0,
+    "phase": 2,
+    "condition_level": 25,
+    "phase+condition_level": 82
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01161641",
+   "condition": "Protein Losing Enteropathy",
+   "mesh_terms": [
+    "Protein-Losing Enteropathies"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Intestinal Diseases",
+   "counts": {
+    "none": 0,
+    "phase": 4,
+    "condition_level": 2213,
+    "phase+condition_level": 12745
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01304407",
+   "condition": "Rothmund-Thomson Syndrome",
+   "mesh_terms": [
+    "Rothmund-Thomson Syndrome"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": "DNA Repair-Deficiency Disorders",
+   "counts": {
+    "none": 0,
+    "phase": 0,
+    "condition_level": 88,
+    "phase+condition_level": 228
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01712555",
+   "condition": "Orbital Atrophy",
+   "mesh_terms": [
+    "Anophthalmos"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": "Eye Abnormalities",
+   "counts": {
+    "none": 2,
+    "phase": 3,
+    "condition_level": 39,
+    "phase+condition_level": 70
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT01827020",
+   "condition": "Nose Deformities, Acquired",
+   "mesh_terms": [
+    "Nose Deformities, Acquired"
+   ],
+   "phase": [
+    "PHASE4"
+   ],
+   "parent_term": "Nose Diseases",
+   "counts": {
+    "none": 1,
+    "phase": 4,
+    "condition_level": 258,
+    "phase+condition_level": 1602
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00006174",
+   "condition": "McCune Albright Syndrome; Polyostotic Fibrous Dysplasia; Precocious Puberty",
+   "mesh_terms": [
+    "Fibrous Dysplasia, Polyostotic",
+    "Puberty, Precocious",
+    "Fibrous Dysplasia of Bone"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Osteochondrodysplasias",
+   "counts": {
+    "none": 1,
+    "phase": 60,
+    "condition_level": 37,
+    "phase+condition_level": 249
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00056550",
+   "condition": "Antithrombin Deficiency, Congenital",
+   "mesh_terms": [
+    "Antithrombin III Deficiency"
+   ],
+   "phase": [
+    "PHASE3"
+   ],
+   "parent_term": "Thrombophilia",
+   "counts": {
+    "none": 3,
+    "phase": 6,
+    "condition_level": 28,
+    "phase+condition_level": 93
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00168688",
+   "condition": "Pregnancy; Birth Weight",
+   "mesh_terms": [
+    "Birth Weight",
+    "Perinatal Death"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Death",
+   "counts": {
+    "none": 2,
+    "phase": 148,
+    "condition_level": 31,
+    "phase+condition_level": 758
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00186069",
+   "condition": "Abruptio Placentae",
+   "mesh_terms": [
+    "Abruptio Placentae"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": "Placenta Diseases",
+   "counts": {
+    "none": 4,
+    "phase": 9,
+    "condition_level": 121,
+    "phase+condition_level": 165
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00194272",
+   "condition": "Ectopic Pregnancy",
+   "mesh_terms": [
+    "Pregnancy, Ectopic"
+   ],
+   "phase": [
+    "PHASE3"
+   ],
+   "parent_term": "Pregnancy Complications",
+   "counts": {
+    "none": 3,
+    "phase": 38,
+    "condition_level": 506,
+    "phase+condition_level": 4999
+   },
+   "solvable_by": [
+    "condition_level",
+    "phase",
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00758667",
+   "condition": "Implant Capsular Contracture",
+   "mesh_terms": [
+    "Implant Capsular Contracture"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": "Foreign-Body Reaction",
+   "counts": {
+    "none": 1,
+    "phase": 2,
+    "condition_level": 2,
+    "phase+condition_level": 6
+   },
+   "solvable_by": [
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT04785014",
+   "condition": "Baker Cyst; Knee Disease",
+   "mesh_terms": [
+    "Popliteal Cyst"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": "Synovial Cyst",
+   "counts": {
+    "none": 3,
+    "phase": 4,
+    "condition_level": 3,
+    "phase+condition_level": 5
+   },
+   "solvable_by": [
+    "phase+condition_level"
+   ]
+  },
+  {
+   "nct_id": "NCT00189397",
+   "condition": "Parthenium Dermatitis",
+   "mesh_terms": [
+    "Parthenium dermatitis"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 0,
+    "phase": 0,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT00894920",
+   "condition": "Biotin Deficiency",
+   "mesh_terms": [
+    "Biotin deficiency"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 0,
+    "phase": 0,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT01674946",
+   "condition": "Echolocation",
+   "mesh_terms": [
+    "Echolocation"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": "Animal Communication",
+   "counts": {
+    "none": 0,
+    "phase": 1,
+    "condition_level": 0,
+    "phase+condition_level": 3
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT01932437",
+   "condition": "Inhalational Anthrax",
+   "mesh_terms": [
+    "Inhalation anthrax"
+   ],
+   "phase": [
+    "PHASE1"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 4,
+    "phase": 4,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT03005327",
+   "condition": "WHIM Syndrome",
+   "mesh_terms": [
+    "WHIM syndrome"
+   ],
+   "phase": [
+    "PHASE2"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 0,
+    "phase": 2,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT03086226",
+   "condition": "Mycetoma",
+   "mesh_terms": [
+    "Mycetoma"
+   ],
+   "phase": [
+    "PHASE2"
+   ],
+   "parent_term": "Nocardia Infections",
+   "counts": {
+    "none": 0,
+    "phase": 2,
+    "condition_level": 0,
+    "phase+condition_level": 2
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT03094624",
+   "condition": "Healthy; Amusia, Congenital",
+   "mesh_terms": [
+    "Tune Deafness"
+   ],
+   "phase": [
+    "NA"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 1,
+    "phase": 1,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": []
+  },
+  {
+   "nct_id": "NCT03116113",
+   "condition": "X-Linked Retinitis Pigmentosa",
+   "mesh_terms": [
+    "Cone-Rod Dystrophy, X-Linked, Type 1"
+   ],
+   "phase": [
+    "PHASE1",
+    "PHASE2"
+   ],
+   "parent_term": null,
+   "counts": {
+    "none": 0,
+    "phase": 0,
+    "condition_level": -1,
+    "phase+condition_level": -1
+   },
+   "solvable_by": []
+  }
+ ]
+}

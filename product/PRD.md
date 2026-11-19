@@ -5,7 +5,7 @@
 **Status:** Draft
 **Version:** 1.0
 
-Basis: Part 1 (stakeholders), Part 5 (thin slices), Part 7 (respiratory scope), and the layered plan agreed in chat. Lung cancer is out of scope. Numbers come from those parts; prices and targets marked [HYPOTHESIS] are untested.
+Basis: Part 1 (stakeholders), Part 5 (thin slices), Part 7 (respiratory scope). Lung cancer is out of scope. Numbers come from those parts; prices and targets marked [HYPOTHESIS] are untested.
 
 ---
 

@@ -348,7 +348,7 @@ def build_pack(con, pid, w):
             "fallback_order": ["intervention_class"],
             "endpoint_vocabulary": vocab,
             "cutoff_norms": cn, "design_norms": dn, "outcome_priors": pri, "known_limits": limits,
-            "eval": {"status": "not_run", "reason": "The eval harness (BUILD.md Step 2) is not built. Pending: retrieval precision@10 base vs pack, pool-size guardrail, parsing accuracy, back-test hit rate.", "base_vs_pack": None}}
+            "eval": {"status": "not_run", "reason": "The eval harness is not built. Pending: retrieval precision@10 base vs pack, pool-size guardrail, parsing accuracy, back-test hit rate.", "base_vs_pack": None}}
     mined = {"id": pid, "n_interventional": n_all, "n_phase2_or_3": n23, "n_phase2_3_pure": n_pg, "parse_sample_n": sample_n, "per_key_counts": {k: len(v["values"]) for k, v in per_key.items()},
              "era_series": era["series"], "endpoint_vocabulary": vocab, "archetypes": arch, "subtypes": subs}
     (OUT / "_mined").mkdir(parents=True, exist_ok=True)
@@ -376,7 +376,7 @@ def write_base():
             "hard_filters_today": ["same condition (MeSH pool)", "interventional", "phase overlap", "not the draft itself"],
             "fallback": "No fallback ladder today: fewer than 5 comparables means no flags, with an explanation.",
             "min_comparables_for_flags": 5, "extraction_fields": [], "subtypes": [], "trial_archetypes": [], "era_breakpoints": [], "cutoff_norms": [],
-            "eval": {"status": "not_run", "reason": "Eval harness (BUILD.md Step 2) is not built; the base is the reference the packs will be compared against."}}
+            "eval": {"status": "not_run", "reason": "Eval harness is not built; the base is the reference the packs will be compared against."}}
     (OUT / "_base.yaml").write_text("# Base pack: documents the current behaviour (draft).\n" + yaml.safe_dump(base, sort_keys=False, allow_unicode=True, width=140), encoding="utf-8")
 
 

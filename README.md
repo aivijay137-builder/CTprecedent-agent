@@ -30,11 +30,11 @@ For hot-reload while developing, run `npm run dev` instead.
 
 ```bash
 pip install -r requirements.txt
-python -m pytest backend tests sync -q     # ~10 s, expected: 112 passed, 28 skipped
+python -m pytest backend tests sync -q     # ~10 s, expected: 121 passed, 34 skipped
 npm --prefix frontend run build            # type-check + build
 ```
 
-The 28 skipped tests need the full registry store; they skip themselves when it is absent. CI runs the same two commands on every push.
+The 34 skipped tests need the full registry store; they skip themselves when it is absent. CI runs the same two commands on every push.
 
 **What the tests cover**
 - **Sync:** weekday/weekend window rule, resume after a partial download, all-or-nothing transaction, watermark.
@@ -58,13 +58,13 @@ The 28 skipped tests need the full registry store; they skip themselves when it 
 
 Verdict: the AI reader stays off by default until the slowest-call row passes. Safety rules and their tests: `docs/safety.md`.
 
-## Trust and compliance
+## Design, evidence and trust
 Public registry data in, a confidential draft design in, advice out. Not HIPAA (no patient data); the exposure is draft confidentiality.
 
 - [`SYSTEM_CARD.md`](SYSTEM_CARD.md): intended use, measured performance, failure modes, human oversight
 - [`CASE_STUDY.md`](CASE_STUDY.md): the problem, the decisions, what failed
 - [`docs/HLD.md`](docs/HLD.md): architecture, model choice, a design for an optional agent layer
-- [`docs/agent_design.md`](docs/agent_design.md): a designed, not built, optional agent: tools, guardrails, and the bars it must beat
+- [`docs/agent_design.md`](docs/agent_design.md): an optional agent design, with a built and scored baseline that shows the agent is not needed yet
 - [`docs/user_flow.md`](docs/user_flow.md): the screens and choices, step by step
 - [`docs/safety.md`](docs/safety.md): each safety rule and the test that proves it
 - [`docs/compliance.md`](docs/compliance.md): data flow and what a regulated version would need
@@ -77,10 +77,11 @@ Public registry data in, a confidential draft design in, advice out. Not HIPAA (
 ## Known limitations (honest list)
 - **Population is often "not checked".** The AI reads only a few comparables in its 40 s window; without a key the free reader checks numeric cutoffs only.
 - **The Sites flag fires on most designs**, so it carries little information yet.
+- **No real user has tested it yet.** Task and outcome metrics have no data (`docs/metrics.md`).
 - **Risk level is unvalidated** against expert judgement.
 - **Therapeutic packs are unreviewed drafts.** In tests they changed 0 to 1 comparable on three designs and no flags. They are safe, not yet shown to help.
 - **Registry data is a snapshot**, refreshed daily on the hosted version; local sample data is illustrative only.
 - Ranking is text-similarity based; it can miss trials that use different wording for the same condition.
 
 ## Layout
-`backend/` FastAPI app, engine, tests · `frontend/` React + Vite · `sync/` daily registry sync · `sync-cron/` scheduler · `src/` data-prep scripts and pack tools · `Dockerfile`, `railway.json` deployment
+`backend/` FastAPI app, engine, tests, eval and gold sets · `docs/` design and trust docs · `product/` PRD and discovery · `Prompt_EVALS/` reader eval and decision log · `frontend/` React + Vite · `sync/` daily registry sync · `sync-cron/` scheduler · `src/` data-prep scripts and pack tools · `Dockerfile`, `railway.json` deployment

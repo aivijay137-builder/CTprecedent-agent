@@ -1,6 +1,6 @@
 # Design: an optional "Investigate" agent
 
-**Status: design only. Nothing here is built.** Bars and numbers below are proposals, to be fixed before the first run, in the same way the reader eval's bars were (`Prompt_EVALS/DECISIONS.md` D30).
+**Status: design, plus a built and scored baseline (section 11). The agent itself is not built.** Bars below were proposed before any run; section 11 records what the baseline showed and which bar cannot be met.
 
 ## 1. The problem it would solve
 A run ends in one of two dead ends:
@@ -18,7 +18,7 @@ The model picks a tool and its arguments. It never writes SQL. Each tool builds 
 
 | Tool | Input | Output | Built from |
 |---|---|---|---|
-| `count_comparables` | `relax`: a list drawn from `phase`, `condition_level`, `intervention_class` (enum, max 2 items) | `{n, filters_applied, filters_relaxed, call_id}` | The candidate query in `find_comparables`, with the named filter dropped or widened |
+| `count_comparables` | `relax`: a list drawn from `phase`, `condition_level` (enum, max 2 items; `intervention_class` was dropped, see section 11) | `{n, filters_applied, filters_relaxed, call_id}` | The candidate query in `find_comparables`, with the named filter dropped or widened |
 | `list_trials` | `relax` (same enum), `limit` (max 15) | Rows of `{nct_id, title, phase, status}` plus `call_id` | Same query, selecting columns |
 | `outcome_mix` | `nct_ids` (max 50, must have come from an earlier tool call) | Counts of completed, terminated, withdrawn, plus `call_id` | The outcome-bucket query used for step 2a |
 
@@ -58,11 +58,11 @@ Bars to fix before the first run (proposed):
 | Tool-result injection: hostile text in a trial title cannot change the answer or trigger a disallowed call | 100% | At least 8 hand-written cases, written before the verifier |
 | Success: finds a relaxation that gives at least 5 comparables when one exists | At least 60% of solvable cases | 30 insufficient designs from real registry data; "solvable" is decided by brute force over all enum relaxations |
 | Honesty: never claims success when none exists | 100% | The unsolvable cases in the same set |
-| Beats the baseline: success rate above a fixed script that tries each relaxation in a set order | Higher than baseline | The baseline is about 20 lines and costs nothing |
+| Beats the baseline on success rate | **Cannot be met: the baseline is exhaustive and scores 100% by construction (section 11).** Replaced by suggestion quality, section 11 | Superseded |
 | Steps | Median 4 or fewer | `llm_log` |
 | Cost per investigation | $0.02 or less | `llm_log` |
 
-**The baseline decides whether this is worth building.** If a fixed script solves the same cases, the right outcome is to ship the script and not the agent. The only relaxation logic today is the pack's drug-vs-device fallback, so a general ladder would be new but small.
+**The baseline decides whether this is worth building.** If a fixed script solves the same cases, the right outcome is to ship the script and not the agent. It does solve them (section 11).
 
 ## 8. Alternatives considered and rejected
 | Option | Why not |
@@ -89,6 +89,27 @@ Bars to fix before the first run (proposed):
 
 Estimated effort: 1 to 2 evenings.
 
-## 11. Open questions
+## 11. Step 4 result: the baseline (built and scored 2026-11-19)
+**What was built** (new files only; `engine.py` is untouched): `backend/relax.py` counts comparables under a relaxation, using the engine's own candidate query (a test checks the counts match the engine's on the three golden designs); `backend/agent_baseline.py` is the fixed ladder (loosen phase, then widen the condition, then both); `backend/golden/make_agent_cases.py` builds the test set.
+
+**Test set.** 3,000 real small-pool trials were used as drafts; 297 had fewer than 5 comparables; 90% of those (267) could be fixed by some relaxation and 10% (30) could not. 30 cases were drawn: 22 solvable, 8 unsolvable. File: `backend/golden/agent_cases.json`.
+
+| Measure | Result on the 30 cases |
+|---|---|
+| Success on solvable (reaches at least 5 comparables) | 22 of 22 |
+| Reports "nothing works" on unsolvable | 8 of 8 |
+| Median comparables after the suggested change | 19 (max 2,213) |
+| Suggestions that pull in more than 100 trials | 4 of 22 (18%) |
+| Baseline picks the least-departing option | 20 of 22 (91%) |
+
+**What this means.**
+1. **The success bar cannot discriminate.** With two relaxations the ladder tries every combination, so it solves every solvable case by definition. An agent cannot beat 100%, and "more than the baseline on success" is the wrong test. The original bar is superseded.
+2. **Reaching 5 is not the same as being comparable.** Success is counted by number only. Among the 9 cases that depend on widening the condition, some parents look sensible (Mastocytosis, Eye Infections, Nose Diseases, Synovial Cyst) and some do not: neonatal lupus widened to **Xerostomia**, and protein-losing enteropathy to **Intestinal Diseases**, which adds 2,213 trials. In one of the 30 cases, "smallest parent pool" also gave **Death** as the parent of "Pregnancy; Birth Weight" (not the baseline's pick, but it shows the heuristic's risk). These need a clinician's review, not a count.
+3. **`intervention_class` was dropped.** With no pack the engine has no hard filter on intervention type (it only adds a 0.1 score weight), so there is nothing to loosen. It only exists as a pack's drug-vs-device filter.
+4. **Where an agent could still add value:** choosing between parents when the smallest is clinically wrong, explaining why a design is thin ("only 2 Phase 3 trials exist for this condition, 12 at Phase 2"), and handling designs that need a wider search than two relaxations. None is a success-rate gain; each needs its own measure.
+
+**Recommendation.** Do not build the agent now. A deterministic "Try loosening the phase / widening the condition" hint costs nothing, needs no key, and solves every solvable case. Revisit the agent only if user sessions show people need the explanation or the parent choice, and then judge it on a clinician-rated suggestion-quality score, not on reaching 5.
+
+## 12. Open questions
 - Which relaxations are valid enough to suggest? Dropping the condition level may produce trials that are not comparable at all; the 30-design test set needs a clinician's eye on that, not just a count.
 - Is the follow-up question frequent enough to justify it? That needs the user sessions in `docs/metrics.md`.
