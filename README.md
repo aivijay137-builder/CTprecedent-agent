@@ -5,19 +5,19 @@ Paste a draft trial design. Get the closest past trials from ClinicalTrials.gov,
 **Live demo:** https://ct-precedent-agent.vercel.app (no key needed; AI reading is off unless you add your own key under "AI key").
 
 ## What it looks like
-Real run on the live site with an invented heart-failure draft (no confidential data). The AI reader was off, so the population checks show as "Not checked" instead of a guess.
+A real run against the full ClinicalTrials.gov registry (data as of 19 Nov 2026), using an invented type 2 diabetes draft with no confidential data. The AI reader was off, so cutoffs are read by simple rules.
 
 **1. Describe the design** (any condition, with a registry condition lookup)
 
-<img src="docs/screens/01_new_design.png" alt="New design form: condition, phase, endpoint, enrollment, countries and eligibility criteria" width="720">
+<img src="docs/screens/01_new_design.png" alt="New design form: condition, phase, intervention type, control arm, endpoint, enrollment, countries and eligibility criteria" width="720">
 
 **2. Confirm the cutoffs read from the criteria**, each with the sentence it came from. Nothing runs until you confirm.
 
-<img src="docs/screens/02_confirm_cutoffs.png" alt="Seven eligibility cutoffs, each shown with its source sentence and an Edit link" width="720">
+<img src="docs/screens/02_confirm_cutoffs.png" alt="Confirm screen: the design, two age cutoffs each shown with its source sentence, and the design elements to check" width="720">
 
-**3. Results:** 30 comparable trials and a flag that shows its count (n) and links to the trials, plus an explicit "Not checked" list.
+**3. Results:** 30 comparable trials and two flags, each showing its count (n) with a link to the trials. Anything the check could not do is listed under "Not checked" and never guessed.
 
-<img src="docs/screens/03_results_flags.png" alt="Results: 30 comparable trials, a Sites flag with n = 178, and a Not checked list" width="720">
+<img src="docs/screens/03_results_flags.png" alt="Results: 30 comparable trials, a Sites flag with n = 232, an Endpoints flag with n = 28, and a Not checked note" width="720">
 
 ## Run it locally (about 2 minutes)
 
