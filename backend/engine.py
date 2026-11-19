@@ -74,6 +74,7 @@ class Ctx:
     def __init__(self):
         self.con = connect()
         self.audit: list[dict] = []
+        self.pack_log: dict | None = None  # filled when a therapeutic pack re-ranks the candidates
 
     def q(self, name: str, sql: str):
         sql = sql.strip()
@@ -144,7 +145,7 @@ SEED_KEYS = {"min_age", "max_age", "fev1_pct_predicted_min", "fev1_pct_predicted
              "exacerbations_prior_year_min", "smoking_pack_years_min"}  # columns already parsed in precedent.duckdb (COPD)
 
 
-def comparable_cutoffs(cx, ids, keys, meta, budget):
+def comparable_cutoffs(cx, ids, keys, meta, budget, addon=""):
     """{key: {nct_id: number or None}} for the comparables read so far, plus a summary.
     Source 1 (SQL): cutoffs already parsed in precedent.duckdb. Source 2: the AI reader, cached in app.db, with a time limit
     so a run never waits minutes; whatever is not read yet is picked up on the next Re-run."""
@@ -167,7 +168,7 @@ WHERE status='ok' AND {k}_status IN ('ok','not_stated') AND nct_id IN ({IN})""")
 SELECT nct_id, criteria FROM study_eligibility WHERE nct_id IN ({ids_sql(pending)})"""))
             fields = [{"key": k, "label": meta[k]["label"]} for k in keys if need[k]]
             deadline = time.time() + float(os.environ.get("LLM_TIME_BUDGET_S") or 40)
-            r = readers.extract_targets({n: texts.get(n) or "" for n in pending}, fields, budget, deadline)
+            r = readers.extract_targets({n: texts.get(n) or "" for n in pending}, fields, budget, deadline, addon)
             info.update(ai=True, calls=r["calls"], not_yet_read=r["not_yet_read"], error=r["error"])
             for (n, k), rec in r["values"].items():
                 if k in vals and n not in vals[k]:
@@ -192,7 +193,7 @@ def F(text: str, ids: list[str], n: int | None = None) -> dict:
 
 
 # ------------------------------------------------------------------ step 1: comparables
-def find_comparables(cx: Ctx, brief, excluded: list[str]):
+def find_comparables(cx: Ctx, brief, excluded: list[str], pack: dict | None = None):
     pool = pool_sql(brief)
     self_id = brief.nct_id or ""
     rows = cx.q("1. Candidate trials (hard filters: same condition, interventional, phase overlap, not the draft itself)", f"""
@@ -275,6 +276,9 @@ WHERE s.nct_id IN ({pool}) AND s.study_type = 'INTERVENTIONAL' AND {phase_pred(b
                 c["why"] += f", eligibility wording overlaps {round(elig * 100)}%"
         short.sort(key=lambda c: (-c["score"], c["nct_id"]))
         cand = short + cand[200:]
+    if pack:  # optional therapeutic pack: hard filter and ranking hints (backend/packlib). With no pack this line does nothing.
+        from .packlib import rank as pack_rank
+        cand, cx.pack_log = pack_rank.apply(cx, cand, brief, pack)
     top = cand[:MAX_COMPARABLES]
     drop = set(excluded)  # removed AFTER ranking, so a removal lowers the count instead of pulling in a replacement
     top = [c for c in top if c["nct_id"] not in drop]
@@ -285,7 +289,13 @@ WHERE s.nct_id IN ({pool}) AND s.study_type = 'INTERVENTIONAL' AND {phase_pred(b
 WRITER_START_BY_S = 90  # the AI sentence writer (one ~4 s call) starts only if the run is younger than this
 
 
-def run(brief, focus: list[str], excluded: list[str], progress=lambda step, status: None) -> dict:
+def packlib_addon(pack) -> str:
+    """The add-on text a pack contributes to the AI prompt (empty when no pack or the add-on switch is off)."""
+    from .packlib import merge as pack_merge
+    return pack_merge.addon_for(pack)
+
+
+def run(brief, focus: list[str], excluded: list[str], progress=lambda step, status: None, pack: dict | None = None) -> dict:
     t_run = time.time()
     cx = Ctx()
     budget = llmsvc.Budget()
@@ -299,7 +309,7 @@ def run(brief, focus: list[str], excluded: list[str], progress=lambda step, stat
     label = cond_label(brief)
 
     progress(1, "running")
-    top, n_candidates, df = find_comparables(cx, brief, excluded)
+    top, n_candidates, df = find_comparables(cx, brief, excluded, pack)
     ids = [c["nct_id"] for c in top]
     IN = ids_sql(ids)
     progress(1, "done")
@@ -372,7 +382,7 @@ SELECT list(nct_id ORDER BY nct_id) FROM prec.copd_cutoffs WHERE status='ok' AND
         meta = brief_cutoff_meta(brief)
         cut_keys = [k for k in meta if k not in ("min_age", "max_age")]
         if cut_keys and ids:
-            vals, info = comparable_cutoffs(cx, ids, cut_keys, meta, budget)
+            vals, info = comparable_cutoffs(cx, ids, cut_keys, meta, budget, packlib_addon(pack))
             D["cut_info"] = info
             for k in cut_keys:
                 m, direction = meta[k], ("min" if k.endswith("_min") else "max")
@@ -564,7 +574,7 @@ WHERE nct_id IN ({IN}) AND overall_status IN ({",".join(lit(x) for x in cfg.DESI
         "run_id": "", "brief_echo": brief.model_dump(), "data_as_of": synced_through(cx, as_of), "condition_support": "full" if copd else "basic",
         "bottom_line": {"risk": risk, "n_comparables": len(ids), "n_terminated": n_term, "n_terminated_enrollment": n_te, "sentence": sentence},
         "comparables": comps, "outcomes": outcomes, "stop_causes": stop_causes, "elements": el, "flags": flags,
-        "no_flags_reason": no_flags_reason, "rule_notes": notes, "ai_usage": {"calls": budget.used, "tokens": budget.tokens, "own_key": bool(llmsvc.current())}, "limits": limits, "diff": None, "package_id": None, "audit": cx.audit}
+        "no_flags_reason": no_flags_reason, "pack": cx.pack_log if pack else None, "rule_notes": notes, "ai_usage": {"calls": budget.used, "tokens": budget.tokens, "own_key": bool(llmsvc.current())}, "limits": limits, "diff": None, "package_id": None, "audit": cx.audit}
 
 
 def apply_diff(parent: dict, res: dict) -> dict:

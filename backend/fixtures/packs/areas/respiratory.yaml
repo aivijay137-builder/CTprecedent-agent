@@ -1,0 +1,19 @@
+id: respiratory
+level: area
+label: Respiratory
+version: 0.1.0
+status: draft
+routing: {mesh_terms: [Respiratory Tract Diseases], exclude_mesh_terms: [Neoplasms], priority: 30, parent: null}
+prompt_addon: Respiratory area text. Spirometry is post-bronchodilator.
+extraction_fields:
+  - {name: fev1_pct, label: FEV1, unit: "% predicted"}
+  - {name: exacerbations, label: Exacerbations, unit: count}
+subtypes:
+  - {name: copd, regex: "copd|chronic obstructive", mode: boost}
+  - {name: asthma, regex: "asthma", mode: boost}
+trial_archetypes:
+  - {name: lab_or_physiologic_change, regex: "fev1|change from baseline", mode: boost}
+  - {name: survival_or_events, regex: "death|mortality|exacerbation", mode: boost}
+era_breakpoints:
+  - {name: biologics, regex: "dupilumab", proposed_year: 2015, mode: penalty}
+intervention_split: {name: intervention_class, mode: hard_filter, relax_rank: 1}

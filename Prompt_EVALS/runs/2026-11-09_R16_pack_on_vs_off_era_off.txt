@@ -1,0 +1,29 @@
+# pack_on_vs_off_era_off: Same what-changes run with the era penalty off by default (the 3 golden designs, AI off).
+# command: python EVALS/scripts/pack_on_vs_off.py
+# when: 2026-11-09 23:53   exit status: 0
+
+
+=== bronchiectasis_nct  ->  Respiratory  [draft]
+  hard filter: not applied  (every candidate is already drug_biologic)
+  ranking hints: design subtypes ['cystic_fibrosis_bronchiectasis'], design endpoint type None; boosted subtype 24, boosted endpoint type 0, era-penalised 0 (of 26 considered)
+  comparables: 26 in both lists, 16 at the same rank, 0 dropped by the pack, 0 brought in by the pack
+  flags: same ['endpoint_precedent', 'sites_competing_trials'], only prompt-only [], only with pack [], n changed []
+  bottom line: prompt-only '26 comparable trials; 3 terminated, 1 for slow enrollment.' | with pack '26 comparable trials; 3 terminated, 1 for slow enrollment.'
+
+=== heart_failure_form  ->  Cardiovascular  [draft]
+  hard filter: APPLIED, removed 95  (removed 95 trials that are not drug_biologic)
+  ranking hints: design subtypes [], design endpoint type survival_or_events; boosted subtype 0, boosted endpoint type 85, era-penalised 0 (of 315 considered)
+  comparables: 29 in both lists, 28 at the same rank, 1 dropped by the pack, 1 brought in by the pack
+     + in : #30 NCT03745898 The Impact of Low Flow Nocturnal Oxygen Therapy on Hospital Admissions | on type, pack boost: same endpoint type (survival_or_events)
+     - out: was #29 NCT06694727 A Danish Pragmatic Randomized Trial of Nutritional Supplements in Hear
+  flags: same ['sites_competing_trials'], only prompt-only [], only with pack [], n changed []
+  bottom line: prompt-only '30 comparable trials; 7 terminated.' | with pack '30 comparable trials; 8 terminated, 1 for slow enrollment.'
+
+=== psoriasis_form  ->  Dermatology > Psoriasis  [draft]
+  hard filter: APPLIED, removed 4  (removed 4 trials that are not drug_biologic)
+  ranking hints: design subtypes ['psoriasis'], design endpoint type response_or_remission; boosted subtype 250, boosted endpoint type 183, era-penalised 0 (of 261 considered)
+  comparables: 30 in both lists, 30 at the same rank, 0 dropped by the pack, 0 brought in by the pack
+  flags: same ['sites_competing_trials'], only prompt-only [], only with pack [], n changed []
+  bottom line: prompt-only '30 comparable trials; 1 terminated.' | with pack '30 comparable trials; 1 terminated.'
+
+saved EVALS/results/pack_on_vs_off_2026-11-09.json

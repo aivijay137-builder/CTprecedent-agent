@@ -64,7 +64,7 @@ def ask_json(system: str, user: str, model: str = None, client=None, retries: in
             if i == retries - 1:
                 raise
             wait = _retry_after(str(e), 2 ** i)
-            if wait > 300:  # a daily cap, not a per-minute one: waiting here is pointless, fail fast
+            if wait > float(os.environ.get("LLM_MAX_WAIT_S", 300)):  # a daily cap, or a wait the caller will not sit through: fail fast so the next model can try
                 raise
             time.sleep(wait)
         except BadRequestError:

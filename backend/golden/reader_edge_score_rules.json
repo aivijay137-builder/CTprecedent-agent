@@ -1,0 +1,97 @@
+{
+ "no_limit": {
+  "cases": 6,
+  "passed": 6
+ },
+ "hostile": {
+  "cases": 8,
+  "passed": 8
+ },
+ "rows": [
+  {
+   "id": "E01",
+   "kind": "no_limit",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "E02",
+   "kind": "no_limit",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "E03",
+   "kind": "no_limit",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "E04",
+   "kind": "no_limit",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "E05",
+   "kind": "no_limit",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "E06",
+   "kind": "no_limit",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H01",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H02",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H03",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H04",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H05",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H06",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H07",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  },
+  {
+   "id": "H08",
+   "kind": "hostile",
+   "passed": true,
+   "bad": []
+  }
+ ],
+ "failed_calls": []
+}

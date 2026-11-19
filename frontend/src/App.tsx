@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { api, demoExamples, demoReset, setRole } from "./api";
 import { Confirm } from "./components/Confirm";
 import { NewDesign } from "./components/NewDesign";
+import { CompareView } from "./components/CompareView";
 import { Settings } from "./components/Settings";
 import { loadAi } from "./llmKey";
 import { Criteria } from "./components/Criteria";
@@ -9,10 +10,10 @@ import { PackageView } from "./components/PackageView";
 import { Progress } from "./components/Progress";
 import { Results } from "./components/Results";
 import { LeftNav, NAV, SidePanel, TopBar, type Status } from "./components/Shell";
-import type { DesignBrief, Element, Flag, Health, PackageSnapshot, Role, RunResult } from "./types";
+import type { Compare, DesignBrief, Element, Flag, Health, PackChoice, PackageSnapshot, Role, RunResult } from "./types";
 import { store } from "./util";
 
-type Mode = "criteria" | "confirm" | "progress" | "results" | "new" | "settings";
+type Mode = "criteria" | "confirm" | "progress" | "results" | "new" | "settings" | "compare";
 const DEFAULT_NCT = "NCT03460704"; // only the saved-results demo opens on this trial; the live app starts empty
 interface Saved { brief: DesignBrief; draftVersion: number; runId: string | null; runDraft: number | null }
 
@@ -28,6 +29,9 @@ export default function App() {
   const [run, setRun] = useState<RunResult | null>(null);
   const [progressId, setProgressId] = useState<string | null>(null);
   const [excluded, setExcluded] = useState<string[]>([]);
+  const [packChoice, setPackChoice] = useState<PackChoice | null>(null);  // null = prompt only (the default); never saved between sessions
+  const [compareWith, setCompareWith] = useState<string | null>(null);   // the pack run we are comparing against while the prompt-only run is in progress
+  const [cmp, setCmp] = useState<Compare | null>(null);
   const [pkg, setPkg] = useState<PackageSnapshot | null>(null);
   const [error, setError] = useState("");
   const retry = useRef<() => void>(() => {});
@@ -79,7 +83,7 @@ export default function App() {
   const startRun = async (b: DesignBrief, focus: Element[]) => {
     setError("");
     try {
-      const { run_id } = await api.createRun(b, focus, []);
+      const { run_id } = await api.createRun(b, focus, [], packChoice);
       retry.current = () => startRun(b, focus);
       setBrief(b);  // keep the cutoffs read on the Confirm screen, so a Re-run checks the same ones
       setProgressId(run_id); setMode("progress");
@@ -89,13 +93,28 @@ export default function App() {
     if (!run || !brief) return;
     setError("");
     try {
-      const { run_id } = await api.rerun(run.run_id, brief, excluded);
+      const { run_id } = await api.rerun(run.run_id, brief, excluded, packChoice);
       retry.current = startRerun;
       setProgressId(run_id); setMode("progress");
     } catch (e) { setError((e as Error).message); }
   };
+  // run the same design again WITHOUT the pack, then show what changed. The pack run stays the current result.
+  const startCompare = async () => {
+    if (!run) return;
+    setError("");
+    try {
+      const { run_id } = await api.rerun(run.run_id, run.brief_echo, excluded, null);
+      retry.current = startCompare;
+      setCompareWith(run.run_id); setProgressId(run_id); setMode("progress");
+    } catch (e) { setError((e as Error).message); }
+  };
   const finished = async () => {
     if (!progressId) return;
+    if (compareWith) {
+      const packRun = compareWith; setCompareWith(null);
+      try { setCmp(await api.compare(progressId, packRun)); setMode("compare"); } catch (e) { setError((e as Error).message); setMode("results"); }
+      return;
+    }
     setRun(await api.getRun(progressId)); setRunDraft(draftVersion); setExcluded([]); setMode("results");
   };
   const decide = async (f: Flag, action: string, reason?: string) => {
@@ -109,12 +128,12 @@ export default function App() {
   const loadNct = async (nct: string): Promise<string | null> => {
     try {
       setBrief(await api.fromNct(nct));
-      setDraftVersion((v) => v + 1); setRun(null); setRunDraft(null); setExcluded([]); setPkg(null); setError("");
+      setDraftVersion((v) => v + 1); setRun(null); setRunDraft(null); setExcluded([]); setPkg(null); setError(""); setPackChoice(null);
       return null;
     } catch (e) { return (e as Error).message; }
   };
   const submitNewDesign = (b: DesignBrief) => {
-    setBrief(b); setDraftVersion((v) => v + 1); setRun(null); setRunDraft(null); setExcluded([]); setPkg(null); setError("");
+    setBrief(b); setDraftVersion((v) => v + 1); setRun(null); setRunDraft(null); setExcluded([]); setPkg(null); setError(""); setPackChoice(null);
     setMode("confirm");
   };
   const openPrecedent = () => { setNav("population"); if (role === "lead") setMode(run ? "results" : "confirm"); };
@@ -148,6 +167,8 @@ export default function App() {
     );
   } else if (role === "reviewer") {
     centre = <PackageView pkg={pkg} onReview={review} />;
+  } else if (mode === "compare" && cmp) {
+    centre = <CompareView cmp={cmp} onBack={() => setMode(run ? "results" : "criteria")} />;
   } else if (mode === "settings") {
     centre = <Settings onClose={() => setMode(run ? "results" : "criteria")} />;
   } else if (mode === "new") {
@@ -157,7 +178,7 @@ export default function App() {
       <>
         {error && <div className="banner red" role="alert">{error}</div>}
         <Confirm brief={brief} onChange={editBrief} onRun={startRun} onCancel={() => { setError(""); setMode(run ? "results" : "criteria"); }}
-          onLoadNct={loadNct} fixtures={!!health?.fixtures} onNewDesign={() => setMode("new")} />
+          onLoadNct={loadNct} fixtures={!!health?.fixtures} onNewDesign={() => setMode("new")} packChoice={packChoice} onPackChange={setPackChoice} />
       </>
     );
   } else if (mode === "progress" && progressId) {
@@ -168,7 +189,7 @@ export default function App() {
         {error && <div className="banner red" role="alert">{error}</div>}
         <Results run={run} outOfDate={outOfDate} excluded={excluded} packaged={!!run.package_id}
           onToggleExcluded={(id) => setExcluded((x) => (x.includes(id) ? x.filter((i) => i !== id) : [...x, id]))}
-          onDecide={decide} onRerun={startRerun} onPackage={makePackage} />
+          onDecide={decide} onRerun={startRerun} onPackage={makePackage} onCompare={run.pack ? startCompare : undefined} />
       </>
     );
   } else {

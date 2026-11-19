@@ -15,8 +15,22 @@ data/
 frontend/dist-demo/
 demo/artifact/
 
-# --- documentation and working docs: local only (bare-minimum repo) ---
-docs/
+# --- working notes and planning: one folder, kept local ---
+_private/
+
+# --- docs: only these are public; everything else in docs/ stays local ---
+docs/*
+!docs/HLD.md
+!docs/user_flow.md
+!docs/safety.md
+!docs/risk_register.md
+!docs/metrics.md
+!docs/compliance.md
+!docs/production.md
+!docs/agent_design.md
+Prompt_EVALS/screens/
+
+# --- old root-level working files (now in _private/) ---
 decision.md
 PROMPTS.md
 flag rules.md

@@ -16,9 +16,17 @@ class NctIn(BaseModel):
     nct_id: str
 
 
+class PackChoice(BaseModel):
+    """The design lead's pack choice for one run. Empty = prompt only (the default). parts: addon, ranking, hard_filter (each true or false)."""
+    area: Optional[str] = None
+    indication: Optional[str] = None
+    parts: dict[str, bool] = Field(default_factory=dict)
+
+
 class ParseIn(BaseModel):
     eligibility_text: str
     condition: str = ""
+    pack: Optional[PackChoice] = None
 
 
 class Cutoff(BaseModel):
@@ -41,6 +49,7 @@ class RunIn(BaseModel):
     focus: list[Element] = Field(default_factory=lambda: list(ALL_ELEMENTS))
     filters: dict = Field(default_factory=dict)
     excluded_ids: list[str] = Field(default_factory=list)
+    packs: Optional[PackChoice] = None
 
 
 class RunId(BaseModel):
@@ -50,6 +59,7 @@ class RunId(BaseModel):
 class RerunIn(BaseModel):
     brief: DesignBrief
     excluded_ids: list[str] = Field(default_factory=list)
+    packs: Optional[PackChoice] = None
 
 
 class BottomLine(BaseModel):
@@ -151,6 +161,7 @@ class RunResult(BaseModel):
     flags: list[Flag] = Field(default_factory=list, max_length=3)
     no_flags_reason: Optional[str] = None  # set when flags is empty on purpose
     rule_notes: list[str] = Field(default_factory=list)  # why a rule could not be checked
+    pack: Optional[dict] = None  # what the therapeutic pack did in this run (None = prompt only)
     ai_usage: Optional[dict] = None  # {calls, tokens, own_key}: what the AI reading cost this run
     limits: list[str]
     diff: Optional[Diff] = None  # only on a re-run

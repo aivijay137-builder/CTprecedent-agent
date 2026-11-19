@@ -1,0 +1,1 @@
+{'seed': 'NCT03460704', 'ids': 35, 'unknown_ids': [], 'bad_n': [], 'findings': 13}

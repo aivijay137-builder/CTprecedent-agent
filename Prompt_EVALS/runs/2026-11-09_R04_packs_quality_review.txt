@@ -1,0 +1,37 @@
+# packs_quality_review: Quality review across the 19 packs: coverage, low-n norms, early or missing era breakpoints.
+# command: python EVALS/scripts/packs_quality_review.py
+# when: 2026-11-09 23:43   exit status: 0
+
+pack                        trials  ph2/3 era_yr subs<30 flds<30 norms_lowN p3_term p3_enr_med
+cardiovascular               40023   9121   2021       0       0       7/14    0.17      206.0
+dermatology                  10736   4507   2012       0       1       9/14    0.12      254.0
+gastro_hepatology            16850   5658   2014       0       0       1/14    0.16      174.0
+hematology_nonmalignant       5373   2630   2022       0       0       0/14    0.19      110.0
+infectious_disease           31369  12156   2020       0       0       7/14    0.13      356.0
+metabolic_endocrine          41080  10434   2006       0       0       0/14    0.14      217.0
+nephrology_urology           10566   3071   2021       0       1       4/14    0.21      153.0
+neurology                    52164  12418   2016       0       0       4/14    0.18      200.0
+oncology_heme                17028  10224   2013       0       0       0/14     0.2      250.0
+oncology_solid               67867  34347   2014       0       0       0/14     0.2      275.0
+ophthalmology                10352   3235   2006       0       0      10/14    0.14      206.5
+psychiatry                   39540   8497   2013       0       0       4/14    0.14      244.0
+rare_genetic                 14799   5856   None       0       0       7/14    0.18       91.0
+respiratory                  27532   9474   2014       0       0       4/14    0.16      295.0
+rheumatology_msk             22261   5897   2005       0       0       7/14    0.14      202.0
+womens_health                17798   4585   None       1       0       7/14    0.19      170.0
+asthma                        3272   1245   2017       0       0       6/14     0.1      305.0
+copd                          3892   1077   None       1       1       9/21     0.1      440.0
+psoriasis                     1392    685   2012       2       2      10/14    0.08      338.5
+
+things to review:
+ - dermatology: 0 subtypes and 1 fields rest on fewer than 30 trials
+ - metabolic_endocrine: era breakpoint 2006 looks too early to be a standard-of-care shift
+ - nephrology_urology: 0 subtypes and 1 fields rest on fewer than 30 trials
+ - ophthalmology: era breakpoint 2006 looks too early to be a standard-of-care shift
+ - rare_genetic: no era breakpoint found
+ - rheumatology_msk: era breakpoint 2005 looks too early to be a standard-of-care shift
+ - womens_health: no era breakpoint found
+ - womens_health: 1 subtypes and 0 fields rest on fewer than 30 trials
+ - copd: no era breakpoint found
+ - copd: 1 subtypes and 1 fields rest on fewer than 30 trials
+ - psoriasis: 2 subtypes and 2 fields rest on fewer than 30 trials

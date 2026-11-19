@@ -1,0 +1,9 @@
+id: _base
+level: base
+version: 0.0.1
+status: draft
+routing: {default: true}
+prompt_addon: "(none)"
+subtypes: []
+trial_archetypes: []
+era_breakpoints: []

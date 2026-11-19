@@ -1,0 +1,12 @@
+# packs_negative_tests: Can the validator FAIL? Six deliberately broken packs must all be rejected.
+# command: python EVALS/scripts/packs_negative_tests.py
+# when: 2026-11-09 23:43   exit status: 0
+
+original cardiovascular pack: valid
+caught: number without an n in design_norms  ->  Value error, numbers without an n at design_norms.phase3.mystery: ['p50'] [type=
+caught: rule without a rationale  ->  subtypes.0.rationale
+caught: rule without evidence  ->  subtypes.0.evidence
+caught: hard filter without a fallback rank  ->  intervention_split
+caught: prompt add-on over 150 words  ->  prompt_addon
+caught: wrong low_n flag (n=5 but low_n false)  ->  cutoff_norms.13
+6 of 6 broken packs rejected

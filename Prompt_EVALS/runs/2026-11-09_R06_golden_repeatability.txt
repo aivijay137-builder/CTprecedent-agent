@@ -1,0 +1,8 @@
+# golden_repeatability: Is the golden snapshot repeatable? Re-run the prompt-only engine on 3 designs and compare with the saved snapshot.
+# command: python EVALS/scripts/golden_repeatability.py
+# when: 2026-11-09 23:44   exit status: 0
+
+bronchiectasis_nct: IDENTICAL  (26 comparables, flags ['endpoint_precedent', 'sites_competing_trials'])
+heart_failure_form: IDENTICAL  (30 comparables, flags ['sites_competing_trials'])
+psoriasis_form: IDENTICAL  (30 comparables, flags ['sites_competing_trials'])
+golden snapshot is repeatable

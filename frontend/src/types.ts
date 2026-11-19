@@ -69,6 +69,7 @@ export interface RunResult {
   brief_echo: DesignBrief;
   data_as_of: string;
   ai_usage?: { calls: number; tokens: number; own_key: boolean } | null;
+  pack?: PackLog | null;
   condition_support: "full" | "basic";
   bottom_line: {
     risk: "low" | "medium" | "high" | "insufficient";
@@ -110,3 +111,24 @@ export interface TrialSummary {
 export interface Health { data_as_of: string; row_counts: Record<string, number>; llm_configured: boolean; fixtures: boolean }
 
 export interface StepEvent { step: number; label: string; status: "running" | "done"; elapsed_ms: number }
+
+// ---- therapeutic packs (optional; the server reports none when no pack files are installed)
+export interface PackInfo { id: string; level: "area" | "indication"; label: string; version: string; status: string; parent?: string | null }
+export interface PackChoice { area: string | null; indication: string | null; parts: Record<string, boolean> }
+export interface PackRoute {
+  available: boolean; area?: string | null; indication?: string | null; reason?: string; all_packs?: PackInfo[];
+  preview?: { label: string; status: string; versions: Record<string, string>; addon_text: string; n_subtypes: number; n_endpoint_types: number; n_era_rules: number; hard_filter?: string | null } | null;
+}
+export interface PackLog {
+  pack: string; status: string; parts: Record<string, boolean>;
+  hard_filter: { applied: boolean; relaxed: boolean; removed: number; reason: string; name?: string; would_remove?: number };
+  ranking: { applied: boolean; reason?: string; design_subtypes?: string[]; design_endpoint_type?: string | null; boosted_subtype?: number; boosted_endpoint_type?: number; penalised_era?: number; era_applied?: boolean; window?: number };
+}
+export interface CompareRow { nct_id: string; title: string; why_picked: string; rank_a?: number; rank_b?: number }
+export interface Compare {
+  a: { run_id: string; label: string; n_comparables: number; risk: string | null; sentence: string | null; ai_usage?: { calls: number; tokens: number } | null };
+  b: { run_id: string; label: string; n_comparables: number; risk: string | null; sentence: string | null; ai_usage?: { calls: number; tokens: number } | null };
+  comparables: { in_both: number; same_rank: number; only_a: CompareRow[]; only_b: CompareRow[]; moved: CompareRow[] };
+  flags: { in_both: string[]; only_a: string[]; only_b: string[]; n_changed: { id: string; n_a: number; n_b: number }[] };
+  pack_log: Partial<PackLog>; note: string;
+}

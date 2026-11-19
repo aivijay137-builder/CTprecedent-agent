@@ -1,0 +1,37 @@
+# pack_on_vs_off_first_look: First look on real data: what changes when the routed pack is ON vs prompt only? (3 golden designs, AI off, no verdict on quality)
+# command: python EVALS/scripts/pack_on_vs_off.py
+# when: 2026-11-09 23:52   exit status: 0
+
+
+=== bronchiectasis_nct  ->  Respiratory  [draft]
+  hard filter: not applied  (every candidate is already drug_biologic)
+  ranking hints: design subtypes ['cystic_fibrosis_bronchiectasis'], design endpoint type None; boosted subtype 24, boosted endpoint type 0, era-penalised 11 (of 26 considered)
+  comparables: 26 in both lists, 4 at the same rank, 0 dropped by the pack, 0 brought in by the pack
+  flags: same ['endpoint_precedent', 'sites_competing_trials'], only prompt-only [], only with pack [], n changed []
+  bottom line: prompt-only '26 comparable trials; 3 terminated, 1 for slow enrollment.' | with pack '26 comparable trials; 3 terminated, 1 for slow enrollment.'
+
+=== heart_failure_form  ->  Cardiovascular  [draft]
+  hard filter: APPLIED, removed 95  (removed 95 trials that are not drug_biologic)
+  ranking hints: design subtypes [], design endpoint type survival_or_events; boosted subtype 0, boosted endpoint type 85, era-penalised 233 (of 315 considered)
+  comparables: 28 in both lists, 6 at the same rank, 2 dropped by the pack, 2 brought in by the pack
+     + in : #23 NCT07238452 Optimal PharmacoTherapy and Invasive Management of Atrial Fibrillation | on type, pack boost: same endpoint type (survival_or_events)
+     + in : #26 NCT07234422 The SELEQT-HF (SELEnium and CoQ10 NuTrition for Heart Failure) Study W | on type, pack boost: same endpoint type (survival_or_events)
+     - out: was #29 NCT06694727 A Danish Pragmatic Randomized Trial of Nutritional Supplements in Hear
+     - out: was #30 NCT00634309 Candesartan Cilexetil in Heart Failure Assessment of Reduction in Mort
+  flags: same ['sites_competing_trials'], only prompt-only [], only with pack [], n changed []
+  bottom line: prompt-only '30 comparable trials; 7 terminated.' | with pack '30 comparable trials; 7 terminated.'
+
+=== psoriasis_form  ->  Dermatology > Psoriasis  [draft]
+  hard filter: APPLIED, removed 4  (removed 4 trials that are not drug_biologic)
+  ranking hints: design subtypes ['psoriasis'], design endpoint type response_or_remission; boosted subtype 250, boosted endpoint type 183, era-penalised 79 (of 261 considered)
+  comparables: 26 in both lists, 4 at the same rank, 4 dropped by the pack, 4 brought in by the pack
+     + in : #25 NCT04673786 A Study to Compare the Efficacy and Safety of CT-P43 to Stelara in Pat | sis); pack boost: same endpoint type (response_or_remission)
+     + in : #26 NCT02714322 MYL-1401A Efficacy and Safety Comparability Study to Humira® | sis); pack boost: same endpoint type (response_or_remission)
+     + in : #27 NCT04167462 An Investigational Study to Evaluate Experimental Medication BMS-98616 | sis); pack boost: same endpoint type (response_or_remission)
+     - out: was #22 NCT01313221 Efficacy and Safety of Etanercept 50 mg Once Weekly Plus As Needed Top
+     - out: was #23 NCT01001208 The Efficacy and Safety of Adding Methotrexate to Etanercept in Psoria
+     - out: was #27 NCT00237887 Efficacy and Safety of Adalimumab in Subjects With Moderate to Severe 
+  flags: same ['sites_competing_trials'], only prompt-only [], only with pack [], n changed []
+  bottom line: prompt-only '30 comparable trials; 1 terminated.' | with pack '30 comparable trials; 1 terminated.'
+
+saved EVALS/results/pack_on_vs_off_2026-11-09.json

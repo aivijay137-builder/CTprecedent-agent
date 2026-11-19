@@ -1,0 +1,366 @@
+{
+ "bronchiectasis_nct": {
+  "route": {
+   "indication": null,
+   "area": "respiratory",
+   "reason": "Matched Respiratory through the condition's MeSH terms."
+  },
+  "compare": {
+   "a": {
+    "run_id": "bronchiectasis_nct_off",
+    "label": "Prompt only",
+    "n_comparables": 26,
+    "risk": "medium",
+    "sentence": "26 comparable trials; 3 terminated, 1 for slow enrollment.",
+    "ai_usage": {
+     "calls": 0,
+     "tokens": 0,
+     "own_key": false
+    }
+   },
+   "b": {
+    "run_id": "bronchiectasis_nct_on",
+    "label": "With pack: Respiratory",
+    "n_comparables": 26,
+    "risk": "medium",
+    "sentence": "26 comparable trials; 3 terminated, 1 for slow enrollment.",
+    "ai_usage": {
+     "calls": 0,
+     "tokens": 0,
+     "own_key": false
+    }
+   },
+   "comparables": {
+    "in_both": 26,
+    "same_rank": 16,
+    "only_a": [],
+    "only_b": [],
+    "moved": [
+     {
+      "nct_id": "NCT06418711",
+      "title": "ICoN-1 Phase 3 Study of the Efficacy and Safety of Treatment With MNKD-101, Clofazimine Inhalation Suspension",
+      "why_picked": "Phase 3 Bronchiectasis, same intervention type",
+      "rank_a": 16,
+      "rank_b": 21
+     },
+     {
+      "nct_id": "NCT00380315",
+      "title": "Therapeutic Confirmatory Clinical Trial to Evaluate the Safety and Efficacy of AG1321001 in Chronic Cougher",
+      "why_picked": "Phase 3 Bronchiectasis, same intervention type",
+      "rank_a": 22,
+      "rank_b": 25
+     },
+     {
+      "nct_id": "NCT01515007",
+      "title": "Phase 3 Study With Ciprofloxacin Dispersion for Inhalation in Non-CF Bronchiectasis (ORBIT-3)",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions exacerbation and bronchiectasis, same intervention type",
+      "rank_a": 17,
+      "rank_b": 16
+     },
+     {
+      "nct_id": "NCT07915219",
+      "title": "A Study to Learn How Well People With Bronchiectasis Tolerate Continued Treatment With Verducatib After Earlier Studies (AIRTIVITY\u00ae-ON)",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions bronchiectasis, same intervention type",
+      "rank_a": 18,
+      "rank_b": 17
+     },
+     {
+      "nct_id": "NCT00415350",
+      "title": "Bronchiectasis and Long Term Azithromycin Treatment",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions bronchiectasis, same intervention type",
+      "rank_a": 19,
+      "rank_b": 18
+     },
+     {
+      "nct_id": "NCT03715322",
+      "title": "Tobramycin in Bronchiectasis Colonized With Pseudmonas Aeruginosa",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions bronchiectasis, same intervention type",
+      "rank_a": 20,
+      "rank_b": 19
+     },
+     {
+      "nct_id": "NCT03846570",
+      "title": "Formoterol-beclomethasone in Patients With Bronchiectasis: a Randomized Controlled Trial",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions bronchiectasis, same intervention type",
+      "rank_a": 21,
+      "rank_b": 20
+     },
+     {
+      "nct_id": "NCT00277537",
+      "title": "Safety and Efficacy of Bronchitol in Bronchiectasis",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions bronchiectasis, same intervention type",
+      "rank_a": 23,
+      "rank_b": 22
+     },
+     {
+      "nct_id": "NCT04122040",
+      "title": "Effects of Roxithromycin on Quality of Life and Physiological Outcomes in Bronchiectasis",
+      "why_picked": "Phase 3 Bronchiectasis, primary outcome mentions bronchiectasis, same intervention type",
+      "rank_a": 24,
+      "rank_b": 23
+     },
+     {
+      "nct_id": "NCT06409299",
+      "title": "Enhancing Lung Health in Kids With Structural Lung Damage and Malformations: Azithromycin (AZI) for Airway Infection Prevention",
+      "why_picked": "Phase 3 Bronchiectasis, same intervention type",
+      "rank_a": 25,
+      "rank_b": 24
+     }
+    ]
+   },
+   "flags": {
+    "in_both": [
+     "endpoint_precedent",
+     "sites_competing_trials"
+    ],
+    "only_a": [],
+    "only_b": [],
+    "n_changed": []
+   },
+   "pack_log": {
+    "pack": "Respiratory",
+    "ids": [
+     "respiratory"
+    ],
+    "versions": {
+     "respiratory": "0.1.0"
+    },
+    "status": "draft",
+    "parts": {
+     "addon": true,
+     "ranking": true,
+     "hard_filter": true,
+     "era": false
+    },
+    "hard_filter": {
+     "applied": false,
+     "relaxed": false,
+     "removed": 0,
+     "reason": "every candidate is already drug_biologic",
+     "name": "intervention_class"
+    },
+    "ranking": {
+     "applied": true,
+     "reason": "",
+     "window": 26,
+     "design_subtypes": [
+      "cystic_fibrosis_bronchiectasis"
+     ],
+     "design_endpoint_type": null,
+     "boosted_subtype": 24,
+     "boosted_endpoint_type": 0,
+     "penalised_era": 0,
+     "era_applied": false,
+     "sizes": {
+      "subtype": 0.04,
+      "endpoint_type": 0.04,
+      "era": -0.04
+     }
+    }
+   },
+   "note": "This shows what changed, not which result is better. A quality check against hand-graded comparables is still to be built (BUILD.md Step 2)."
+  }
+ },
+ "heart_failure_form": {
+  "route": {
+   "indication": null,
+   "area": "cardiovascular",
+   "reason": "Matched Cardiovascular through the condition's MeSH terms."
+  },
+  "compare": {
+   "a": {
+    "run_id": "heart_failure_form_off",
+    "label": "Prompt only",
+    "n_comparables": 30,
+    "risk": "medium",
+    "sentence": "30 comparable trials; 7 terminated.",
+    "ai_usage": {
+     "calls": 0,
+     "tokens": 0,
+     "own_key": false
+    }
+   },
+   "b": {
+    "run_id": "heart_failure_form_on",
+    "label": "With pack: Cardiovascular",
+    "n_comparables": 30,
+    "risk": "medium",
+    "sentence": "30 comparable trials; 8 terminated, 1 for slow enrollment.",
+    "ai_usage": {
+     "calls": 0,
+     "tokens": 0,
+     "own_key": false
+    }
+   },
+   "comparables": {
+    "in_both": 29,
+    "same_rank": 28,
+    "only_a": [
+     {
+      "nct_id": "NCT06694727",
+      "title": "A Danish Pragmatic Randomized Trial of Nutritional Supplements in Heart Failure",
+      "why_picked": "Phase 3 Heart Failure, primary outcome mentions hospitalization and cardiovascular",
+      "rank_a": 29
+     }
+    ],
+    "only_b": [
+     {
+      "nct_id": "NCT03745898",
+      "title": "The Impact of Low Flow Nocturnal Oxygen Therapy on Hospital Admissions and Mortality in Patients With Heart Failure and Central Sleep Apnea",
+      "why_picked": "Phase 3 Heart Failure, primary outcome mentions hospitalization and cardiovascular, same intervention type, pack boost: same endpoint type (survival_or_events)",
+      "rank_b": 30
+     }
+    ],
+    "moved": [
+     {
+      "nct_id": "NCT00634309",
+      "title": "Candesartan Cilexetil in Heart Failure Assessment of Reduction in Mortality and Morbidity (CHARM Added)",
+      "why_picked": "Phase 3 Heart Failure, primary outcome mentions cardiovascular and failure, same intervention type",
+      "rank_a": 30,
+      "rank_b": 29
+     }
+    ]
+   },
+   "flags": {
+    "in_both": [
+     "sites_competing_trials"
+    ],
+    "only_a": [],
+    "only_b": [],
+    "n_changed": []
+   },
+   "pack_log": {
+    "pack": "Cardiovascular",
+    "ids": [
+     "cardiovascular"
+    ],
+    "versions": {
+     "cardiovascular": "0.1.0"
+    },
+    "status": "draft",
+    "parts": {
+     "addon": true,
+     "ranking": true,
+     "hard_filter": true,
+     "era": false
+    },
+    "hard_filter": {
+     "applied": true,
+     "relaxed": false,
+     "removed": 95,
+     "reason": "removed 95 trials that are not drug_biologic",
+     "name": "intervention_class"
+    },
+    "ranking": {
+     "applied": true,
+     "reason": "",
+     "window": 315,
+     "design_subtypes": [],
+     "design_endpoint_type": "survival_or_events",
+     "boosted_subtype": 0,
+     "boosted_endpoint_type": 85,
+     "penalised_era": 0,
+     "era_applied": false,
+     "sizes": {
+      "subtype": 0.04,
+      "endpoint_type": 0.04,
+      "era": -0.04
+     }
+    }
+   },
+   "note": "This shows what changed, not which result is better. A quality check against hand-graded comparables is still to be built (BUILD.md Step 2)."
+  }
+ },
+ "psoriasis_form": {
+  "route": {
+   "indication": "psoriasis",
+   "area": "dermatology",
+   "reason": "Matched Dermatology > Psoriasis through the condition's MeSH terms."
+  },
+  "compare": {
+   "a": {
+    "run_id": "psoriasis_form_off",
+    "label": "Prompt only",
+    "n_comparables": 30,
+    "risk": "low",
+    "sentence": "30 comparable trials; 1 terminated.",
+    "ai_usage": {
+     "calls": 0,
+     "tokens": 0,
+     "own_key": false
+    }
+   },
+   "b": {
+    "run_id": "psoriasis_form_on",
+    "label": "With pack: Dermatology > Psoriasis",
+    "n_comparables": 30,
+    "risk": "low",
+    "sentence": "30 comparable trials; 1 terminated.",
+    "ai_usage": {
+     "calls": 0,
+     "tokens": 0,
+     "own_key": false
+    }
+   },
+   "comparables": {
+    "in_both": 30,
+    "same_rank": 30,
+    "only_a": [],
+    "only_b": [],
+    "moved": []
+   },
+   "flags": {
+    "in_both": [
+     "sites_competing_trials"
+    ],
+    "only_a": [],
+    "only_b": [],
+    "n_changed": []
+   },
+   "pack_log": {
+    "pack": "Dermatology > Psoriasis",
+    "ids": [
+     "dermatology",
+     "psoriasis"
+    ],
+    "versions": {
+     "dermatology": "0.1.0",
+     "psoriasis": "0.1.0"
+    },
+    "status": "draft",
+    "parts": {
+     "addon": true,
+     "ranking": true,
+     "hard_filter": true,
+     "era": false
+    },
+    "hard_filter": {
+     "applied": true,
+     "relaxed": false,
+     "removed": 4,
+     "reason": "removed 4 trials that are not drug_biologic",
+     "name": "intervention_class"
+    },
+    "ranking": {
+     "applied": true,
+     "reason": "",
+     "window": 261,
+     "design_subtypes": [
+      "psoriasis"
+     ],
+     "design_endpoint_type": "response_or_remission",
+     "boosted_subtype": 250,
+     "boosted_endpoint_type": 183,
+     "penalised_era": 0,
+     "era_applied": false,
+     "sizes": {
+      "subtype": 0.04,
+      "endpoint_type": 0.04,
+      "era": -0.04
+     }
+    }
+   },
+   "note": "This shows what changed, not which result is better. A quality check against hand-graded comparables is still to be built (BUILD.md Step 2)."
+  }
+ }
+}

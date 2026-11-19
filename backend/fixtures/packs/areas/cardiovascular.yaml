@@ -1,0 +1,10 @@
+id: cardiovascular
+level: area
+label: Cardiovascular
+version: 0.1.0
+status: draft
+routing: {mesh_terms: [Cardiovascular Diseases, Respiratory Tract Diseases], exclude_mesh_terms: [Neoplasms], priority: 30, parent: null}
+prompt_addon: Cardiovascular area text.
+subtypes: []
+trial_archetypes: []
+era_breakpoints: []

@@ -1,0 +1,10 @@
+id: oncology_solid
+level: area
+label: Oncology, solid tumours
+version: 0.1.0
+status: draft
+routing: {mesh_terms: [Neoplasms], exclude_mesh_terms: [Lymphoma], priority: 20, parent: null}
+prompt_addon: Oncology text.
+subtypes: []
+trial_archetypes: []
+era_breakpoints: []

@@ -1,0 +1,49 @@
+# packs_unit_era_off_default: Unit tests after making the era penalty its own switch, off by default.
+# command: python -m pytest backend/test_packs.py backend/test_packs_real.py backend/test_packs_off_is_unchanged.py -q
+# when: 2026-11-09 23:53   exit status: 1
+
+..........F......F.................                                      [100%]
+================================== FAILURES ===================================
+________ test_addon_switch_off_gives_empty_text_but_keeps_other_parts _________
+
+    def test_addon_switch_off_gives_empty_text_but_keeps_other_parts():
+        e = eff({"addon": False})
+>       assert merge.addon_for(e) == "" and e["parts"] == {"addon": False, "ranking": True, "hard_filter": True}
+E       AssertionError: assert ('' == '' and {'addon': Fal... 'era': False} == {'addon': Fal...filter': True}
+E        +  where '' = <function addon_for at 0x000001393B0D9F80>({'ids': ['respiratory', 'copd'], 'label': 'Respiratory > COPD', 'versions': {'respiratory': '0.1.0', 'copd': '0.1.0'}, 'status': 'draft', ...})
+E        +    where <function addon_for at 0x000001393B0D9F80> = merge.addon_for
+E         
+E         Omitting 3 identical items, use -vv to show
+E         Left contains 1 more item:
+E         {'era': False}
+E         Use -v to get more diff)
+
+backend\test_packs.py:111: AssertionError
+__________________ test_era_penalty_and_endpoint_type_boost ___________________
+
+    def test_era_penalty_and_endpoint_type_boost():
+        c = cands(3)
+        c[0]["pm"] = "number of deaths"                     # a different endpoint type from the design's FEV1 change
+        extras = {c[0]["nct_id"]: (2010, ""), c[1]["nct_id"]: (2010, ""), c[2]["nct_id"]: (2019, "")}
+        out, log = rank.apply(FakeCx(extras=extras), c, brief(), eff({"hard_filter": False}))
+        g = log["ranking"]
+        assert g["design_endpoint_type"] == "lab_or_physiologic_change"
+        assert g["boosted_endpoint_type"] == 2               # the two FEV1 trials; the 'deaths' trial is not boosted
+>       assert g["penalised_era"] == 2                       # the fixture pack's breakpoint is 2015: the two 2010 trials are penalised, the 2019 one is not
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 0 == 2
+
+backend\test_packs.py:175: AssertionError
+============================== warnings summary ===============================
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14
+  C:\Users\vijay\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/test_packs.py::test_addon_switch_off_gives_empty_text_but_keeps_other_parts
+FAILED backend/test_packs.py::test_era_penalty_and_endpoint_type_boost - asse...
+2 failed, 33 passed, 1 warning in 12.14s

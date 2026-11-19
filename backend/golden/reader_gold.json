@@ -1,0 +1,1003 @@
+{
+ "labelled_by": "Claude (first draft), not yet reviewed by a domain expert",
+ "policy": "(what counts as a \"limit\")\n- A numeric limit on a PATIENT MEASURE: age, BMI, weight, lab value, vital sign, lung function, smoking pack-years, a clinical score, a count of events.\n- Direction is about who may ENTER: key ends _min (lowest allowed in) or _max (highest allowed in). Age keys are min_age / max_age.\n- Under Exclusion, the limit points the other way (\"excluded if eGFR < 30\" -> egfr_min 30). An excluded band is not a limit; skipped.\n- Skipped on purpose: time windows (\"within 3 months\"), drug doses, counts of visits/sessions, birth-year ranges, a child's age, ambiguous wording.\n- The same limit written twice (inclusion and exclusion) is labelled once. Sex-specific limits are labelled once per value.",
+ "items": [
+  {
+   "nct_id": "NCT04031261",
+   "condition": "Bronchial Diseases",
+   "text": "Part 1: National Validation\n\nInclusion Criteria:\n\n* All patients must have a diagnosis of severe asthma, be taking high dose inhaled corticosteroids (GINA step 4 \\& 5), and be aged 16 years or over.\n\nExclusion Criteria:\n\n* Patients that are unwilling to participate will be excluded from the study.\n* In the opinion of the physician responsible for the care of the patient, the patient has a condition, other than asthma, which is significantly contributing to their respiratory symptoms, e.g. lung cancer, heart failure or severe Chronic Obstructive Pulmonary Disease (COPD).\n* The SAQ is currently only translated into British English. Therefore, if the participant is unable to read in English, they will be unable to participate.\n\nPart 2: Sensitivity to change\n\nInclusion Criteria\n\n* Patients commencing a biologic treatment for their severe asthma (GINA step 4 \\& 5), as per NICE guidelines.\n\nExclusion Criteria\n\n* Patients will be excluded from the study if they are unwilling to participate\n* In the opinion of the physician responsible for the care of the patient, the patient has a condition, other than asthma which is significantly contributing to their respiratory symptoms, e.g. lung cancer, heart failure or severe COPD.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 16,
+     "unit": "years",
+     "fragment": "aged 16 years or over"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT01337336",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n* Diagnosis of COPD in any field in the pre-index period and 60 days after the index date\n* Diagnosis of depression/anxiety in any field and a medication for treating depression/anxiety in the pre-index period and 60 days after the index date\n* Index date occurs during identification period\n* Patients must be continuously eligible during 1-year pre and 1-year post-index date and be of at least 40 years of age\n\nExclusion Criteria:\n\n* comorbid conditions (respiratory cancer, cystic fibrosis, fibrosis due to tuberculosis, and bronchiectasis, pneumonociosis, pulmonary fibrosis, pulmonary tuberculosis, sarcoidosis) during the 1 year pre or post-index periods\n* No other maintenance medications other than the index medication on or 60 days after the index date",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 40,
+     "unit": "years",
+     "fragment": "at least 40 years of age"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT04014868",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n* Age \\> 18years and \\< 80years;\n* Chronic obstructive pulmonary disease Gold III-IV;\n* Stable (no exacerbation) in the past 4 weeks;\n* Referred for pulmonary rehabilitation (no cardiac, neurological, orthopedic, neuromuscular, psychological or psychiatric contra indication).\n\nNon-inclusion Criteria:\n\n* Acute exacerbation of chronic obstructive pulmonary disease between the incremental cardiopulmonary exercise testing and inclusion;\n* Tracheostomy;\n* Nasal high flow intolerance;\n* Pregnancy or likely to be;\n* Unable to consent;\n* Patients under guardianship.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Age \\> 18years"
+    },
+    {
+     "key": "max_age",
+     "value": 80,
+     "unit": "years",
+     "fragment": "\\< 80years"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT01285882",
+   "condition": "Pancreatic Diseases",
+   "text": "Inclusion Criteria:\n\n* For patients :\n\n  * Adult patient (those concerned by the suggestion of lung transplant).\n  * At the time of transplant indication : after the first suggestion of the medical person, before or after the preoperative graft check-up but before registration on waiting list.\n* For medical persons :\n\n  * Medical persons involved in the suggestion of lung transplantation to the patients.\n* For assistants :\n\n  * Adult close to the patient and that the patient sees as a resource person and advisor in his choices for the transplant : reference person having a major influence for the patient (spouse, parent, sibling, friend ...)\n\nExclusion Criteria:\n\n* For patients :\n\n  * Patient with a psychiatric disorder\n  * Patient in intensive care unit\n  * Palliative care patient\n  * Patient aged under 18 years old\n  * Patient refusal\n* For medical persons :\n\n  * Medical person refusal\n* For assistants :\n\n  * Assistant or patient refusal",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Patient aged under 18 years old"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00774176",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n* Phase 1 \\& Gene Expression: --Current hospitalization for COPD exacerbation\n* Phase 1 \\& 2: COPD \\& ONE of the following criteria:\n\n  1. History of hospitalization for COPD exacerbation, OR\n  2. Currently on supplemental oxygen, OR\n  3. History of evaluation for lung transplant or LVRS, OR\n  4. \\>/= 6 months post-LVRS\n* Phase 1 or 2:\n\n  1. Current or former smoker, \\>/= 20 pack-yr. smoking history\n  2. FEV1 \\</= 70%; FEV1/FVC \\</= 70%\n  3. Life expectancy of \\> 6 months\n\nExclusion Criteria:\n\n* \\< 20 pack-yr. smoking history\n* Diagnosis of pulmonary fibrosis, bronchiectasis, mediastinal mass, or presence of a pulmonary mass\n* Asthma\n* FEV1 \\> 70% or FEV1/FVC \\>70%",
+   "limits": [
+    {
+     "key": "smoking_pack_years_min",
+     "value": 20,
+     "unit": "pack-years",
+     "fragment": ">/= 20 pack-yr"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 70,
+     "unit": "%",
+     "fragment": "FEV1 \\</= 70%"
+    },
+    {
+     "key": "fev1_fvc_ratio_max",
+     "value": 70,
+     "unit": "%",
+     "fragment": "FEV1/FVC \\</= 70%"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00163423",
+   "condition": "Bronchial Diseases",
+   "text": "Main Inclusion Criteria:\n\n* Outpatients\n* Written informed consent\n* History of bronchial asthma for at least 6 months\n* Good health with the exception of asthma\n* Treated with inhaled steroids with a maximum daily constant dosage of 250 mcg fluticasone propionate or equivalent\n* FEV1 80 - 105% of predicted\n\nMain Exclusion Criteria:\n\n* Concomitant severe diseases or diseases which are contraindications for the use of inhaled steroids\n* COPD (i.e. chronic bronchitis or emphysema) and/or other relevant lung diseases causing alternating impairment in lung function\n* Current smoking with more than 10 pack-years\n* Previous smoking with more than 10 pack-years\n* Use of systemic steroids 4 weeks (injectable depot steroids 6 weeks) before entry into the baseline period, or more than 2 times\n* Pregnancy\n* Intention to become pregnant during the course of the study\n* Breast feeding\n* Lack of safe contraception",
+   "limits": [
+    {
+     "key": "fev1_pct_predicted_min",
+     "value": 80,
+     "unit": "%",
+     "fragment": "FEV1 80 - 105% of predicted"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 105,
+     "unit": "%",
+     "fragment": "FEV1 80 - 105% of predicted"
+    },
+    {
+     "key": "smoking_pack_years_max",
+     "value": 10,
+     "unit": "pack-years",
+     "fragment": "Current smoking with more than 10 pack-years"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00894426",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n* COPD outpatients over 45 years old\n* Lung function: post-FEV1 \\< 50%\n* Current or ex-smoker \\> 10 packs per year\n* Patients who were not on medication of ISC/FC at least 2 weeks\n\nExclusion Criteria:\n\n* Ongoing exacerbation of COPD or within the previous 3 months\n* History of asthma or allergic rhinitis\n* Lung cancer or any other significant respiratory disease such as bronchiectasis, lung fibrosis, interstitial lung disease, tuberculosis, sarcoidosis\n* Current participation in an interventional clinical trial",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 45,
+     "unit": "years",
+     "fragment": "over 45 years old"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 50,
+     "unit": "%",
+     "fragment": "post-FEV1 \\< 50%"
+    },
+    {
+     "key": "smoking_pack_years_min",
+     "value": 10,
+     "unit": "pack-years",
+     "fragment": "\\> 10 packs per year"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00281242",
+   "condition": "Lung Diseases",
+   "text": "Inclusion criteria:\n\n* Diagnosis of COPD (following American Thoracic Society guidelines) and/or chronic bronchitis\n* ER visit and/or hospitalization with AE-COPD\n* Current or former smokers with more than 20 pack-years\n* Willingness to participate in follow-up studies defined in the protocol\n* Ability to give informed consent\n\nExclusion criteria:\n\n* Unstable cardiovascular disease\n* Other systemic disease in which survival of more than 2 years is unlikely\n* Mental incompetence or active psychiatric illness\n* Currently taking more than 20 mg/day of Prednisone\n* Participation in another experimental protocol within 6 weeks of study entry\n* Asthma\n* Cystic fibrosis\n* Clinically significant bronchiectasis\n* Lung cancer\n* Other inflammatory or fibrotic lung disease",
+   "limits": [
+    {
+     "key": "smoking_pack_years_min",
+     "value": 20,
+     "unit": "pack-years",
+     "fragment": "more than 20 pack-years"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT06525051",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n1. Clinical diagnosis of COPD\n2. Not receiving any COPD treatment\n3. Receiving only 18 mcg Tiotropium treatment\n4. With written consent\n\nExclusion Criteria:\n\n1\\. Patients under 18 years of age 2. Pregnant women 3. Without written consent 4. Receiving the following medications: 4a. Inhaled and/or systemic steroids 4b. Long-acting inhaled beta-2 agonists 4c. Combined long-acting beta-2 agonists and long-acting anticholinergics 4d. Topical medication\n\n5\\. Patients with the following comorbidities 5a. Glaucoma 5b. Cataract 5c. Hypertension 5d. Diabetes Mellitus 5e. Patients had previously undergone eyelid, refractive, or intraocular surgery, those with corneal diseases altering the corneal surface\n\n6\\. Patients receiving topical medications for chronic eye diseases 7. Patients receiving medications for diabetes mellitus 8. Patients receiving medications for hypertension 8. Patients those using contact lenses",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Patients under 18 years of age"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT03157518",
+   "condition": "Bronchial Diseases",
+   "text": "Inclusion Criteria:\n\n1. Moderate to severe asthma requiring medium to high dose inhaled corticosteroids\n\n   1. Patients will be recruited through the UAB Asthma Clinic and using the UAB Asthma Clinic Database for the Biospecimen Repository\n   2. Patients must show spirometry with positive bronchodilator reversibility or have a positive Methacholine Challenge Test within 3 years of enrollment\n2. Obesity as defined as BMI over 30\n3. Self-reported or radiographic evidence of gastroesophageal reflux disease\n4. Ability and willingness to provide informed consent\n\nExclusion Criteria:\n\n1. Inability of the subject to provide informed consent\n2. Inability of the subject to undergo bronchoscopy\n3. Use of monoclonal antibody within three months prior to enrollment\n4. Use of immunosuppressive medication\n5. Use of oral corticosteroids or antibiotics 4 weeks prior to enrollment\n6. Use of anticoagulants (warfarin/Coumadin and heparin products).\n7. Use of aspirin and/or other non-steroidal anti-inflammatory drugs or clopidogrel (Plavix) within 5 days of bronchoscopy.\n8. Pregnancy\n9. Diagnosis of HIV, active cancer, or liver disease",
+   "limits": [
+    {
+     "key": "bmi_min",
+     "value": 30,
+     "unit": "kg/m2",
+     "fragment": "BMI over 30"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00207337",
+   "condition": "Pathologic Processes",
+   "text": "Inclusion Criteria:\n\n1. High resolution computed tomography (CT) scan evidence of bilateral emphysema\n2. Residual volume (RV) ≥ 220% predicted.\n3. Total lung capacity (TLC) ≥ 133% of predicted value.\n4. Forced expiratory volume (FEV1) \\< 40% of predicted or FEV1 \\< 1 liter.\n5. Marked dyspnea, scoring ≥ 2 on the modified Medical Research Council scale of 0-4.\n6. Patient has undergone pulmonary rehabilitation of 16 - 20 sessions.\n\nExclusion Criteria:\n\n1. FEV1 \\> 20%\n2. Diffusing capacity for carbon monoxide (DLco) \\< 15% of predicted.\n3. Respiratory infection requiring \\> 3 hospitalizations in past year\n4. Inability to walk \\> 140 meters in 6 minutes\n5. Giant bulla \\> 1/3 of one lung's volume\n6. Previous lung volume reduction surgery (LVRS) or lobectomy.",
+   "limits": [
+    {
+     "key": "rv_pct_predicted_min",
+     "value": 220,
+     "unit": "%",
+     "fragment": "Residual volume (RV) ≥ 220% predicted"
+    },
+    {
+     "key": "tlc_pct_predicted_min",
+     "value": 133,
+     "unit": "%",
+     "fragment": "Total lung capacity (TLC) ≥ 133%"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 40,
+     "unit": "%",
+     "fragment": "\\< 40% of predicted"
+    },
+    {
+     "key": "fev1_l_max",
+     "value": 1,
+     "unit": "L",
+     "fragment": "FEV1 \\< 1 liter"
+    },
+    {
+     "key": "mmrc_min",
+     "value": 2,
+     "unit": "",
+     "fragment": "scoring ≥ 2 on the modified Medical Research Council scale"
+    },
+    {
+     "key": "fev1_pct_predicted_min",
+     "value": 20,
+     "unit": "%",
+     "fragment": "FEV1 \\> 20%"
+    },
+    {
+     "key": "dlco_pct_predicted_min",
+     "value": 15,
+     "unit": "%",
+     "fragment": "DLco) \\< 15% of predicted"
+    },
+    {
+     "key": "hospitalizations_max",
+     "value": 3,
+     "unit": "events",
+     "fragment": "requiring \\> 3 hospitalizations"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05533957",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n* PaO2 in room air less than 60 mmHg assessed by arterial blood gas analysis\n* FEV1/FVC \\<70%\n* FEV1 \\< 50% of predicted\n* need for LTOT for 3 months\n* important non-comorbidities\n\nExclusion Criteria:\n\n* Presence of lung diseases other than COPD, respiratory tract infections in the last 4 weeks, terminality, severe neurological and cardiologic comorbidities.",
+   "limits": [
+    {
+     "key": "pao2_max",
+     "value": 60,
+     "unit": "mmHg",
+     "fragment": "PaO2 in room air less than 60 mmHg"
+    },
+    {
+     "key": "fev1_fvc_ratio_max",
+     "value": 70,
+     "unit": "%",
+     "fragment": "FEV1/FVC \\<70%"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 50,
+     "unit": "%",
+     "fragment": "FEV1 \\< 50% of predicted"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT01729247",
+   "condition": "Bronchial Diseases",
+   "text": "Inclusion Criteria:\n\n* Age: 7 to 60 years of age, inclusive\n* Sex: Males and Females\n* Diagnosis: Asthma\n\nExclusion Criteria:\n\n* Concurrent Conditions or Disease: Subjects with an established diagnosis of chronic, obstructive pulmonary disease (COPD) cystic fibrosis (CF), bronchiectasis, obliterative bronchiolitis, ciliary dyskinesia, post-viral bronchial hyperresponsive syndrome, or vocal cord dysfunction are excluded from participation\n* Cigarette Smoking: Subjects with greater than a 10 pack-year history of cigarette smoking are excluded from participation\n* Study Participation Outside of This Protocol: Subjects currently enrolled in studies of Investigational or Non-Investigational Drugs or Medical Devices and/or who participated in these studies within 30 days prior to this study are excluded from participation",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 7,
+     "unit": "years",
+     "fragment": "Age: 7 to 60 years of age"
+    },
+    {
+     "key": "max_age",
+     "value": 60,
+     "unit": "years",
+     "fragment": "Age: 7 to 60 years of age"
+    },
+    {
+     "key": "smoking_pack_years_max",
+     "value": 10,
+     "unit": "pack-years",
+     "fragment": "greater than a 10 pack-year history"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT03359122",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n1. Patients diagnosed with COPD in 2015;\n2. Patients had complete hospital visit data available during pre-index 1 year period and post 1 year follow-up;\n3. Patients had at least one COPD exacerbation during 1 year prior to the index date;\n4. Patients had at least 2 COPD maintenance medication claims during post index 1 year period, as 2 claims are recommended to calculate adherence.\n\nExclusion Criteria:\n\n1. Inability to determine diagnoses from claims;\n2. Individuals with other chronic respiratory conditions such as respiratory cancer, pulmonary fibrosis, asthma.",
+   "limits": [
+    {
+     "key": "exacerbations_prior_year_min",
+     "value": 1,
+     "unit": "events",
+     "fragment": "at least one COPD exacerbation during 1 year"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05876403",
+   "condition": "Lung Diseases, Obstructive",
+   "text": "Inclusion Criteria:\n\n* Both male \\& female participants.\n* Diagnosed COPD patients\n* Age 35-60years\n* Ratio of forced expiratory volume in first second \\& forced vital capacity(FEV1/FVC \\<0.7,30%\\<FEV1\\<80%\n* Stable clinical condition.\n\nExclusion Criteria:\n\n* Serious conditions with require supplementary oxygen or ventilator/support devices.\n* COPD exacerbation within last 4weeks\n* Patients with recent chest wall trauma, surgery or deformity.\n* Patient with neurological, psychological, musculoskeletal, or cardiac medical history.\n* Pulmonary disease with physical impairment.\n* Inability to follow the pulmonary rehabilitation program.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 35,
+     "unit": "years",
+     "fragment": "Age 35-60years"
+    },
+    {
+     "key": "max_age",
+     "value": 60,
+     "unit": "years",
+     "fragment": "Age 35-60years"
+    },
+    {
+     "key": "fev1_fvc_ratio_max",
+     "value": 0.7,
+     "unit": "",
+     "fragment": "FEV1/FVC \\<0.7"
+    },
+    {
+     "key": "fev1_pct_predicted_min",
+     "value": 30,
+     "unit": "%",
+     "fragment": "30%\\<FEV1\\<80%"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 80,
+     "unit": "%",
+     "fragment": "30%\\<FEV1\\<80%"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT07746310",
+   "condition": "Digestive System Neoplasms",
+   "text": "Inclusion Criteria:\n\nSMC and COSM\n\n* Born between 1914 and 1948 (SMC) or through 1952 (COSM)\n* Residing in Västmanland and Uppsala counties (SMC)\n* Residing in Västmanland and Örebro counties (COSM)\n\nBAMSE cohort\n\n* All children born in certain areas of northern and central Stockholm between Feb 1994 and Nov 1996.\n\nExclusion Criteria:\n\nSMC and COSM\n\n* Incorrect or missing national registration number\n* Prevalent disease at baseline (depending on research question)\n* Implausible energy intake\n\nBAMSE cohort\n\n* The family planned to move within 1 year of the study start;\n* Insufficient knowledge of the Swedish language;\n* The family had a seriously ill child or\n* an older sister or brother was already included in the study.",
+   "limits": []
+  },
+  {
+   "nct_id": "NCT00160407",
+   "condition": "Liver Diseases",
+   "text": "Inclusion Criteria:\n\n* Liver biopsy obtained no more than 24 months before randomization with a pathology report confirming that the histological diagnosis is consistent with NASH\n* Compensated liver disease with the following laboratory parameters at the entry visit:\n\n  * Hemoglobin values of greater than or equal to 12 gm/dl for females or 13 gm/dl for males\n  * WBC count \\> 3,000/mm3\n  * Neutrophil count \\> 1,500/mm3\n  * Platelets \\> 70,000/mm3\n  * Albumin \\>3.0 g/dl\n* Serum creatinine \\<1.4mg/dl\n* Ability to give informed consent\n* Alanine aminotransferase (ALT) greater than or equal to 40 U/L\n* BMI \\> or equal to 27 kg/m2\n* Patients who receive orlistat must agree to participate in Xenicare, a free dietary counseling program provided by Roche (sponsor)\n\nExclusion Criteria:\n\n* Any cause for chronic liver disease other than NASH\n* Evidence of decompensated liver disease such as a history of or presence of ascites, bleeding varices, or spontaneous encephalopathy\n* History of alcohol consumption of greater than 20 grams per day in the past 2 years\n* Prior surgical procedures to include gastroplasty, jejunoileal or jejunocolic bypass\n* TPN within the past 6 months\n* History of prior organ transplantation\n* Concurrent enrollment in other experimental treatment protocols\n* Use of ursodeoxycholic acid, rosiglitazone, pioglitazone, or metformin within the 6-month period before enrollment\n* Women who are pregnant or breast-feeding",
+   "limits": [
+    {
+     "key": "hemoglobin_min",
+     "value": 12,
+     "unit": "gm/dl",
+     "fragment": "Hemoglobin values of greater than or equal to 12 gm/dl for females"
+    },
+    {
+     "key": "hemoglobin_min",
+     "value": 13,
+     "unit": "gm/dl",
+     "fragment": "13 gm/dl for males"
+    },
+    {
+     "key": "wbc_min",
+     "value": 3000,
+     "unit": "/mm3",
+     "fragment": "WBC count \\> 3,000/mm3"
+    },
+    {
+     "key": "neutrophil_min",
+     "value": 1500,
+     "unit": "/mm3",
+     "fragment": "Neutrophil count \\> 1,500/mm3"
+    },
+    {
+     "key": "platelets_min",
+     "value": 70000,
+     "unit": "/mm3",
+     "fragment": "Platelets \\> 70,000/mm3"
+    },
+    {
+     "key": "albumin_min",
+     "value": 3.0,
+     "unit": "g/dl",
+     "fragment": "Albumin \\>3.0 g/dl"
+    },
+    {
+     "key": "creatinine_max",
+     "value": 1.4,
+     "unit": "mg/dl",
+     "fragment": "Serum creatinine \\<1.4mg/dl"
+    },
+    {
+     "key": "alt_min",
+     "value": 40,
+     "unit": "U/L",
+     "fragment": "Alanine aminotransferase (ALT) greater than or equal to 40 U/L"
+    },
+    {
+     "key": "bmi_min",
+     "value": 27,
+     "unit": "kg/m2",
+     "fragment": "BMI \\> or equal to 27 kg/m2"
+    },
+    {
+     "key": "alcohol_max",
+     "value": 20,
+     "unit": "g/day",
+     "fragment": "greater than 20 grams per day"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05768581",
+   "condition": "Overweight",
+   "text": "Inclusion Criteria:\n\n* Physical activity frequency minor of 2 days/week\n* BMI major of 30 kg/m2\n* informed consent signature\n\nExclusion Criteria:\n\n* age over 65 years\n* knee or hip pain (visual analogue scale score \\>7 arbitrary units\n* a history of hip, knee or foot replacement or osteoarthrosis\n* cardiac infarction\n* neurological impairments or any other clinical condition that affects the practice of physical activity",
+   "limits": [
+    {
+     "key": "bmi_min",
+     "value": 30,
+     "unit": "kg/m2",
+     "fragment": "BMI major of 30 kg/m2"
+    },
+    {
+     "key": "max_age",
+     "value": 65,
+     "unit": "years",
+     "fragment": "age over 65 years"
+    },
+    {
+     "key": "vas_max",
+     "value": 7,
+     "unit": "",
+     "fragment": "visual analogue scale score \\>7"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT03159312",
+   "condition": "Overweight",
+   "text": "Inclusion Criteria:\n\n* Signed informed consent.\n* Do not suffer any absolute contraindication.\n* Patients who will undergo bariatric surgery and who reside in the city of Talca.\n* Age between 18 - 60 years.\n* With weight \\<180 kilograms.\n\nExclusion Criteria:\n\n* Medical indication for basic pathologies.\n* Post-operative complications.\n* Acute angina-like pain during the 6-minute gait test.\n* Absence of 2 or more trainings in a row.\n* Pregnancy within the first 6 months post-surgery.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Age between 18 - 60 years"
+    },
+    {
+     "key": "max_age",
+     "value": 60,
+     "unit": "years",
+     "fragment": "Age between 18 - 60 years"
+    },
+    {
+     "key": "weight_max",
+     "value": 180,
+     "unit": "kg",
+     "fragment": "weight \\<180 kilograms"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT01695083",
+   "condition": "Obesity",
+   "text": "Inclusion Criteria:\n\n* Age ≥ 18 years\n* BMI ≥ 35 kg/m2\n* Bariatric surgery scheduled within 3 months following the inclusion\n* Conducting a medical examination.\n* Signature of informed consent\n\nExclusion Criteria:\n\n* Patient non-affiliated to a social security scheme (beneficiary or assignee)\n* Cons-indication for performing an MRI\n* weight\\> 230 kg , anteroposterior diameter\\>40 cm\n* Cancer treatment or medication that may induce lesions of steatohepatitis (corticoids, methotrexate, amiodarone, perhexiline, tamoxifen, nifedipine, diltiazem, hycanthone)\n* Alcohol consumption \\> 20 g per day for women and \\> 30 g per day for men AND no past history of excessive alcohol use for more than a 2-year period within the last 20 years\n* known chronic liver disease other than steatosis (presence of HBs antigen, or antibody to HCV, or anti-nuclear antibodies, anti-mitochondria, anti-LKM1, anti-smooth muscle negative, or the presence of a hemochromatosis),\n* known HIV positive status\n* Pregnant women (known pregnancy) or lactating",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Age ≥ 18 years"
+    },
+    {
+     "key": "bmi_min",
+     "value": 35,
+     "unit": "kg/m2",
+     "fragment": "BMI ≥ 35 kg/m2"
+    },
+    {
+     "key": "weight_max",
+     "value": 230,
+     "unit": "kg",
+     "fragment": "weight\\> 230 kg"
+    },
+    {
+     "key": "anteroposterior_diameter_max",
+     "value": 40,
+     "unit": "cm",
+     "fragment": "anteroposterior diameter\\>40 cm"
+    },
+    {
+     "key": "alcohol_max",
+     "value": 20,
+     "unit": "g/day",
+     "fragment": "\\> 20 g per day for women"
+    },
+    {
+     "key": "alcohol_max",
+     "value": 30,
+     "unit": "g/day",
+     "fragment": "\\> 30 g per day for men"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02420145",
+   "condition": "Obesity",
+   "text": "Inclusion Criteria:\n\n* Waist circumference at least 88cm\n* Body mass index at least 25\n* Sedentary\n* Physical and mental ability to participate in the yoga intervention\n* Willingness to participate in at least 18 of 24 yoga sessions and the whole-day workshop\n\nExclusion Criteria:\n\n* Dementia\n* Psychosis\n* Severe hypertension (diastolic blood pressure more than 120mmHg)\n* Type 1 diabetes or insulin-dependent 2 diabetes\n* Coronary artery disease\n* Myocardial infarction\n* Lung embolism\n* Stroke\n* Regular physical activity or yoga practice\n* Pregnancy",
+   "limits": [
+    {
+     "key": "waist_circumference_min",
+     "value": 88,
+     "unit": "cm",
+     "fragment": "Waist circumference at least 88cm"
+    },
+    {
+     "key": "bmi_min",
+     "value": 25,
+     "unit": "kg/m2",
+     "fragment": "Body mass index at least 25"
+    },
+    {
+     "key": "diastolic_blood_pressure_max",
+     "value": 120,
+     "unit": "mmHg",
+     "fragment": "diastolic blood pressure more than 120mmHg"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT07440914",
+   "condition": "Heart Diseases",
+   "text": "Inclusion Criteria:\n\n* Patients with a confirmed diagnosis of CHF, classified according to the New York Heart Association (NYHA) functional classification II-III.\n* Radiographically confirmed diagnosis of knee OA, based on the Kellgren-Lawrence grading system (grade II-III).\n* Adults aged 40-80 years\n* Left ventricular ejection fraction (LVEF) ≤ 40% as measured by echocardiography within the last 6 months.\n* Patients must be on stable pharmacologic therapy for CHF for at least 4 weeks prior to enrollment.\n\nExclusion Criteria:\n\n* Presence of severe comorbid conditions that could interfere with the study protocol or pose a risk to the patient, such as severe pulmonary disease, advanced renal or liver disease, or active malignancy.\n* Kellgren-Lawrence grade IV knee OA or recent knee surgery within the last 6 months.\n* Presence of inflammatory arthritis, such as rheumatoid arthritis or gout\n* Recent myocardial infarction (within the past 3 months), unstable angina, or recent coronary artery bypass graft surgery.\n* Any condition that contraindicates exercise participation, such as severe hypertension (BP \\> 180/110 mmHg), uncontrolled arrhythmias, or severe aortic stenosis.\n* Significant cognitive impairment or psychiatric disorder that would interfere with adherence to the exercise protocol.\n* Patients already participating in regular, structured exercise programs exceeding moderate intensity (\\>150 minutes per week)",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 40,
+     "unit": "years",
+     "fragment": "aged 40-80 years"
+    },
+    {
+     "key": "max_age",
+     "value": 80,
+     "unit": "years",
+     "fragment": "aged 40-80 years"
+    },
+    {
+     "key": "lvef_max",
+     "value": 40,
+     "unit": "%",
+     "fragment": "(LVEF) ≤ 40%"
+    },
+    {
+     "key": "systolic_blood_pressure_max",
+     "value": 180,
+     "unit": "mmHg",
+     "fragment": "BP \\> 180/110 mmHg"
+    },
+    {
+     "key": "diastolic_blood_pressure_max",
+     "value": 110,
+     "unit": "mmHg",
+     "fragment": "BP \\> 180/110 mmHg"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT06683430",
+   "condition": "Vascular Diseases",
+   "text": "Inclusion Criteria:\n\n* older adults aged ≥60 years residing in the nursing\n* active and not bedridden\n* without infectious disease, taste disorders, or dementia\n* have blood pressure measurements indicating a systolic blood pressure (SBP) ≥130 mmHg and/or diastolic blood pressure (DBP) ≥85 mmHg\n\nExclusion Criteria:\n\n* individuals with impaired kidney function (creatinine serum levels \\>1.2 mmol/L)\n* uncontrolled diabetes mellitus (fasting blood sugar \\>126 mg/dL)\n* obesity (BMI ≥30 kg/m2 )\n* active smokers\n* have memory impairment and depressive conditions\n* participants declining continued participation, requiring intensive hospital care, or experiencing persistent vomiting and diarrhea were excluded from the intervention.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 60,
+     "unit": "years",
+     "fragment": "aged ≥60 years"
+    },
+    {
+     "key": "systolic_blood_pressure_min",
+     "value": 130,
+     "unit": "mmHg",
+     "fragment": "systolic blood pressure (SBP) ≥130 mmHg"
+    },
+    {
+     "key": "diastolic_blood_pressure_min",
+     "value": 85,
+     "unit": "mmHg",
+     "fragment": "diastolic blood pressure (DBP) ≥85 mmHg"
+    },
+    {
+     "key": "creatinine_max",
+     "value": 1.2,
+     "unit": "mmol/L",
+     "fragment": "creatinine serum levels \\>1.2 mmol/L"
+    },
+    {
+     "key": "fasting_blood_sugar_max",
+     "value": 126,
+     "unit": "mg/dL",
+     "fragment": "fasting blood sugar \\>126 mg/dL"
+    },
+    {
+     "key": "bmi_max",
+     "value": 30,
+     "unit": "kg/m2",
+     "fragment": "obesity (BMI ≥30 kg/m2 )"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02915250",
+   "condition": "Diabetes Mellitus",
+   "text": "Inclusion Criteria:\n\n* Male or female subject aged 18-70 years (both inclusive)\n* Type 2 diabetes mellitus (as diagnosed clinically) for ≥ 12 months\n* HbA1c level between 7.5% and 9.5% (both inclusive)\n* Body mass index between 20.0 and 40.0 kg/m2 (both inclusive)\n* Treated with once daily injections with insulin glargine U-100 for ≥ 3 months prior to screening\n\nExclusion Criteria:\n\n* Type 1 diabetes mellitus\n* Known or suspected allergy to the IMPs or related products\n* Previous participation in this trial. Participation is defined as randomised.\n* Receipt of any medicinal product in clinical development within 60 days prior to this trial.\n* Clinically significant abnormal haematology, biochemistry, urinalysis or coagulation screening tests, as judged by the Investigator considering the underlying disease\n* Supine blood pressure at screening outside the range of 90-160 mmHg for systolic or 50-95 mmHg for diastolic and/or resting supine heart rate outside the range 50-90 beats per minute. This exclusion criterion also pertains to subjects being on antihypertensives.\n* Current treatment with premixed or intermediate insulin products, or with long acting insulins other than insulin glargine U-100. The use of short or rapid acting prandial insulin products will be allowed provided their use has been stable for ≥ 3 months prior to screening.\n* Use of GLP-1 receptor agonists or oral antidiabetic drugs (OADs) other than stable intake of metformin alone or metformin in combination with a DPP-4 inhibitor within 4 weeks prior to screening\n* Women of child bearing potential not willing to use contraceptive methods.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "aged 18-70 years"
+    },
+    {
+     "key": "max_age",
+     "value": 70,
+     "unit": "years",
+     "fragment": "aged 18-70 years"
+    },
+    {
+     "key": "hba1c_min",
+     "value": 7.5,
+     "unit": "%",
+     "fragment": "HbA1c level between 7.5% and 9.5%"
+    },
+    {
+     "key": "hba1c_max",
+     "value": 9.5,
+     "unit": "%",
+     "fragment": "HbA1c level between 7.5% and 9.5%"
+    },
+    {
+     "key": "bmi_min",
+     "value": 20,
+     "unit": "kg/m2",
+     "fragment": "Body mass index between 20.0 and 40.0 kg/m2"
+    },
+    {
+     "key": "bmi_max",
+     "value": 40,
+     "unit": "kg/m2",
+     "fragment": "Body mass index between 20.0 and 40.0 kg/m2"
+    },
+    {
+     "key": "systolic_blood_pressure_min",
+     "value": 90,
+     "unit": "mmHg",
+     "fragment": "range of 90-160 mmHg for systolic"
+    },
+    {
+     "key": "systolic_blood_pressure_max",
+     "value": 160,
+     "unit": "mmHg",
+     "fragment": "range of 90-160 mmHg for systolic"
+    },
+    {
+     "key": "diastolic_blood_pressure_min",
+     "value": 50,
+     "unit": "mmHg",
+     "fragment": "50-95 mmHg for diastolic"
+    },
+    {
+     "key": "diastolic_blood_pressure_max",
+     "value": 95,
+     "unit": "mmHg",
+     "fragment": "50-95 mmHg for diastolic"
+    },
+    {
+     "key": "heart_rate_min",
+     "value": 50,
+     "unit": "bpm",
+     "fragment": "heart rate outside the range 50-90"
+    },
+    {
+     "key": "heart_rate_max",
+     "value": 90,
+     "unit": "bpm",
+     "fragment": "heart rate outside the range 50-90"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00413335",
+   "condition": "Overweight",
+   "text": "Inclusion Criteria:\n\n* Good general health\n* Aged 10 to 18 yrs (females: Tanner stage II-V;and males:testes size\\>6ml)\n* IGT based on 2-hr plasma glucose\\>140mg/dl and \\<200mg/dl during an OGTT.\n\nExclusion Criteria:\n\n* Baseline creatinine\\>1.0mg\n* AST and ALT\\>2.5 ULN\n* Anemia (Hct\\<30)\n* Pregnancy (females must have a negative urine pregnancy test during the study)\n* Cardiac or pulmonary or other significant chronic illness\n* Plans to increase the frequency or intensity of a regular exercise program\n* Psychiatric disorder or substance abuse of anorexic agents.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 10,
+     "unit": "years",
+     "fragment": "Aged 10 to 18 yrs"
+    },
+    {
+     "key": "max_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Aged 10 to 18 yrs"
+    },
+    {
+     "key": "testes_volume_min",
+     "value": 6,
+     "unit": "ml",
+     "fragment": "testes size\\>6ml"
+    },
+    {
+     "key": "glucose_min",
+     "value": 140,
+     "unit": "mg/dl",
+     "fragment": "plasma glucose\\>140mg/dl"
+    },
+    {
+     "key": "glucose_max",
+     "value": 200,
+     "unit": "mg/dl",
+     "fragment": "\\<200mg/dl"
+    },
+    {
+     "key": "creatinine_max",
+     "value": 1.0,
+     "unit": "mg",
+     "fragment": "creatinine\\>1.0mg"
+    },
+    {
+     "key": "ast_max",
+     "value": 2.5,
+     "unit": "x ULN",
+     "fragment": "AST and ALT\\>2.5 ULN"
+    },
+    {
+     "key": "alt_max",
+     "value": 2.5,
+     "unit": "x ULN",
+     "fragment": "AST and ALT\\>2.5 ULN"
+    },
+    {
+     "key": "hematocrit_min",
+     "value": 30,
+     "unit": "",
+     "fragment": "Hct\\<30"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02530788",
+   "condition": "Ventricular Dysfunction",
+   "text": "Inclusion criteria:\n\n* Patients with chronic left ventricular heart failure, who undergo LVAD Implant surgery (including other heart surgery)\n* Full aged, contractually capable, male and female patients\n* Patients that are capable and willing to understand and obey the instructions of the study staff.\n* Signed informed consent\n\nExclusion criteria:\n\n* Selenium intoxication\n* Patients with contraindications to the planned intervention, due to diseases\n* Severe exacerbation of comorbidities such as renal failure requiring dialysis or liver dysfunction (defined as bilirubin \\>2mg/dl)\n* Known hypersensitivity to the trial medication (selenase® 300 RP, selenase® T), to any of the constituents of the solution or to the placebo\n* Patients that are not contractually capable; Patients accommodated to a facility by court order or public authority\n* Pregnancy or lactation period\n* Women at reproductive age, without suitable contraception\n* Patients in a relationship of dependency or in employment with the head of study's\n* Underaged\n* No signed informed consent\n* Simultaneous participation in another clinical trial",
+   "limits": [
+    {
+     "key": "bilirubin_max",
+     "value": 2,
+     "unit": "mg/dl",
+     "fragment": "bilirubin \\>2mg/dl"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05629117",
+   "condition": "Diabetes Mellitus",
+   "text": "Inclusion Criteria:\n\n* Participants who had been diagnosed with poorly controlled type 2 diabetes (having HbA1C level of \\> 7% in the past three months)\n* Participants ho were 17 years or older (the legal age to provide informed consent in Indonesia)\n* having their own mobile phone\n\nExclusion Criteria:\n\n* People who could not read or write Indonesian\n* Had medical diagnostic with cognitive impairments\n* Psychiatric disorders, or were diagnosed with cancer",
+   "limits": [
+    {
+     "key": "hba1c_min",
+     "value": 7,
+     "unit": "%",
+     "fragment": "HbA1C level of \\> 7%"
+    },
+    {
+     "key": "min_age",
+     "value": 17,
+     "unit": "years",
+     "fragment": "17 years or older"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05196659",
+   "condition": "Myocardial Ischemia",
+   "text": "Inclusion Criteria:\n\nParticipants should be:\n\n* age ≥18 years, both sexes\n* confirmed diagnosis of cardiovascular disease (ischemic heart disease, stroke, or heart failure irrespective of ejection fraction)\n* able to provide written informed consent.\n\nExclusion Criteria:\n\n* pregnant women\n* those with any serious or uncontrolled medical condition (e.g., cancer) that may restrict the patient to come for follow-up.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "age ≥18 years"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT00103363",
+   "condition": "Respiratory Tract Neoplasms",
+   "text": "DISEASE CHARACTERISTICS:\n\n* Current or ex-smoker with a lifetime history of cigarette smoking of ≥ 20 pack years, meeting 1 of the following criteria:\n\n  * Airflow obstruction\n\n    * FEV\\_1 \\< 75% predicted for age by spirometry\n    * FEV\\_1/FVC ≤ 75% by spirometry\n  * No airflow obstruction\n* No history of lung cancer\n\nPATIENT CHARACTERISTICS:\n\nAge\n\n* 25 and over\n\nPerformance status\n\n* Not specified\n\nLife expectancy\n\n* More than 5 years\n\nHematopoietic\n\n* Not specified\n\nHepatic\n\n* Not specified\n\nRenal\n\n* Not specified\n\nOther\n\n* No cancer within the past 5 years except nonmelanoma skin cancer\n\nPRIOR CONCURRENT THERAPY:\n\nBiologic therapy\n\n* Not specified\n\nChemotherapy\n\n* Not specified\n\nEndocrine therapy\n\n* Not specified\n\nRadiotherapy\n\n* Not specified\n\nSurgery\n\n* Not specified",
+   "limits": [
+    {
+     "key": "smoking_pack_years_min",
+     "value": 20,
+     "unit": "pack-years",
+     "fragment": "≥ 20 pack years"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 75,
+     "unit": "%",
+     "fragment": "FEV\\_1 \\< 75% predicted"
+    },
+    {
+     "key": "fev1_fvc_ratio_max",
+     "value": 75,
+     "unit": "%",
+     "fragment": "FEV\\_1/FVC ≤ 75%"
+    },
+    {
+     "key": "min_age",
+     "value": 25,
+     "unit": "years",
+     "fragment": "25 and over"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05180487",
+   "condition": "Narcotic-Related Disorders",
+   "text": "Inclusion Criteria:\n\n* Must be a parent or legal guardian of a child between the ages of 18 months and 5 years old that lives in the parent's home at least 50% of time;\n* Must have a smart phone with text messaging capability and access to email;\n* Must be willing to complete phone interviews and use a telehealth program that focuses on strengthening parenting;\n* Must respond 'yes' to binge drinking and/or recreational drug use in the last year, lifetime use of prescription opioids, or depressed mood in the last two weeks.\n\nExclusion Criteria:\n\n* none",
+   "limits": []
+  },
+  {
+   "nct_id": "NCT00183560",
+   "condition": "Behavioral Symptoms",
+   "text": "Inclusion Criteria:\n\n* Meet DSM criteria for recurrent major depressive disorder, defined as at least one major depressive episode within 3 years prior to study entry AND at least 2 months of normal functioning following the episode\n\nExclusion Criteria:\n\n* Depression secondary to a concurrent medical disorder\n* Current use of medication that could cause depressive symptoms\n* A rating of level 2 or higher on the Index of Treatment Refractory Depression\n* Current diagnosis of any of the following psychiatric disorders: psychotic or organic mental, bipolar, primary obsessive compulsive, borderline personality, antisocial personality, or eating\n* Current diagnosis of comorbid chronic depression that is disabling\n* Current substance abuse\n* Score less than 14 on the Hamilton Rating Scale for Depression-17 (HRSD-17)\n* At risk for suicide\n* Pregnancy or plan to become pregnant during the study\n* Practice meditation more than once a week or yoga more than twice a week at study entry",
+   "limits": [
+    {
+     "key": "hrsd17_min",
+     "value": 14,
+     "unit": "",
+     "fragment": "Score less than 14 on the Hamilton Rating Scale"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT07037680",
+   "condition": "Carcinoma, Bronchogenic",
+   "text": "Patients with histologically or cytologically confirmed negative EGFR (including EGFR exon 19 deletion or L858R mutations) or ALK/ROS1-mutated locally advanced unresectable NSCLC were screened.\n\nInclusion Criteria:\n\n1. ≥18 years old with no restrictions on sex;\n2. Peripheral tumor, or central lung cancer with non-squamous tissue or a mixed tissue with less than 50% squamous carcinoma;\n3. Eastern cooperative oncology group (ECOG) score ≤2 was required;\n4. Received systemic chemotherapy or combined chemotherapy and immumitherapy for ≥ 4 weeks without progression;\n5. .No cavity inside the tumor, and located ≥ 1 cm of the main pulmonary artery trunk;\n6. No symptoms of hemoptysis;\n7. Adequate hepatic and renal functions with a negative urine protein;\n8. Expected survival of more than 6 months.\n\nExclusion Criteria:\n\n1. currently receiving treatment for malignancies at other sites, except for curable non-melanoma skin cancer and cervical carcinoma in situ;\n2. previous malignancy within five years;\n3. thoracic radiotherapy history, hemoptysis, myocardial infarction or cerebrovascular accident within three months;\n4. uncontrolled or active pulmonary inflammation;\n5. participated in other clinical trials;\n6. Pregnant women.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "≥18 years old"
+    },
+    {
+     "key": "ecog_max",
+     "value": 2,
+     "unit": "",
+     "fragment": "score ≤2 was required"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02149849",
+   "condition": "Respiratory Tract Neoplasms",
+   "text": "Inclusion Criteria:\n\n* Men and women;18 years and older\n* Thoracotomy for lung cancer\n* Video assisted thoracic surgery for lung cancer.\n\nExclusion Criteria:\n\n* Received treatment for shoulder pain\n* Use pain medication on regular basis\n* Under 18 year\n* Length of stay in ICU more than 24 hours after surgery\n* Does not understand the native language",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "18 years and older"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02448303",
+   "condition": "Carcinoma, Bronchogenic",
+   "text": "Inclusion Criteria:\n\n* Men and women ≥ 18 years of age\n* ECOG performance status of 0 or 1\n* Histologically confirmed recurrent or metastatic NSCLC (adenocarcinoma, large cell, squamous cell, or not otherwise specified) that has either progressed during or after platinum-based chemotherapy\n* Received at least 1 platinum-based chemotherapy regimen. Note: Subjects with EGFR mutations or ALK translocations are required to have received prior therapy with appropriate TKI; prior platinum-based chemotherapy is not required for this specific patient population\n\nExclusion Criteria:\n\n* Prior malignancy (other than lung cancer), except for adequately treated basal cell or squamous cell skin cancer, in situ cervical cancer, or other cancer from which the subject has been disease free for ≥ 2 years or which will not limit survival to \\< 2 years\n* Known central nervous system metastases and/or carcinomatous meningitis\n* Significant cardiovascular disease such as uncontrolled or symptomatic arrhythmias, congestive heart failure, or myocardial infarction within 6 months of screening\n* Malabsorption syndrome, disease significantly affecting gastrointestinal function, or resection of the stomach or small bowel, symptomatic inflammatory bowel disease, partial or complete bowel obstruction, or gastric restrictions and bariatric surgery, such as gastric bypass\n* Breastfeeding or pregnant",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "≥ 18 years of age"
+    },
+    {
+     "key": "ecog_max",
+     "value": 1,
+     "unit": "",
+     "fragment": "ECOG performance status of 0 or 1"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02097745",
+   "condition": "Arthritis",
+   "text": "Inclusion Criteria:\n\n* adult patients 18-80 years of age with active RA;\n* patients who participated in MabThera study WA17042, and completed to at least the Week 24 visit;\n* eligible for re-treatment, based on clinical symptoms;\n* patients of reproductive potential must be using reliable contraceptive methods.\n\nExclusion Criteria:\n\n* patients who participated in MabThera study WA17042 but withdrew into the safety follow-up;\n* current treatment with any other disease-modifying antirheumatic drug (apart from methotrexate), or any anti-TNFalfa, anti-IL1, or other biologic therapies;\n* development of any new contraindications to receiving MabThera;\n* women who are pregnant or breast-feeding.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "18-80 years of age"
+    },
+    {
+     "key": "max_age",
+     "value": 80,
+     "unit": "years",
+     "fragment": "18-80 years of age"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT03653351",
+   "condition": "Cognition Disorders",
+   "text": "Inclusion Criteria:\n\n1. Community-dwelling men and women aged 60 or above.\n2. Current cognitive complaints per participant self-report, but with intact cognitive function as defined by a score of 0-9 on the Short Blessed Test (SBT) and a Montreal Cognitive Assessment (MoCA) score ≥25 per PI discretion.\n3. PROMIS depression scale score of greater or equal to 16 and/or PROMIS anxiety score greater or equal to 14.\n4. Ability to read and speak English fluently enough to complete all research assessments.\n5. Corrected visual ability to read newspaper headlines.\n6. Hearing capacity to respond to a raised conversational voice.\n7. Willingness and ability to provide informed consent.\n\nExclusion Criteria:\n\n1. The Mini-International Neuropsychiatric Interview (MINI) criteria for current or life-time bipolar disorder, schizophrenia, schizoaffective disorder.\n2. Untreated current post-traumatic stress disorder.\n3. A MoCA score \\<25 or SBT score \\>9, per PI discretion.\n4. Use of cognitive enhancers (namely, cholinesterase inhibitors such as donepezil; or memantine) within the past 6 weeks.\n5. MINI criteria for any substance abuse within 6 months that would affect their participation, per PI discretion.\n6. Unstable medical illness (e.g. uncontrolled diabetes mellitus or hypertension).\n7. Concurrent cognitive training, such as brain-training software, participation in psychotherapy or regular engagement in mindfulness practice and/or yoga.\n8. Taking anticonvulsant or antipsychotics that cannot be safely tapered and discontinued.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 60,
+     "unit": "years",
+     "fragment": "aged 60 or above"
+    },
+    {
+     "key": "sbt_max",
+     "value": 9,
+     "unit": "",
+     "fragment": "score of 0-9 on the Short Blessed Test"
+    },
+    {
+     "key": "moca_min",
+     "value": 25,
+     "unit": "",
+     "fragment": "(MoCA) score ≥25"
+    },
+    {
+     "key": "promis_depression_min",
+     "value": 16,
+     "unit": "",
+     "fragment": "PROMIS depression scale score of greater or equal to 16"
+    },
+    {
+     "key": "promis_anxiety_min",
+     "value": 14,
+     "unit": "",
+     "fragment": "PROMIS anxiety score greater or equal to 14"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT06186167",
+   "condition": "Dementia",
+   "text": "Inclusion Criteria:\n\n* Patients who are 40 years of age or older\n* Patients who are able and willing to provide informed consent\n* Patients who are scheduled for CIED implantation within the study period and with clinical lab and imaging features suggestive of cardiac amyloidosis\n\nExclusion Criteria:\n\n* Individuals below the age of 40.\n* Persons who are unable to consent or who do not consent to participate.\n* Patients who have already been diagnosed with cardiac amyloidosis prior to the study",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 40,
+     "unit": "years",
+     "fragment": "40 years of age or older"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT02910388",
+   "condition": "Precancerous Conditions",
+   "text": "Inclusion Criteria:\n\n* histologically proven cervical dysplasia\n* colposcopy Prior to conization\n* informed consent\n\nExclusion Criteria:\n\n* significant language barrier\n* a personal history of conization\n* pregnancy\n* the use of blood thinner\n* unwillingness to participate",
+   "limits": []
+  },
+  {
+   "nct_id": "NCT03764839",
+   "condition": "Neurologic Manifestations",
+   "text": "Inclusion Criteria:\n\n* Age 18-80 years\n* Undergoing a scheduled surgery for orthopedic trauma\n* Post-surgery up to 7 days\n* English fluency\n* Ability and willingness to complete electronic study procedures including questionnaires, assessments, and receipt of treatment.\n\nExclusion Criteria:\n\n* Any conditions causing inability to complete study procedures (e.g. cognitive ability, mental status, medical status) or lack of access to internet and phone that would prevent participation in study procedures - at the discretion of the staff member.\n* long-term opioid use prior to surgery\n* Known pregnancy\n* Ongoing legal action related to pain or disability claim\n* Multiple surgeries and/or infections\n* Injury is not fracture related or non-trauma surgery\n* Documented history of alcohol abuse",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "Age 18-80 years"
+    },
+    {
+     "key": "max_age",
+     "value": 80,
+     "unit": "years",
+     "fragment": "Age 18-80 years"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT07379749",
+   "condition": "Acute Cholangitis",
+   "text": "Inclusion Criteria:\n\n* All patients between 18 and 90 years old with native papilla and obstructive jaundice of any etiology requiring plastic biliary stent placement, with a positive bile culture at index ERCP who can provide written informed consent (obtained from the patient or legal caregiver).\n\nExclusion Criteria:\n\n* prior ERCP attempts\n* patients with bilio-digestive surgical or endoscopic anastomoses\n* inability to provide informed consent due to cognitive, legal, or medical reasons\n* scheduled surgical resection within one month after ERCP.",
+   "limits": [
+    {
+     "key": "min_age",
+     "value": 18,
+     "unit": "years",
+     "fragment": "between 18 and 90 years old"
+    },
+    {
+     "key": "max_age",
+     "value": 90,
+     "unit": "years",
+     "fragment": "between 18 and 90 years old"
+    }
+   ]
+  }
+ ]
+}

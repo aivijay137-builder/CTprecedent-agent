@@ -1,0 +1,19 @@
+# router_real_smoke: Router on the REAL registry and REAL draft packs: does each golden design and a few made-up conditions route to the pack I expect?
+# command: python EVALS/scripts/router_real_smoke.py
+# when: 2026-11-09 23:48   exit status: 1
+
+20 packs loaded from C:\Users\vijay\test workspace\ctg-data\Faro\Prompts\packs
+DIFF bronchiectasis_nct                       -> indication=copd, area=respiratory | add-on 204 words | Matched Respiratory > COPD through the condition's MeSH terms.
+       expected (None, 'respiratory'); matches: [('copd', 90), ('oncology_heme', 60), ('metabolic_endocrine', 30), ('cardiovascular', 30), ('respiratory', 30), ('gastro_hepatology', 25), ('infectious_disease', 25), ('neurology', 25), ('rare_genetic', 15)]
+DIFF heart_failure_form                       -> indication=None, area=metabolic_endocrine | add-on 111 words | Matched Metabolic and endocrine through the condition's MeSH terms.
+       expected (None, 'cardiovascular'); matches: [('metabolic_endocrine', 30), ('cardiovascular', 30), ('respiratory', 30), ('nephrology_urology', 25), ('infectious_disease', 25), ('neurology', 25), ('ophthalmology', 25), ('psychiatry', 25), ('womens_health', 25), ('rare_genetic', 15)]
+ok   psoriasis_form                           -> indication=psoriasis, area=dermatology | add-on 215 words | Matched Dermatology > Psoriasis through the condition's MeSH terms.
+ok   type 2 diabetes (made up)                -> indication=None, area=metabolic_endocrine | add-on 111 words | Matched Metabolic and endocrine through the condition's MeSH terms.
+DIFF non-small cell lung cancer (made up)     -> indication=None, area=oncology_heme | add-on 108 words | Matched Oncology, blood cancers through the condition's MeSH terms.
+       expected (None, 'oncology_solid'); matches: [('oncology_heme', 60)]
+ok   multiple myeloma (made up)               -> indication=None, area=oncology_heme | add-on 108 words | Matched Oncology, blood cancers through the condition's MeSH terms.
+ok   asthma (made up)                         -> indication=asthma, area=respiratory | add-on 199 words | Matched Respiratory > Asthma through the condition's MeSH terms.
+DIFF glaucoma (made up)                       -> indication=None, area=metabolic_endocrine | add-on 111 words | Matched Metabolic and endocrine through the condition's MeSH terms.
+       expected (None, 'ophthalmology'); matches: [('metabolic_endocrine', 30), ('cardiovascular', 30), ('ophthalmology', 25), ('rare_genetic', 15)]
+ok   no MeSH term (free text only)            -> indication=None, area=None | add-on 0 words | The design has no MeSH condition term, so no pack could be chosen. The
+4 case(s) differ from what I expected

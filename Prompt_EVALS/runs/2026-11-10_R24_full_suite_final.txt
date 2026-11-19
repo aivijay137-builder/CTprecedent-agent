@@ -1,0 +1,22 @@
+# full_suite_final: Full suite at the end of the router build (registry and packs present).
+# command: python -m pytest backend tests sync -q
+# when: 2026-11-10 00:03   exit status: 0
+
+........................................................................ [ 51%]
+....................................................................     [100%]
+============================== warnings summary ===============================
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14
+  C:\Users\vijay\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+sync/test_sync.py::test_labels_stop_cause
+sync/test_sync.py::test_daily_sync_ok_and_watermark
+sync/test_sync.py::test_bootstrap_resumes_from_saved_token
+  C:\Users\vijay\test workspace\ctg-data\Faro\sync\labels.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+    flags[name] = mesh.str.contains(mesh_re, regex=True) | cond.str.contains(text_re, regex=True) | ((~has_mesh) & fb.str.contains(text_re, regex=True))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+140 passed, 4 warnings in 39.76s

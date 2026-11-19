@@ -1,0 +1,53 @@
+# full_suite_after_engine_hooks: Full test suite after the engine, readers, API and packlib changes (compare with R05: 95 passed before).
+# command: python -m pytest backend tests sync -q
+# when: 2026-11-09 23:55   exit status: 1
+
+...........F............................................................ [ 51%]
+....................................................................     [100%]
+================================== FAILURES ===================================
+__________________ test_background_run_gets_the_visitors_key __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000212E01EC170>
+
+    def test_background_run_gets_the_visitors_key(monkeypatch):
+        got = {}
+    
+        def fake_run(brief, focus, excluded, progress):
+            got["c"] = llmsvc.current()
+            return {"flags": [], "bottom_line": {}}
+        monkeypatch.setattr(main.engine, "run", fake_run)
+        monkeypatch.setattr(main.appdb, "save_run", lambda *a, **k: None)
+        rid = main._start_job(None, [], [], None, creds=creds())
+        for _ in range(50):
+            if main.JOBS[rid]["state"] != "running":
+                break
+            time.sleep(0.05)
+>       assert got["c"].api_key == KEY
+               ^^^^^^^^
+E       KeyError: 'c'
+
+backend\test_byok.py:190: KeyError
+---------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "C:\Users\vijay\test workspace\ctg-data\Faro\backend\main.py", line 90, in work
+    res = engine.run(brief, focus, excluded, progress, pack)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: test_background_run_gets_the_visitors_key.<locals>.fake_run() takes 4 positional arguments but 5 were given
+============================== warnings summary ===============================
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14
+  C:\Users\vijay\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+sync/test_sync.py::test_labels_stop_cause
+sync/test_sync.py::test_daily_sync_ok_and_watermark
+sync/test_sync.py::test_bootstrap_resumes_from_saved_token
+  C:\Users\vijay\test workspace\ctg-data\Faro\sync\labels.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+    flags[name] = mesh.str.contains(mesh_re, regex=True) | cond.str.contains(text_re, regex=True) | ((~has_mesh) & fb.str.contains(text_re, regex=True))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/test_byok.py::test_background_run_gets_the_visitors_key - KeyE...
+1 failed, 139 passed, 4 warnings in 41.27s

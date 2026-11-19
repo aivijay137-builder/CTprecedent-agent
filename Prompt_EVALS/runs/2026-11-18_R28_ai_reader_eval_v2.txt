@@ -1,0 +1,10 @@
+Reader: llm   texts: 40   gold limits: 120   reader outputs (in scope): 120
+  strict_recall     63.3%
+  strict_precision  63.3%
+  loose_recall      92.5%
+  loose_precision   92.5%
+  source_match      100.0%
+  edge no_limit  6/6 passed
+  edge hostile   3/4 passed
+  calls that failed on every model: 1 ['H03']
+Texts with most misses: NCT05876403(3), NCT07440914(2), NCT00207337(1), NCT03359122(1), NCT05768581(1)

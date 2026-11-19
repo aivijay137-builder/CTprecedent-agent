@@ -10,9 +10,9 @@ const RISK: Record<string, { label: string; tone: string }> = {
   high: { label: "High precedent risk", tone: "red" }, insufficient: { label: "Not enough precedent", tone: "" },
 };
 
-export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, onRerun, onPackage, packaged }: {
+export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, onRerun, onPackage, packaged, onCompare }: {
   run: RunResult; outOfDate: boolean; excluded: string[]; onToggleExcluded: (id: string) => void;
-  onDecide: (flag: Flag, action: string, reason?: string) => Promise<void>; onRerun: () => void; onPackage: () => Promise<void>; packaged: boolean;
+  onDecide: (flag: Flag, action: string, reason?: string) => Promise<void>; onRerun: () => void; onPackage: () => Promise<void>; packaged: boolean; onCompare?: () => void;
 }) {
   const [tab, setTab] = useState<Tab>("flags");
   const refs = useRef<Record<string, HTMLButtonElement | null>>({});
@@ -45,6 +45,17 @@ export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, 
       {stale && <div className="banner amber">Registry data is {daysOld(run.data_as_of)} days old (as of {fmtDate(run.data_as_of)}). Newer trials may be missing.</div>}
       {run.condition_support === "basic" && (
         <div className="banner grey">Basic support for this condition: comparables and outcomes come from the registry, but eligibility cutoffs are not parsed, so population checks use text only.</div>
+      )}
+
+      {run.pack && (
+        <div className="banner grey" role="note" aria-label="Therapeutic pack used">
+          <b>Therapeutic pack: {run.pack.pack}</b> <span className="badge amber">{run.pack.status}, not reviewed</span>
+          <ul style={{ margin: "4px 0 0", paddingLeft: 18 }}>
+            <li>Drug vs device filter: {run.pack.hard_filter.applied ? `removed ${run.pack.hard_filter.removed} trials` : run.pack.hard_filter.relaxed ? "relaxed, because fewer than 5 trials would remain" : "not applied"} ({run.pack.hard_filter.reason}).</li>
+            <li>Ranking hints: {run.pack.ranking.applied ? `${run.pack.ranking.boosted_subtype ?? 0} trials nudged up for subtype, ${run.pack.ranking.boosted_endpoint_type ?? 0} for endpoint type` : "off"}. Older-trial penalty: {run.pack.ranking.era_applied ? "on" : "off"}. Prompt add-on: {run.pack.parts.addon ? "on" : "off"}.</li>
+          </ul>
+          {onCompare && <div className="actions" style={{ marginTop: 8 }}><button className="btn" onClick={onCompare}>Compare with prompt only</button></div>}
+        </div>
       )}
 
       <div className="bottom">
@@ -93,7 +104,6 @@ export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, 
             </div>
           )}
           <Background run={run} />
-          <Audit run={run} />
         </div>
       )}
 
@@ -114,20 +124,6 @@ export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, 
   );
 }
 
-function Audit({ run }: { run: RunResult }) {
-  if (!run.audit?.length) return null;
-  return (
-    <details>
-      <summary>SQL behind these numbers ({run.audit.length} queries)</summary>
-      <div>
-        <p className="lead">Every number above comes from one of these queries against the registry database (ctg.duckdb). Paste one into DuckDB to check it.</p>
-        {run.audit.map((a, i) => (
-          <details key={i}><summary>{a.name}</summary><pre style={{ whiteSpace: "pre-wrap", fontSize: 11, margin: 0, paddingBottom: 12 }}>{a.sql}</pre></details>
-        ))}
-      </div>
-    </details>
-  );
-}
 
 function Background({ run }: { run: RunResult }) {
   const o = run.outcomes;

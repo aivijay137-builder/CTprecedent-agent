@@ -16,5 +16,5 @@ def pytest_collection_modifyitems(config, items):
     import pytest
     skip = pytest.mark.skip(reason="registry database not present")
     for it in items:
-        if it.module.__name__.split(".")[-1] in ("test_real", "test_three_designs") or it.name in NEEDS_REGISTRY:
+        if it.module.__name__.split(".")[-1] in ("test_real", "test_three_designs", "test_packs_real", "test_packs_off_is_unchanged", "test_packs_api_real") or it.name in NEEDS_REGISTRY:
             it.add_marker(skip)

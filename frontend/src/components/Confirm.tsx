@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
-import type { Cutoff, DesignBrief, Element } from "../types";
+import type { Cutoff, DesignBrief, Element, PackChoice } from "../types";
+import { PackOptions } from "./PackOptions";
 import { CONTROL_OPTIONS, ELEMENT_LABEL, controlValue } from "../util";
 
 const PHASES = ["EARLY_PHASE1", "PHASE1", "PHASE1/PHASE2", "PHASE2", "PHASE2/PHASE3", "PHASE3", "PHASE4"];
@@ -16,9 +17,10 @@ export function missingFields(b: DesignBrief): string[] {
 }
 const NAMES: Record<string, string> = { condition: "Condition", phase: "Phase", primary_endpoint: "Primary endpoint", target_enrollment: "Target enrollment" };
 
-export function Confirm({ brief, onChange, onRun, onCancel, onLoadNct, fixtures, onNewDesign }: {
+export function Confirm({ brief, onChange, onRun, onCancel, onLoadNct, fixtures, onNewDesign, packChoice, onPackChange }: {
   brief: DesignBrief; onChange: (b: DesignBrief) => void; onRun: (b: DesignBrief, focus: Element[]) => void;
   onCancel: () => void; onLoadNct: (nct: string) => Promise<string | null>; fixtures: boolean; onNewDesign: () => void;
+  packChoice: PackChoice | null; onPackChange: (c: PackChoice | null) => void;
 }) {
   const [cutoffs, setCutoffs] = useState<Cutoff[] | null>(null);
   const [parseErr, setParseErr] = useState("");
@@ -34,11 +36,11 @@ export function Confirm({ brief, onChange, onRun, onCancel, onLoadNct, fixtures,
   useEffect(() => {
     let live = true;
     setCutoffs(null); setParseErr(""); setParseNote("");
-    api.parse(brief.eligibility_text, brief.condition)
+    api.parse(brief.eligibility_text, brief.condition, packChoice?.parts.addon ? packChoice : null)  // the add-on changes how the text is read
       .then((r) => { if (live) { setCutoffs(r.cutoffs); setParseNote(r.note ?? ""); } })
       .catch((e: Error) => live && setParseErr(e.message));
     return () => { live = false; };
-  }, [brief.eligibility_text, brief.condition]);
+  }, [brief.eligibility_text, brief.condition, packChoice?.area, packChoice?.indication, packChoice?.parts.addon]);
 
   const bad = (k: string) => showErr && miss.includes(k);
   const edit = (i: number, p: Partial<Cutoff>) => setCutoffs((cs) => cs && cs.map((c, j) => (j === i ? { ...c, ...p } : c)));
@@ -121,6 +123,8 @@ export function Confirm({ brief, onChange, onRun, onCancel, onLoadNct, fixtures,
         </table></div>
       )}
       {cutoffs && cutoffs.length === 0 && <div className="banner grey">No cutoffs found. The check will use text similarity only.</div>}
+
+      <PackOptions brief={brief} choice={packChoice} onChange={onPackChange} />
 
       <h2 className="sectionhead">Which design elements to check</h2>
       <div className="checks" role="group" aria-label="Design elements to check">

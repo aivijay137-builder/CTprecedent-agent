@@ -1,0 +1,33 @@
+# packs_unit_first_run: Router, merge and ranking unit tests (fixture packs), first run. Expected one FAIL: a wrong expectation in my era-penalty test.
+# command: python -m pytest backend/test_packs.py -q
+# when: 2026-11-09 23:47   exit status: 1
+
+.................F..                                                     [100%]
+================================== FAILURES ===================================
+__________________ test_era_penalty_and_endpoint_type_boost ___________________
+
+    def test_era_penalty_and_endpoint_type_boost():
+        c = cands(3)
+        c[0]["pm"] = "number of deaths"                     # a different endpoint type from the design's FEV1 change
+        extras = {c[0]["nct_id"]: (2010, ""), c[1]["nct_id"]: (2010, ""), c[2]["nct_id"]: (2019, "")}
+        out, log = rank.apply(FakeCx(extras=extras), c, brief(), eff({"hard_filter": False}))
+        g = log["ranking"]
+        assert g["design_endpoint_type"] == "lab_or_physiologic_change"
+        assert g["boosted_endpoint_type"] == 2               # the two FEV1 trials; the 'deaths' trial is not boosted
+>       assert g["penalised_era"] == 0                       # fixture era years only bite when proposed_year is set and the trial is older
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 2 == 0
+
+backend\test_packs.py:175: AssertionError
+============================== warnings summary ===============================
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14
+  C:\Users\vijay\AppData\Local\Programs\Python\Python312\Lib\site-packages\anyio\pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/test_packs.py::test_era_penalty_and_endpoint_type_boost - asse...
+1 failed, 19 passed, 1 warning in 1.03s

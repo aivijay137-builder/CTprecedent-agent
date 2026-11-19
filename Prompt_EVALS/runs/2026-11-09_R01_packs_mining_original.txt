@@ -1,0 +1,26 @@
+# packs_mining_original: Original mining run that wrote the 19 draft packs (SQL only, no AI). Log recorded from the 9 Nov 22:39-22:46 run.
+# command: python src/packs/mine.py
+# when: 2026-11-09 23:43   exit status: 0
+
+22:39:45 building the per-trial table
+22:39:47   trials: 465865
+22:40:34 oncology_heme: 17028 trials, 10224 Phase 2/3, fields 8, subtypes 3, archetypes 5, norms 14, few-shots 3 (46s)
+22:41:11 oncology_solid: 67867 trials, 34347 Phase 2/3, fields 10, subtypes 3, archetypes 5, norms 14, few-shots 3 (37s)
+22:41:31 cardiovascular: 40023 trials, 9121 Phase 2/3, fields 7, subtypes 4, archetypes 5, norms 14, few-shots 3 (19s)
+22:41:57 respiratory: 27532 trials, 9474 Phase 2/3, fields 7, subtypes 5, archetypes 5, norms 14, few-shots 3 (26s)
+22:42:16 metabolic_endocrine: 41080 trials, 10434 Phase 2/3, fields 9, subtypes 5, archetypes 5, norms 14, few-shots 3 (19s)
+22:42:38 neurology: 52164 trials, 12418 Phase 2/3, fields 9, subtypes 6, archetypes 5, norms 14, few-shots 3 (22s)
+22:42:59 psychiatry: 39540 trials, 8497 Phase 2/3, fields 8, subtypes 6, archetypes 5, norms 14, few-shots 3 (21s)
+22:43:23 infectious_disease: 31369 trials, 12156 Phase 2/3, fields 7, subtypes 6, archetypes 5, norms 14, few-shots 3 (23s)
+22:43:48 dermatology: 10736 trials, 4507 Phase 2/3, fields 8, subtypes 6, archetypes 5, norms 14, few-shots 3 (25s)
+22:44:10 rheumatology_msk: 22261 trials, 5897 Phase 2/3, fields 8, subtypes 6, archetypes 5, norms 14, few-shots 3 (22s)
+22:44:31 gastro_hepatology: 16850 trials, 5658 Phase 2/3, fields 9, subtypes 5, archetypes 5, norms 14, few-shots 3 (21s)
+22:44:50 nephrology_urology: 10566 trials, 3071 Phase 2/3, fields 9, subtypes 5, archetypes 5, norms 14, few-shots 3 (19s)
+22:45:09 ophthalmology: 10352 trials, 3235 Phase 2/3, fields 7, subtypes 5, archetypes 5, norms 14, few-shots 3 (19s)
+22:45:32 hematology_nonmalignant: 5373 trials, 2630 Phase 2/3, fields 8, subtypes 5, archetypes 5, norms 14, few-shots 3 (23s)
+22:45:49 womens_health: 17798 trials, 4585 Phase 2/3, fields 7, subtypes 5, archetypes 5, norms 14, few-shots 3 (17s)
+22:46:10 rare_genetic: 14799 trials, 5856 Phase 2/3, fields 7, subtypes 5, archetypes 5, norms 14, few-shots 3 (21s)
+22:46:25 copd: 3892 trials, 1077 Phase 2/3, fields 8, subtypes 4, archetypes 5, norms 21, few-shots 3 (14s)
+22:46:41 asthma: 3272 trials, 1245 Phase 2/3, fields 7, subtypes 4, archetypes 5, norms 14, few-shots 3 (17s)
+22:46:49 psoriasis: 1392 trials, 685 Phase 2/3, fields 8, subtypes 5, archetypes 3, norms 14, few-shots 3 (8s)
+22:46:50 done

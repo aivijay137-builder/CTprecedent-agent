@@ -9,6 +9,7 @@ import threading
 import time
 import traceback
 from pathlib import Path
+from typing import Optional
 
 from dotenv import load_dotenv
 import hashlib
@@ -17,11 +18,12 @@ from fastapi import FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, Field
 
 import adapters
 from sync import sync_ctg
 from . import appdb, byok, criteria, engine, llmsvc, readers
-from .schemas import (DecisionIn, Diff, DiffItem, Flag, Health, NctIn, PackageId, PackageSnapshot, ParseIn,
+from .schemas import (PackChoice, DecisionIn, Diff, DiffItem, Flag, Health, NctIn, PackageId, PackageSnapshot, ParseIn,
                       ParseOut, ConditionSuggestion, RerunIn, RerunOut, ReviewIn, RunId, RunIn, RunResult, TrialSummary)
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -54,7 +56,26 @@ _attempts: dict[str, int] = {}  # demo: NCT05000003 fails on odd attempts, so Re
 JOBS: dict[str, dict] = {}  # real engine: run_id -> {events, state, error}
 
 
-def _start_job(brief, focus, excluded, parent=None, creds=None) -> str:
+def _effective_pack(choice):
+    """The merged pack for a run, or None (prompt only). Raises 400 when the pack files are missing or an id is unknown."""
+    if not choice or not (choice.area or choice.indication):
+        return None
+    from .packlib import loader, merge
+    if not loader.available():
+        raise HTTPException(400, "Therapeutic packs are not available on this server.")
+    packs = loader.load_all()
+    for pid, level in ((choice.area, "area"), (choice.indication, "indication")):
+        if pid and (pid not in packs or packs[pid]["level"] != level):
+            raise HTTPException(400, f"Unknown {level} pack: {pid}")
+    return merge.merge(packs, choice.area, choice.indication, choice.parts)
+
+
+def _log_pack(role, run_id, eff):
+    appdb.log(role, "pack", "on" if eff else "off", run_id=run_id,
+              reason=json.dumps({"ids": eff["ids"], "versions": eff["versions"], "status": eff["status"], "parts": eff["parts"]}) if eff else None)
+
+
+def _start_job(brief, focus, excluded, parent=None, creds=None, pack=None) -> str:
     """Run the real engine in a background thread; the SSE endpoint streams its progress."""
     run_id = appdb.new_id("run")
     job = {"events": [], "state": "running", "error": "", "t0": time.time()}
@@ -67,7 +88,7 @@ def _start_job(brief, focus, excluded, parent=None, creds=None) -> str:
     def work():
         try:
             with llmsvc.use(creds):  # the visitor's own key, if any (a new thread does not inherit it)
-                res = engine.run(brief, focus, excluded, progress)
+                res = engine.run(brief, focus, excluded, progress, **({"pack": pack} if pack else {}))  # prompt-only runs keep the exact old call
             res["run_id"] = run_id
             if parent:
                 engine.apply_diff(parent, res)
@@ -125,8 +146,10 @@ def suggest(q: str = ""):
 @app.post("/api/briefs/parse", response_model=ParseOut)
 def parse(body: ParseIn, request: Request):
     creds = byok.from_request(request)
+    from .packlib import merge as pack_merge
+    addon = pack_merge.addon_for(_effective_pack(body.pack))
     if not FIXTURES:  # Phase C adds live LLM parsing; until then reuse cutoffs already parsed (free)
-        hit = engine.cached_cutoffs(body.eligibility_text)
+        hit = None if addon else engine.cached_cutoffs(body.eligibility_text)  # with a pack add-on the earlier answer is not the same question
         if hit:
             return {"cutoffs": hit, "note": "Cutoffs were parsed earlier for this exact trial text (no LLM call)."}
         text = body.eligibility_text
@@ -135,7 +158,7 @@ def parse(body: ParseIn, request: Request):
         why = ""
         try:
             with llmsvc.use(creds):
-                found = readers.parse_design(text, body.condition, llmsvc.Budget(5))
+                found = readers.parse_design(text, body.condition, llmsvc.Budget(5), addon)
             bad = sum(1 for c in found if not c["valid"])
             note = (f"Read by AI. Each quoted sentence was checked against your text{f'; {bad} could not be matched and are marked' if bad else ''}."
                     if found else "The AI found no numeric limits in this text. The check still compares your wording with each trial's.")
@@ -228,13 +251,17 @@ def _make_run(brief, excluded: list[str], parent: dict | None = None) -> dict:
 
 
 @app.post("/api/runs", response_model=RunId)
-def create_run(body: RunIn, request: Request):
+def create_run(body: RunIn, request: Request, x_role: str = Header("lead")):
     miss = _missing(body.brief)
     if miss:
         raise HTTPException(422, "Missing required: " + ", ".join(miss))
     if not FIXTURES:
         _limit_checks(request)
-        return {"run_id": _start_job(body.brief, body.focus, body.excluded_ids, creds=byok.from_request(request))}
+        eff = _effective_pack(body.packs)
+        run_id = _start_job(body.brief, body.focus, body.excluded_ids, creds=byok.from_request(request), pack=eff)
+        if eff:
+            _log_pack(x_role, run_id, eff)
+        return {"run_id": run_id}
     res = _make_run(body.brief, body.excluded_ids)
     if body.brief.nct_id == "NCT05000003":  # demo: every other attempt fails
         _attempts["n"] = _attempts.get("n", 0) + 1
@@ -321,14 +348,18 @@ def decide(run_id: str, flag_id: str, body: DecisionIn, x_role: str = Header("le
 
 
 @app.post("/api/runs/{run_id}/rerun", response_model=RerunOut)
-def rerun(run_id: str, body: RerunIn, request: Request):
+def rerun(run_id: str, body: RerunIn, request: Request, x_role: str = Header("lead")):
     parent = _run_or_404(run_id)
     miss = _missing(body.brief)
     if miss:
         raise HTTPException(422, "Missing required: " + ", ".join(miss))
     if not FIXTURES:  # the diff arrives with the finished run (GET /runs/{id}.diff); see docs/api.md
         _limit_checks(request)
-        return {"run_id": _start_job(body.brief, list(parent_focus(parent)), body.excluded_ids, parent, creds=byok.from_request(request)), "diff": {}}
+        eff = _effective_pack(body.packs)
+        rid = _start_job(body.brief, list(parent_focus(parent)), body.excluded_ids, parent, creds=byok.from_request(request), pack=eff)
+        if eff:
+            _log_pack(x_role, rid, eff)
+        return {"run_id": rid, "diff": {}}
     res = _make_run(body.brief, body.excluded_ids, parent)
     return {"run_id": res["run_id"], "diff": res["diff"]}
 
@@ -412,6 +443,54 @@ def health():
     return {**info, **sync, "version": (os.environ.get("RAILWAY_GIT_COMMIT_SHA") or "dev")[:7],
             "llm_configured": llmsvc.configured(), "llm_enabled": llmsvc.enabled(),
             "fixtures": FIXTURES}
+
+
+# ---------- therapeutic packs (optional; the live site has none until a pack passes review)
+@app.get("/api/packs")
+def packs_list():
+    from .packlib import loader
+    if FIXTURES or not loader.available():
+        return {"available": False, "packs": []}
+    return {"available": True, "packs": loader.summary(loader.load_all())}
+
+
+class RouteIn(BaseModel):
+    condition: str = ""
+    mesh_terms: list[str] = Field(default_factory=list)
+    area: Optional[str] = None         # the lead's own pick: the preview then shows THIS pair instead of the suggested one
+    indication: Optional[str] = None
+
+
+@app.post("/api/packs/route")
+def packs_route(body: RouteIn):
+    """Suggests the pack(s) for a design's condition and previews what they would add. It only suggests: the lead chooses."""
+    from types import SimpleNamespace
+    from .packlib import loader, merge, router
+    if FIXTURES or not loader.available():
+        return {"available": False}
+    packs = loader.load_all()
+    try:
+        r = router.route(engine.Ctx(), SimpleNamespace(condition=body.condition, mesh_terms=body.mesh_terms), packs)
+    except engine.RegistryBusy as e:
+        raise HTTPException(503, str(e))
+    pick = body.area or body.indication
+    eff = merge.merge(packs, body.area if pick else r["area"], body.indication if pick else r["indication"])
+    prev = None if not eff else {
+        "label": eff["label"], "ids": eff["ids"], "versions": eff["versions"], "status": eff["status"], "addon_text": eff["addon_text"],
+        "n_subtypes": len(eff["subtypes"]), "n_endpoint_types": len(eff["archetypes"]), "n_era_rules": len([e for e in eff["eras"] if e.get("proposed_year")]),
+        "hard_filter": (eff["intervention_split"] or {}).get("name")}
+    return {"available": True, "indication": r["indication"], "area": r["area"], "reason": r["reason"], "matches": r["matches"], "preview": prev,
+            "all_packs": loader.summary(packs)}
+
+
+@app.get("/api/compare")
+def compare_runs(a: str, b: str):
+    """What changed between two finished runs of the same design (for example prompt only vs with a pack). Not a quality verdict."""
+    from .packlib import compare
+    ra, rb = appdb.load_run(a), appdb.load_run(b)
+    if not ra or not rb:
+        raise HTTPException(404, "run not found")
+    return compare.compare_runs(ra, rb)
 
 
 @app.post("/api/llm/test")

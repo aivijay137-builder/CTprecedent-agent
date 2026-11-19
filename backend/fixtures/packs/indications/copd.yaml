@@ -1,0 +1,14 @@
+id: copd
+level: indication
+label: COPD
+version: 0.1.0
+status: draft
+routing: {mesh_terms: ["Pulmonary Disease, Chronic Obstructive"], exclude_mesh_terms: [], priority: 90, parent: respiratory}
+prompt_addon: COPD text. GOLD grade is a category.
+extraction_fields:
+  - {name: fev1_fvc, label: FEV1/FVC, unit: ratio}
+subtypes:
+  - {name: copd, regex: "copd", mode: boost}
+  - {name: frequent_exacerbators, regex: "exacerbat", mode: boost}
+trial_archetypes: []
+era_breakpoints: []

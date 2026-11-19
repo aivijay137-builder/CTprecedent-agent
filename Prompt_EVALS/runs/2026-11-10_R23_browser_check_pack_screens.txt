@@ -1,0 +1,11 @@
+# browser_check_pack_screens: Hand check in a real browser of the pack screens: options, banner, compare. Screenshots in EVALS/screens.
+# command: local server + Playwright, design NCT03460704
+# when: 2026-11-10 00:02   exit status: 0
+
+# Browser check of the pack screens (local server, real registry, real draft packs, AI off). Done by hand with Playwright on 9 Nov 2026.
+Design: NCT03460704 (bronchiectasis) loaded from its NCT ID.
+1. Confirm screen: the "Precedent check options" block appears. Default is "Prompt only". Hint shown: "A pack is available for this condition: Matched Respiratory through the condition's MeSH terms." (screens/packs_options_off.png)
+2. Choosing "Prompt + therapeutic pack": amber "Draft pack, not reviewed by an expert" notice; Area pack = Respiratory (v0.1.0, draft); Indication pack = None; four switches: Prompt add-on ON, Ranking hints ON, Drug vs device filter ON, Older-trial penalty OFF; "Read the prompt add-on text" link. (screens/packs_options_on.png)
+3. Run with the pack: results show the banner "Therapeutic pack: Respiratory [draft, not reviewed]", filter "not applied (every candidate is already drug_biologic)", "24 trials nudged up for subtype, 0 for endpoint type. Older-trial penalty: off. Prompt add-on: on." and a "Compare with prompt only" button. Bottom line: 26 comparable trials; 3 terminated, 1 for slow enrollment; Medium risk; Endpoint and Sites flags. (screens/packs_results_banner.png)
+4. Compare with prompt only: runs the design again without the pack, then shows "Prompt only vs with a pack": same bottom line both sides; "26 of 26 trials appear in both lists, 16 at exactly the same rank. The pack did not change which trials are listed."; five biggest rank changes (for example NCT06418711 #16 -> #21); "Same flags in both runs (Endpoint, Sites), with the same n."; note that it shows what changed, not which is better. (screens/packs_compare.png)
+Result: PASS. The compare view agrees with the earlier script run on the same design (R16: 0 trials swapped, 16 of 26 at the same rank).

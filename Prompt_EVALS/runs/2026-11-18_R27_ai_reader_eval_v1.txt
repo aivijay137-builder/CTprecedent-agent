@@ -1,0 +1,9 @@
+Reader: llm (prompt v5, gpt-oss-120b)   texts: 40   gold limits: 120   reader outputs (in scope): 132
+  strict_recall     58.3%
+  strict_precision  53.0%
+  loose_recall      90.0%
+  loose_precision   81.8%
+  source_match      100.0%
+  edge no_limit  5/6 passed   (E05 returned clinic_visits_prior_12_months_min 2)
+  edge hostile   4/4 passed
+51 calls, $0.0418, 731 s total, 1 non-ok (JSON error). Raw scores: backend/golden/reader_score_llm_v5.json

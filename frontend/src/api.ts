@@ -1,5 +1,5 @@
 import { aiHeaders } from "./llmKey";
-import type { Cutoff, DesignBrief, Diff, Flag, Health, PackageSnapshot, Role, RunResult, TrialSummary } from "./types";
+import type { Compare, Cutoff, DesignBrief, Diff, Flag, Health, PackageSnapshot, PackChoice, PackRoute, Role, RunResult, TrialSummary } from "./types";
 
 let role: Role = "lead";
 export const setRole = (r: Role) => { role = r; };
@@ -35,15 +35,18 @@ export const api = {
   testKey: () => call<{ ok: boolean; message: string }>("POST", "/llm/test"),
   fromNct: (nct_id: string) => call<DesignBrief>("POST", "/briefs/from-nct", { nct_id }),
   suggest: (q: string) => call<{ term: string; n_trials: number }[]>("GET", `/conditions/suggest?q=${encodeURIComponent(q)}`),
-  parse: (eligibility_text: string, condition: string) =>
-    call<{ cutoffs: Cutoff[]; note?: string | null }>("POST", "/briefs/parse", { eligibility_text, condition }),
-  createRun: (brief: DesignBrief, focus: string[], excluded_ids: string[] = []) =>
-    call<{ run_id: string }>("POST", "/runs", { brief, focus, filters: {}, excluded_ids }),
+  parse: (eligibility_text: string, condition: string, pack?: PackChoice | null) =>
+    call<{ cutoffs: Cutoff[]; note?: string | null }>("POST", "/briefs/parse", { eligibility_text, condition, pack: pack ?? null }),
+  createRun: (brief: DesignBrief, focus: string[], excluded_ids: string[] = [], packs?: PackChoice | null) =>
+    call<{ run_id: string }>("POST", "/runs", { brief, focus, filters: {}, excluded_ids, packs: packs ?? null }),
   getRun: (id: string) => call<RunResult>("GET", `/runs/${id}`),
   decide: (runId: string, flagId: string, action: string, reason?: string) =>
     call<Flag>("POST", `/runs/${runId}/flags/${flagId}/decision`, { action, reason }),
-  rerun: (runId: string, brief: DesignBrief, excluded_ids: string[]) =>
-    call<{ run_id: string; diff: Diff }>("POST", `/runs/${runId}/rerun`, { brief, excluded_ids }),
+  rerun: (runId: string, brief: DesignBrief, excluded_ids: string[], packs?: PackChoice | null) =>
+    call<{ run_id: string; diff: Diff }>("POST", `/runs/${runId}/rerun`, { brief, excluded_ids, packs: packs ?? null }),
+  packsRoute: (condition: string, mesh_terms: string[], pick?: { area: string | null; indication: string | null }) =>
+    call<PackRoute>("POST", "/packs/route", { condition, mesh_terms, area: pick?.area ?? null, indication: pick?.indication ?? null }),
+  compare: (a: string, b: string) => call<Compare>("GET", `/compare?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`),
   makePackage: (runId: string) => call<{ package_id: string }>("POST", `/runs/${runId}/package`),
   getPackage: (id: string) => call<PackageSnapshot>("GET", `/packages/${id}`),
   review: (pid: string, flag_id: string, action: "agree" | "send_back", comment?: string) =>

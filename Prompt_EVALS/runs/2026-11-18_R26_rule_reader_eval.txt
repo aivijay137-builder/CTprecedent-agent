@@ -1,0 +1,8 @@
+Reader: rules   texts: 40   gold limits: 120   reader outputs (in scope): 56
+  strict_recall     24.2%
+  strict_precision  51.8%
+  loose_recall      35.8%
+  loose_precision   76.8%
+  source_match      97.7%
+  edge no_limit  6/6 passed
+  edge hostile   4/4 passed

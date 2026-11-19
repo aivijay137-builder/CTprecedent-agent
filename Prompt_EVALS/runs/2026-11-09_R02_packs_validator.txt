@@ -1,0 +1,25 @@
+# packs_validator: Do all 19 draft packs pass the schema (every number has n, every rule has a rationale and evidence)?
+# command: python src/packs/schema.py
+# when: 2026-11-09 23:43   exit status: 0
+
+ok    _base.yaml
+ok    areas\cardiovascular.yaml
+ok    areas\dermatology.yaml
+ok    areas\gastro_hepatology.yaml
+ok    areas\hematology_nonmalignant.yaml
+ok    areas\infectious_disease.yaml
+ok    areas\metabolic_endocrine.yaml
+ok    areas\nephrology_urology.yaml
+ok    areas\neurology.yaml
+ok    areas\oncology_heme.yaml
+ok    areas\oncology_solid.yaml
+ok    areas\ophthalmology.yaml
+ok    areas\psychiatry.yaml
+ok    areas\rare_genetic.yaml
+ok    areas\respiratory.yaml
+ok    areas\rheumatology_msk.yaml
+ok    areas\womens_health.yaml
+ok    indications\asthma.yaml
+ok    indications\copd.yaml
+ok    indications\psoriasis.yaml
+20 of 20 packs valid

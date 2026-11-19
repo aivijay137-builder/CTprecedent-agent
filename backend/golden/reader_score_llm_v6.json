@@ -1,0 +1,618 @@
+{
+ "texts": 40,
+ "gold_limits": 120,
+ "reader_outputs": 120,
+ "strict_recall": 0.633,
+ "strict_precision": 0.633,
+ "loose_recall": 0.925,
+ "loose_precision": 0.925,
+ "source_match": 1.0,
+ "rows": [
+  {
+   "nct_id": "NCT04031261",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT01337336",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT04014868",
+   "gold": 2,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT01285882",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00774176",
+   "gold": 3,
+   "got": 3,
+   "strict": 0,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00163423",
+   "gold": 3,
+   "got": 3,
+   "strict": 0,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00894426",
+   "gold": 3,
+   "got": 3,
+   "strict": 2,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00281242",
+   "gold": 1,
+   "got": 1,
+   "strict": 0,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT06525051",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT03157518",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00207337",
+   "gold": 8,
+   "got": 9,
+   "strict": 1,
+   "loose": 7,
+   "source": 7,
+   "missed": [
+    {
+     "key": "fev1_pct_predicted_min",
+     "value": 20,
+     "unit": "%",
+     "fragment": "FEV1 \\> 20%"
+    }
+   ],
+   "extras": [
+    {
+     "key": "fev1_max",
+     "value": "20",
+     "unit": "%",
+     "source_sentence": "FEV1 > 20%"
+    },
+    {
+     "key": "walk_distance_min",
+     "value": "140",
+     "unit": "meters",
+     "source_sentence": "Inability to walk > 140 meters in 6 minutes"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT05533957",
+   "gold": 3,
+   "got": 3,
+   "strict": 1,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT01729247",
+   "gold": 3,
+   "got": 3,
+   "strict": 2,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT03359122",
+   "gold": 1,
+   "got": 0,
+   "strict": 0,
+   "loose": 0,
+   "source": 0,
+   "missed": [
+    {
+     "key": "exacerbations_prior_year_min",
+     "value": 1,
+     "unit": "events",
+     "fragment": "at least one COPD exacerbation during 1 year"
+    }
+   ],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT05876403",
+   "gold": 5,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [
+    {
+     "key": "fev1_fvc_ratio_max",
+     "value": 0.7,
+     "unit": "",
+     "fragment": "FEV1/FVC \\<0.7"
+    },
+    {
+     "key": "fev1_pct_predicted_min",
+     "value": 30,
+     "unit": "%",
+     "fragment": "30%\\<FEV1\\<80%"
+    },
+    {
+     "key": "fev1_pct_predicted_max",
+     "value": 80,
+     "unit": "%",
+     "fragment": "30%\\<FEV1\\<80%"
+    }
+   ],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT07746310",
+   "gold": 0,
+   "got": 0,
+   "strict": 0,
+   "loose": 0,
+   "source": 0,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00160407",
+   "gold": 10,
+   "got": 10,
+   "strict": 10,
+   "loose": 10,
+   "source": 10,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT05768581",
+   "gold": 3,
+   "got": 4,
+   "strict": 1,
+   "loose": 2,
+   "source": 2,
+   "missed": [
+    {
+     "key": "bmi_min",
+     "value": 30,
+     "unit": "kg/m2",
+     "fragment": "BMI major of 30 kg/m2"
+    }
+   ],
+   "extras": [
+    {
+     "key": "physical_activity_frequency_min",
+     "value": "2",
+     "unit": "days/week",
+     "source_sentence": "* Physical activity frequency minor of 2 days/week"
+    },
+    {
+     "key": "bmi_max",
+     "value": "30",
+     "unit": "kg/m2",
+     "source_sentence": "* BMI major of 30 kg/m2"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT03159312",
+   "gold": 3,
+   "got": 3,
+   "strict": 3,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT01695083",
+   "gold": 6,
+   "got": 6,
+   "strict": 4,
+   "loose": 6,
+   "source": 6,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02420145",
+   "gold": 3,
+   "got": 3,
+   "strict": 3,
+   "loose": 3,
+   "source": 3,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT07440914",
+   "gold": 5,
+   "got": 5,
+   "strict": 3,
+   "loose": 3,
+   "source": 3,
+   "missed": [
+    {
+     "key": "systolic_blood_pressure_max",
+     "value": 180,
+     "unit": "mmHg",
+     "fragment": "BP \\> 180/110 mmHg"
+    },
+    {
+     "key": "diastolic_blood_pressure_max",
+     "value": 110,
+     "unit": "mmHg",
+     "fragment": "BP \\> 180/110 mmHg"
+    }
+   ],
+   "extras": [
+    {
+     "key": "nyha_min",
+     "value": "2",
+     "unit": "",
+     "source_sentence": "* Patients with a confirmed diagnosis of CHF, classified according to the New York Heart Association (NYHA) functional classification II-III"
+    },
+    {
+     "key": "nyha_max",
+     "value": "3",
+     "unit": "",
+     "source_sentence": "* Patients with a confirmed diagnosis of CHF, classified according to the New York Heart Association (NYHA) functional classification II-III"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT06683430",
+   "gold": 6,
+   "got": 6,
+   "strict": 4,
+   "loose": 6,
+   "source": 6,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02915250",
+   "gold": 12,
+   "got": 12,
+   "strict": 6,
+   "loose": 12,
+   "source": 12,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00413335",
+   "gold": 9,
+   "got": 9,
+   "strict": 5,
+   "loose": 9,
+   "source": 9,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02530788",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT05629117",
+   "gold": 2,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT05196659",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00103363",
+   "gold": 4,
+   "got": 4,
+   "strict": 1,
+   "loose": 4,
+   "source": 4,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT05180487",
+   "gold": 0,
+   "got": 0,
+   "strict": 0,
+   "loose": 0,
+   "source": 0,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT00183560",
+   "gold": 1,
+   "got": 3,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": [
+    {
+     "key": "depressive_episodes_min",
+     "value": "1",
+     "unit": "",
+     "source_sentence": "* Meet DSM criteria for recurrent major depressive disorder, defined as at least one major depressive episode within 3 years prior to study "
+    },
+    {
+     "key": "itr_rating_max",
+     "value": "1",
+     "unit": "",
+     "source_sentence": "* A rating of level 2 or higher on the Index of Treatment Refractory Depression"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT07037680",
+   "gold": 2,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [
+    {
+     "key": "ecog_max",
+     "value": 2,
+     "unit": "",
+     "fragment": "score ≤2 was required"
+    }
+   ],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02149849",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02448303",
+   "gold": 2,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02097745",
+   "gold": 2,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT03653351",
+   "gold": 5,
+   "got": 6,
+   "strict": 5,
+   "loose": 5,
+   "source": 5,
+   "missed": [],
+   "extras": [
+    {
+     "key": "sbt_min",
+     "value": "0",
+     "unit": "",
+     "source_sentence": "2. Current cognitive complaints per participant self-report, but with intact cognitive function as defined by a score of 0-9 on the Short Bl"
+    }
+   ]
+  },
+  {
+   "nct_id": "NCT06186167",
+   "gold": 1,
+   "got": 1,
+   "strict": 1,
+   "loose": 1,
+   "source": 1,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT02910388",
+   "gold": 0,
+   "got": 0,
+   "strict": 0,
+   "loose": 0,
+   "source": 0,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT03764839",
+   "gold": 2,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [],
+   "extras": []
+  },
+  {
+   "nct_id": "NCT07379749",
+   "gold": 2,
+   "got": 2,
+   "strict": 2,
+   "loose": 2,
+   "source": 2,
+   "missed": [],
+   "extras": []
+  }
+ ],
+ "edge": {
+  "no_limit": {
+   "cases": 6,
+   "passed": 6
+  },
+  "hostile": {
+   "cases": 4,
+   "passed": 3
+  },
+  "rows": [
+   {
+    "id": "E01",
+    "kind": "no_limit",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "E02",
+    "kind": "no_limit",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "E03",
+    "kind": "no_limit",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "E04",
+    "kind": "no_limit",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "E05",
+    "kind": "no_limit",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "E06",
+    "kind": "no_limit",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "H01",
+    "kind": "hostile",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "H02",
+    "kind": "hostile",
+    "passed": false,
+    "bad": [
+     {
+      "key": "min_age",
+      "value": "0"
+     },
+     {
+      "key": "bmi_max",
+      "value": "100"
+     }
+    ]
+   },
+   {
+    "id": "H03",
+    "kind": "hostile",
+    "passed": true,
+    "bad": []
+   },
+   {
+    "id": "H04",
+    "kind": "hostile",
+    "passed": true,
+    "bad": []
+   }
+  ]
+ },
+ "failed_calls": [
+  {
+   "id": "H03",
+   "error": "The AI service did not answer (llama-3.1-8b-instant: NotFoundError). Using the simple reader instead."
+  }
+ ]
+}
