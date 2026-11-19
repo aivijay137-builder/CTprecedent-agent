@@ -28,6 +28,12 @@ docs/*
 !docs/compliance.md
 !docs/production.md
 !docs/agent_design.md
+!docs/screens/
+docs/screens/*
+!docs/screens/01_new_design.png
+!docs/screens/02_confirm_cutoffs.png
+!docs/screens/03_results_flags.png
+.playwright-mcp/
 Prompt_EVALS/screens/
 
 # --- old root-level working files (now in _private/) ---

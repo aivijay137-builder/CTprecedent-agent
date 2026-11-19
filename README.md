@@ -4,6 +4,21 @@ Paste a draft trial design. Get the closest past trials from ClinicalTrials.gov,
 
 **Live demo:** https://ct-precedent-agent.vercel.app (no key needed; AI reading is off unless you add your own key under "AI key").
 
+## What it looks like
+Real run on the live site with an invented heart-failure draft (no confidential data). The AI reader was off, so the population checks show as "Not checked" instead of a guess.
+
+**1. Describe the design** (any condition, with a registry condition lookup)
+
+<img src="docs/screens/01_new_design.png" alt="New design form: condition, phase, endpoint, enrollment, countries and eligibility criteria" width="720">
+
+**2. Confirm the cutoffs read from the criteria**, each with the sentence it came from. Nothing runs until you confirm.
+
+<img src="docs/screens/02_confirm_cutoffs.png" alt="Seven eligibility cutoffs, each shown with its source sentence and an Edit link" width="720">
+
+**3. Results:** 30 comparable trials and a flag that shows its count (n) and links to the trials, plus an explicit "Not checked" list.
+
+<img src="docs/screens/03_results_flags.png" alt="Results: 30 comparable trials, a Sites flag with n = 178, and a Not checked list" width="720">
+
 ## Run it locally (about 2 minutes)
 
 Needs Python 3.11+ and Node 20+.
