@@ -1,6 +1,6 @@
 """Router smoke test on the REAL registry and the REAL draft packs (read-only, no AI, no engine involved).
 For the golden designs plus a few made-up conditions, prints which pack the router chooses and why, and the merged add-on size.
-Run from the Faro folder:  CTG_DB_PATH=<local registry copy> python EVALS/scripts/router_real_smoke.py"""
+Run from the Faro folder:  CTG_DB_PATH=<local registry copy> python Prompt_EVALS/scripts/router_real_smoke.py"""
 import os
 import sys
 from pathlib import Path

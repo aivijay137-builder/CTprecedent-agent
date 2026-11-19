@@ -1,6 +1,6 @@
 """What does a pack CHANGE? For the golden designs: route to a pack, run the engine prompt-only and with the pack (AI off, free), and compare.
-This describes what changed, not which result is better (that needs the quality eval). Full comparison saved to EVALS/results/.
-Run from the Faro folder:  CTG_DB_PATH=<local registry copy> python EVALS/scripts/pack_on_vs_off.py"""
+This describes what changed, not which result is better (that needs the quality eval). Full comparison saved to Prompt_EVALS/results/.
+Run from the Faro folder:  CTG_DB_PATH=<local registry copy> python Prompt_EVALS/scripts/pack_on_vs_off.py"""
 import json
 import os
 import sys
@@ -41,6 +41,6 @@ for name, brief in make_golden.designs().items():
         print(f"     - out: was #{row['rank_a']:>2} {row['nct_id']} {row['title'][:70]}")
     print(f"  flags: same {cmp['flags']['in_both']}, only prompt-only {cmp['flags']['only_a']}, only with pack {cmp['flags']['only_b']}, n changed {cmp['flags']['n_changed']}")
     print(f"  bottom line: prompt-only '{cmp['a']['sentence']}' | with pack '{cmp['b']['sentence']}'")
-(ROOT / "EVALS" / "results").mkdir(exist_ok=True)
-(ROOT / "EVALS" / "results" / "pack_on_vs_off_2026-11-09.json").write_text(json.dumps(out, indent=1, default=str), encoding="utf-8")
-print("\nsaved EVALS/results/pack_on_vs_off_2026-11-09.json")
+(ROOT / "Prompt_EVALS" / "results").mkdir(exist_ok=True)
+(ROOT / "Prompt_EVALS" / "results" / "pack_on_vs_off_2026-11-09.json").write_text(json.dumps(out, indent=1, default=str), encoding="utf-8")
+print("\nsaved Prompt_EVALS/results/pack_on_vs_off_2026-11-09.json")

@@ -1,5 +1,5 @@
 """Quality review across all draft packs: what each pack found, and what looks weak. Prints a table. Read-only.
-Run from the Faro folder:  python EVALS/scripts/packs_quality_review.py"""
+Run from the Faro folder:  python Prompt_EVALS/scripts/packs_quality_review.py"""
 import glob
 from pathlib import Path
 

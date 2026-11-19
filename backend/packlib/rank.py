@@ -1,6 +1,6 @@
 """Re-ranks the engine's candidate list with a pack: first the hard filter (with its fallback), then small boosts and penalties.
 Rank, don't over-filter: only the hard filter can remove a trial, and it is relaxed when fewer than MIN_COMPARABLES would remain.
-The boost and penalty sizes are STARTING VALUES, untuned (see EVALS/DECISIONS.md D15); the eval should tune them.
+The boost and penalty sizes are STARTING VALUES, untuned (see Prompt_EVALS/DECISIONS.md D15); the eval should tune them.
 The similarity score shown to the user stays the engine's own score: the pack only changes the ORDER, and says why in `why`."""
 import re
 

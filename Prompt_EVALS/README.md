@@ -11,7 +11,7 @@ The record of how the therapeutic packs, the router and the "with or without pac
 | `RESULTS.md` | Plain-English summary of what the results mean so far (updated as runs are added) |
 | `golden/` | Copy of the golden regression snapshot (also at `backend/golden/golden_base_runs.json`) |
 | `scripts/` | The scripts behind the runs |
-| `record.py` | Runs a command and records it: `python EVALS/record.py <name> "<what it checks>" -- <command>` |
+| `record.py` | Runs a command and records it: `python Prompt_EVALS/record.py <name> "<what it checks>" -- <command>` |
 
 ## Two different kinds of check (do not mix them up)
 | | Regression check | Quality eval |

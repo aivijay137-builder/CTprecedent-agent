@@ -1,6 +1,6 @@
 """Is the golden snapshot repeatable? Re-runs the prompt-only engine (AI off) on the three golden designs and compares with the saved
 snapshot (backend/golden/golden_base_runs.json). Does NOT overwrite it. Exit status 1 if anything differs.
-Run from the Faro folder:  CTG_DB_PATH=<local registry copy> python EVALS/scripts/golden_repeatability.py"""
+Run from the Faro folder:  CTG_DB_PATH=<local registry copy> python Prompt_EVALS/scripts/golden_repeatability.py"""
 import json
 import sys
 from pathlib import Path

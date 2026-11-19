@@ -1,5 +1,5 @@
 """Runs the whole test suite the way GitHub CI sees it: no registry, no pack files, empty data folder. Everything that needs them must skip itself.
-Run from the Faro folder:  python EVALS/scripts/ci_view.py"""
+Run from the Faro folder:  python Prompt_EVALS/scripts/ci_view.py"""
 import os
 import subprocess
 import sys

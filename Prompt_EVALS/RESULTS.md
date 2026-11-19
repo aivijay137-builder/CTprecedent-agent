@@ -29,7 +29,7 @@ Updated as runs are added. Each line names the run it comes from (see `RUNS.md`)
 - Two mistakes of mine were caught on the way and fixed (R19): the engine call shape for prompt-only runs, and a test that touched the registry at import.
 
 ## 10 Nov 2026: screens and the end-to-end check
-- **The pack screens work in a real browser** (R23, screenshots in `EVALS/screens/`): the options block, the draft warning, the four switches, the pack banner on the results, and the compare view. The compare view matches the earlier script run on the same design (0 trials swapped, 16 of 26 at the same rank).
+- **The pack screens work in a real browser** (R23, screenshots in `Prompt_EVALS/screens/`): the options block, the draft warning, the four switches, the pack banner on the results, and the compare view. The compare view matches the earlier script run on the same design (0 trials swapped, 16 of 26 at the same rank).
 - **Front end type-checks and builds, and so does the saved-results demo** (R22).
 - **Final suite:** see the last two rows of `RUNS.md` (full suite and CI view).
 

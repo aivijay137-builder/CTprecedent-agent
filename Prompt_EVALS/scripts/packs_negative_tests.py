@@ -1,5 +1,5 @@
 """Proves the pack validator can FAIL: six deliberately broken copies of a good pack must each be rejected.
-Run from the Faro folder:  python EVALS/scripts/packs_negative_tests.py   (exit status 1 if any broken pack slips through)"""
+Run from the Faro folder:  python Prompt_EVALS/scripts/packs_negative_tests.py   (exit status 1 if any broken pack slips through)"""
 import copy
 import sys
 from pathlib import Path

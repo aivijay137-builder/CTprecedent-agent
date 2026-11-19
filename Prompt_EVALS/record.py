@@ -1,8 +1,8 @@
-"""Records one test or eval run: runs a command, saves its full output, and adds a row to EVALS/RUNS.md.
+"""Records one test or eval run: runs a command, saves its full output, and adds a row to Prompt_EVALS/RUNS.md.
 Usage (from the Faro folder):
-    python EVALS/record.py <name> "<what it checks>" -- <command ...>
-    python EVALS/record.py <name> "<what it checks>" --from-file <existing_output.txt> --command "<how it was run>"
-Output is saved to EVALS/runs/<date>_<number>_<name>.txt. The row shows the result line (pytest summary or the last line printed) and the exit status."""
+    python Prompt_EVALS/record.py <name> "<what it checks>" -- <command ...>
+    python Prompt_EVALS/record.py <name> "<what it checks>" --from-file <existing_output.txt> --command "<how it was run>"
+Output is saved to Prompt_EVALS/runs/<date>_<number>_<name>.txt. The row shows the result line (pytest summary or the last line printed) and the exit status."""
 import datetime as dt
 import re
 import subprocess
