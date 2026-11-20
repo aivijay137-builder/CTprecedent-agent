@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import type { Element, Flag, RunResult } from "../types";
+import { demoExamples } from "../api";
 import { BUCKET_LABEL, ELEMENT_LABEL, TIER_LABEL, daysOld, fmtDate, isStale, nctUrl } from "../util";
 import { Comparables } from "./Comparables";
 import { Evidence, FlagCard } from "./FlagCard";
@@ -27,7 +28,7 @@ export function Results({ run, outOfDate, excluded, onToggleExcluded, onDecide, 
     const j = e.key === "ArrowRight" ? (i + 1) % 3 : e.key === "ArrowLeft" ? (i + 2) % 3 : -1;
     if (j >= 0) { e.preventDefault(); setTab(tabs[j].id); refs.current[tabs[j].id]?.focus(); }
   };
-  const stale = isStale(run.data_as_of);
+  const stale = isStale(run.data_as_of) && demoExamples().length === 0; // the saved-results demo is a replay, so its date is not 'old' (same rule as the side panel)
 
   return (
     <div className="inner">
